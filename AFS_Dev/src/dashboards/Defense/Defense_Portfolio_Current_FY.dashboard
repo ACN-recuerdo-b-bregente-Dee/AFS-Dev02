@@ -206,7 +206,7 @@
             <chartAxisRange>Auto</chartAxisRange>
             <chartSummary>
                 <axisBinding>y</axisBinding>
-                <column>FORMULA2</column>
+                <column>FORMULA3</column>
             </chartSummary>
             <componentType>ColumnStacked</componentType>
             <dashboardFilterColumns>

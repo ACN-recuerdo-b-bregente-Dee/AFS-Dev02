@@ -2,7 +2,7 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Email_Notification_for_ATS_Approval_for_Status_Stage_Requested_to_2B</fullName>
-        <ccEmails>AFS@accenturefederal.com</ccEmails>
+        <ccEmails>AFS.OSPs@accenturefederal.com</ccEmails>
         <description>Email Notification for ATS Approval for Status/Stage Requested to 2B</description>
         <protected>false</protected>
         <senderType>CurrentUser</senderType>
@@ -214,55 +214,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Set_Stage_1A_Offline_sent_to_Today</fullName>
-        <field>Stage_1A_Offline_sent__c</field>
-        <formula>Today()</formula>
-        <name>Set Stage 1A Offline sent to Today</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Set_Stage_1B_Offline_sent_to_Today</fullName>
-        <description>Set Stage 1B Offline sent to Today</description>
-        <field>Stage_1B_Offline_sent__c</field>
-        <formula>Today()</formula>
-        <name>Set Stage 1B Offline sent to Today</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Set_Stage_2A_Offline_sent_to_Today</fullName>
-        <description>Set Stage 2A Offline sent to Today</description>
-        <field>Stage_2A_Offline_sent__c</field>
-        <formula>Today()</formula>
-        <name>Set Stage 2A Offline sent to Today</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Set_Stage_2B_Offline_sent_to_Today</fullName>
-        <description>Set Stage 2B Offline sent to Today</description>
-        <field>Stage_2B_Offline_sent__c</field>
-        <formula>Today()</formula>
-        <name>Set Stage 2B Offline sent to Today</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Set_Stage_3_Offline_sent_to_Today</fullName>
-        <description>Set Stage 3 Offline sent to Today</description>
-        <field>Stage_3_Offline_sent__c</field>
-        <formula>Today()</formula>
-        <name>Set Stage 3 Offline sent to Today</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Stage_1A_Entry_Date_Today</fullName>
         <field>Stage_1A_Entry_Date__c</field>
         <formula>Today()</formula>
@@ -355,6 +306,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Update_Probability</fullName>
+        <description>Update Probability and Win Probability when Approved Stage = Won</description>
         <field>Probability</field>
         <formula>1.0</formula>
         <name>Update Probability</name>
@@ -377,15 +329,6 @@
         <field>Reporting_Status_Since__c</field>
         <formula>Today()</formula>
         <name>Update ReportingStatus Date field</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Formula</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Update_Reporting_Status_Date</fullName>
-        <field>Reporting_Status_Since__c</field>
-        <formula>Actual_Contract_Sign_Date__c</formula>
-        <name>Update Reporting Status Date</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Formula</operation>
         <protected>false</protected>
@@ -455,6 +398,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Update_Stage_Status_Request_to_0</fullName>
+        <description>This will update the status stage to 0</description>
         <field>Status_Stage_Requested__c</field>
         <literalValue>0</literalValue>
         <name>Update Stage Status Request to 0</name>
@@ -463,38 +407,46 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Stage_Status_Request_to_AFSWithdr</fullName>
+        <fullName>Update_Stage_Status_Request_to_1A</fullName>
         <field>Status_Stage_Requested__c</field>
-        <literalValue>AFS Withdrew</literalValue>
-        <name>Update Stage Status Request to AFSWithdr</name>
+        <literalValue>1A</literalValue>
+        <name>Update Stage Status Request to 1A</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Stage_Status_Request_to_CWithdraw</fullName>
+        <fullName>Update_Stage_Status_Request_to_1B</fullName>
         <field>Status_Stage_Requested__c</field>
-        <literalValue>Client Withdrew</literalValue>
-        <name>Update Stage Status Request to CWithdraw</name>
+        <literalValue>1B</literalValue>
+        <name>Update Stage Status Request to 1B</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Stage_Status_Request_to_Closed</fullName>
-        <description>Update Stage Status Request to Closed</description>
+        <fullName>Update_Stage_Status_Request_to_2A</fullName>
         <field>Status_Stage_Requested__c</field>
-        <literalValue>Closed</literalValue>
-        <name>Update Stage Status Request to Closed</name>
+        <literalValue>2A</literalValue>
+        <name>Update Stage Status Request to 2A</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_Stage_Status_Request_to_Lost</fullName>
+        <fullName>Update_Stage_Status_Request_to_2B</fullName>
         <field>Status_Stage_Requested__c</field>
-        <literalValue>Lost</literalValue>
-        <name>Update Stage Status Request to Lost</name>
+        <literalValue>2B</literalValue>
+        <name>Update Stage Status Request to 2B</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage_Status_Request_to_3</fullName>
+        <field>Status_Stage_Requested__c</field>
+        <literalValue>3</literalValue>
+        <name>Update Stage Status Request to 3</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
@@ -546,6 +498,7 @@ NULL
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Win_probability_update_to_100</fullName>
+        <description>Update win probability to 100% when approved status stage is equal to &quot;won&quot;</description>
         <field>Win_Probability__c</field>
         <literalValue>100</literalValue>
         <name>Win probability update to 100</name>
@@ -559,7 +512,7 @@ NULL
             <name>Email_Notification_for_ATS_Approval_for_Status_Stage_Requested_to_2B</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>If Approved Stage = 2B, send ATS approval notification</description>
         <formula>AND( ISCHANGED( Status_Stage_Requested__c ),  ISPICKVAL( Status_Stage_Requested__c , &apos;2B&apos;), Portfolio__c &lt;&gt; &apos;Defense - ASM&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
@@ -570,7 +523,7 @@ NULL
             <name>Email_Notification_for_ATS_Approval_for_Status_Stage_Requested_to_2B_ASM</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>If Approved Stage = 2B and Portfolio = &quot;Defense - ASM&quot;, send ATS approval notification</description>
         <formula>AND( ISCHANGED( Status_Stage_Requested__c ),  ISPICKVAL( Status_Stage_Requested__c , &apos;2B&apos;), Portfolio__c = &apos;Defense - ASM&apos;)</formula>
         <triggerType>onAllChanges</triggerType>
@@ -579,6 +532,10 @@ NULL
         <fullName>Approved Stage %3D 0</fullName>
         <actions>
             <name>Opp_Stage_to_0</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_0</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
@@ -596,6 +553,10 @@ NULL
             <name>Opp_Stage_to_1A</name>
             <type>FieldUpdate</type>
         </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_1A</name>
+            <type>FieldUpdate</type>
+        </actions>
         <active>true</active>
         <criteriaItems>
             <field>Opportunity.Approved_Status_Stage__c</field>
@@ -609,6 +570,10 @@ NULL
         <fullName>Approved Stage %3D 1B</fullName>
         <actions>
             <name>Opp_Stage_to_1B</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_1B</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
@@ -626,6 +591,10 @@ NULL
             <name>Opp_Stage_to_2A</name>
             <type>FieldUpdate</type>
         </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_2A</name>
+            <type>FieldUpdate</type>
+        </actions>
         <active>true</active>
         <criteriaItems>
             <field>Opportunity.Approved_Status_Stage__c</field>
@@ -639,6 +608,10 @@ NULL
         <fullName>Approved Stage %3D 2B</fullName>
         <actions>
             <name>Opp_Stage_to_2B</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_2B</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
@@ -656,6 +629,10 @@ NULL
             <name>Opp_Stage_to_3</name>
             <type>FieldUpdate</type>
         </actions>
+        <actions>
+            <name>Update_Stage_Status_Request_to_3</name>
+            <type>FieldUpdate</type>
+        </actions>
         <active>true</active>
         <criteriaItems>
             <field>Opportunity.Approved_Status_Stage__c</field>
@@ -663,29 +640,6 @@ NULL
             <value>3</value>
         </criteriaItems>
         <description>If Approved Stage = 3, update reporting status to pipeline and current stage to 3.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Approved stage %3D won</fullName>
-        <actions>
-            <name>Update_Probability</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Update_Reporting_Status_Date</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Win_probability_update_to_100</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Approved_Status_Stage__c</field>
-            <operation>equals</operation>
-            <value>Won</value>
-        </criteriaItems>
-        <description>If Approved Stage = won, update reporting status to pipeline and current stage to won.</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
@@ -739,7 +693,7 @@ NULL
             <name>Update_Send_Email_To_OSP_to_False</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <criteriaItems>
             <field>Opportunity.Send_Email_to_OSP__c</field>
             <operation>equals</operation>
@@ -753,7 +707,7 @@ NULL
             <name>Send_notification_to_Legal</name>
             <type>Alert</type>
         </actions>
-        <active>false</active>
+        <active>true</active>
         <description>Sends a notification email to Legal, based on answers to any of the trade compliance questions in the Legal section of the Opportunity object such as a response of Yes or I am not sure.</description>
         <formula>OR(  	 	AND(  		ISCHANGED(Subject_countries_client_operates__c),  		INCLUDES(Subject_countries_client_operates__c , &apos;I am not sure, please contact me&apos;) 	), 	AND(  		ISCHANGED(Client_Industry_Area_of_Service__c),  		INCLUDES(Client_Industry_Area_of_Service__c , &apos;Aerospace &amp; Defense&apos;) 	), 	AND(  		ISCHANGED(Client_Industry_Area_of_Service__c),  		INCLUDES( Client_Industry_Area_of_Service__c , &apos;I am not sure, please contact me&apos;)  	),  	AND(  		ISCHANGED(Export_Transfer_of_Products_Software__c),  		OR(ISPICKVAL(Export_Transfer_of_Products_Software__c , &apos;I am not sure, please contact me&apos;),ISPICKVAL(Export_Transfer_of_Products_Software__c , &apos;Yes&apos;)  )	),  	AND(  		ISCHANGED(The_Opportunity_involves_activities_now__c),  		OR(ISPICKVAL(The_Opportunity_involves_activities_now__c , &apos;I am not sure, please contact me&apos;),ISPICKVAL(The_Opportunity_involves_activities_now__c , &apos;Yes&apos;)  	)) )</formula>
         <triggerType>onAllChanges</triggerType>
@@ -780,83 +734,8 @@ NULL
         </actions>
         <active>true</active>
         <description>If approved stage is changed, update Reporting Status Date to Today&apos;s Date.</description>
-        <formula>ISCHANGED(  Approved_Status_Stage__c )</formula>
+        <formula>(ISCHANGED(Approved_Status_Stage__c))</formula>
         <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>Stage %3D Stage 1A</fullName>
-        <actions>
-            <name>Set_Stage_1A_Offline_sent_to_Today</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Stage__c</field>
-            <operation>equals</operation>
-            <value>Stage 1A</value>
-        </criteriaItems>
-        <description>If Stage = Stage 1B, update Stage 1B Offline sent to Today.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Stage %3D Stage 1B</fullName>
-        <actions>
-            <name>Set_Stage_1B_Offline_sent_to_Today</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Stage__c</field>
-            <operation>equals</operation>
-            <value>Stage 1B</value>
-        </criteriaItems>
-        <description>If Stage = Stage 1B, update Stage 1B Offline sent to Today.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Stage %3D Stage 2A</fullName>
-        <actions>
-            <name>Set_Stage_2A_Offline_sent_to_Today</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Stage__c</field>
-            <operation>equals</operation>
-            <value>Stage 2A</value>
-        </criteriaItems>
-        <description>If Stage = Stage 2A, update Stage 2A Offline sent to Today.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Stage %3D Stage 2B</fullName>
-        <actions>
-            <name>Set_Stage_2B_Offline_sent_to_Today</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Stage__c</field>
-            <operation>equals</operation>
-            <value>Stage 2B</value>
-        </criteriaItems>
-        <description>If Stage = Stage 2B, update Stage 2B Offline sent to Today.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
-    </rules>
-    <rules>
-        <fullName>Stage %3D Stage 3</fullName>
-        <actions>
-            <name>Set_Stage_3_Offline_sent_to_Today</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <criteriaItems>
-            <field>Opportunity.Stage__c</field>
-            <operation>equals</operation>
-            <value>Stage 3</value>
-        </criteriaItems>
-        <description>If Stage = Stage 3, update Stage 3 Offline sent to Today.</description>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
         <fullName>Update Opportunity Id for Source SFDC</fullName>
@@ -958,10 +837,6 @@ NULL
             <type>FieldUpdate</type>
         </actions>
         <actions>
-            <name>Update_Stage_Status_Request_to_0</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
             <name>Update_stage_to_stage_0</name>
             <type>FieldUpdate</type>
         </actions>
@@ -978,6 +853,25 @@ NULL
         </criteriaItems>
         <description>If new opportunity record is created/cloned, update current stage to 0, reporting status to unqualified, and status/stage requested to 0.</description>
         <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Won_Opp_to_full_win_percentage</fullName>
+        <actions>
+            <name>Update_Probability</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Win_probability_update_to_100</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Approved_Status_Stage__c</field>
+            <operation>equals</operation>
+            <value>Won</value>
+        </criteriaItems>
+        <description>Workflow to make percent win percentage 100% when the opportunity is won.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <tasks>
         <fullName>Task_to_CAL</fullName>

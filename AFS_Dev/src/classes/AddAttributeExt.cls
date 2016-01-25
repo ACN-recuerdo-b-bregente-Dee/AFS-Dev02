@@ -60,7 +60,6 @@ public with sharing class AddAttributeExt {
         attributes = new List<Attribute__c>();
         toDelete = new List<Attribute__c>();
 
-        //Retrieves the opportunity record base on the opportunity Id in the URL Parameter - Recuerdo
         List<Opportunity> opps = [
             SELECT Id, Name,
             (SELECT Id, Name, TotalPrice FROM OpportunityLineItems LIMIT 50000) 
@@ -68,15 +67,12 @@ public with sharing class AddAttributeExt {
             WHERE Id = :ApexPages.currentPage().getParameters().get(UTIL_Constants.ID) LIMIT 50000
         ];
         
-        //Instantiates a new Attribute record with opportunity is set to the retrieved opportunity record - Recuerdo
         if (!opps.isEmpty()) {
             OPP = opps[0];
             ATT = new Attribute__c(Opportunity_Name__c = OPP.Id);
         }
         
-        //Retrieves all the Attribute records related to the retrieved opportunity record - Recuerdo
-        attributes = [SELECT Name, id,Attribute_Check__c ,Attribute_TypeName__c, Attribute_Type__c, AttributeTxt__c, Attribute_TCR__c, Attribute_TDP__c, WTD_TDP__c, WTD_TCR__c, Attribute_Value__c, AttributePercent__c,Opportunity_Name__c FROM Attribute__c WHERE Opportunity_Name__c = :ApexPages.currentPage().getParameters().get(UTIL_Constants.ID) ORDER BY Attribute_Type__c, Attribute_Value__c ASC LIMIT 50000];
-        //Retrieval of OpportunityLineItem records and Opportunity records are already done in the previous SOQL - Recuerdo
+        attributes = [SELECT Name, id,Attribute_Check__c ,Attribute_TypeName__c, Attribute_Type__c, AttributeTxt__c, Attribute_Value__c, AttributePercent__c,Opportunity_Name__c FROM Attribute__c WHERE Opportunity_Name__c = :ApexPages.currentPage().getParameters().get(UTIL_Constants.ID) ORDER BY Attribute_Type__c, Attribute_Value__c ASC LIMIT 50000];
         oppLineItem = [SELECT Id, OpportunityId, Type__c, Revenue__c FROM OpportunityLineItem WHERE OpportunityId = : ApexPages.currentPage().getParameters().get(UTIL_Constants.ID) LIMIT 50000];
         opportunityRec = [Select id, Status_Stage_Requested__c from Opportunity where Id = :  ApexPages.currentPage().getParameters().get(UTIL_Constants.ID) limit 1];
   

@@ -42,11 +42,6 @@
             <operator>equals</operator>
             <value>Won</value>
         </criteriaItems>
-        <criteriaItems>
-            <column>Opportunity.Reporting_Status_Since__c</column>
-            <operator>equals</operator>
-            <value>THIS_FISCAL_QUARTER,LAST_N_FISCAL_QUARTERS:4</value>
-        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -86,6 +81,6 @@
     <showDetails>true</showDetails>
     <timeFrameFilter>
         <dateColumn>Opportunity.Reporting_Status_Since__c</dateColumn>
-        <interval>INTERVAL_CUSTOM</interval>
+        <interval>INTERVAL_PREVCURFY</interval>
     </timeFrameFilter>
 </Report>

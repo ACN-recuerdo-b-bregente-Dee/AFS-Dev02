@@ -14,7 +14,7 @@ If(tm!= null && tm.Active__c == TRUE)
         handler.OnBeforeInsert(Trigger.new);
     }
     else if(Trigger.isInsert && Trigger.isAfter){
-        handler.OnAfterInsert(Trigger.newMap);
+        handler.OnAfterInsert(Trigger.new);
     }
     
     else if(Trigger.isUpdate && Trigger.isBefore){

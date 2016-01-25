@@ -264,9 +264,8 @@ private class CreateSnapshotsTest{
         OpportunityHandler.firstRunForBeforeUpdate = true;
         system.test.startTest();
 
-        recordOpp.STATUS_STAGE_REQUESTED__C = 'Lost';
         recordOpp.Approved_Status_Stage__c = 'Lost';
-        recordOpp.Winning_Competitor__c = 'Booz Allen Hamilton';
+        //recordOpp.STATUS_STAGE_REQUESTED__C = '1A';
         database.update(recordOpp, True);
 
         // Confirm that record is inserted

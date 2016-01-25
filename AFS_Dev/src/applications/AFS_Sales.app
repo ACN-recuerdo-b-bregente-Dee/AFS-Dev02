@@ -7,6 +7,4 @@
     <tab>standard-Opportunity</tab>
     <tab>standard-report</tab>
     <tab>standard-Dashboard</tab>
-    <tab>Dashboard_Analytics__c</tab>
-    <tab>Opportunity_Schedule__c</tab>
 </CustomApplication>

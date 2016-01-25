@@ -9,14 +9,6 @@
         <value>Attributes</value>
     </caseValues>
     <fields>
-        <label><!-- Accenture Digital TCR --></label>
-        <name>Accenture_Digital_TCR__c</name>
-    </fields>
-    <fields>
-        <label><!-- All TCR excpt ACN Dig --></label>
-        <name>All_TCR_excpt_ACN_Dig__c</name>
-    </fields>
-    <fields>
         <label><!-- Attribute % --></label>
         <name>AttributePercent__c</name>
     </fields>
@@ -29,20 +21,8 @@
         <name>Attribute_Check__c</name>
     </fields>
     <fields>
-        <label><!-- Attribute TCR --></label>
-        <name>Attribute_TCR__c</name>
-    </fields>
-    <fields>
-        <label><!-- Attribute TDP --></label>
-        <name>Attribute_TDP__c</name>
-    </fields>
-    <fields>
         <label><!-- Attribute Type Name --></label>
         <name>Attribute_TypeName__c</name>
-    </fields>
-    <fields>
-        <label><!-- Attribute Type(Digital or Not) --></label>
-        <name>Attribute_Type_Digital_or_Not__c</name>
     </fields>
     <fields>
         <label><!-- Attribute Type --></label>
@@ -72,6 +52,10 @@
             <translation><!-- Horizontals/Initiatives --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>IC Offerings</masterLabel>
+            <translation><!-- IC Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>IO Offerings</masterLabel>
             <translation><!-- IO Offerings --></translation>
         </picklistValues>
@@ -86,6 +70,10 @@
         <picklistValues>
             <masterLabel>SI Offerings</masterLabel>
             <translation><!-- SI Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy Offerings</masterLabel>
+            <translation><!-- Strategy Offerings --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>TC Offerings</masterLabel>
@@ -170,10 +158,6 @@
         <picklistValues>
             <masterLabel>Analytics</masterLabel>
             <translation><!-- Analytics --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Application Modernization</masterLabel>
-            <translation><!-- Application Modernization --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>BMC</masterLabel>
@@ -745,35 +729,9 @@
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Digital TCR --></label>
-        <name>Digital_TCR__c</name>
-    </fields>
-    <fields>
         <label><!-- Opportunity Name --></label>
         <name>Opportunity_Name__c</name>
         <relationshipLabel><!-- Attributes --></relationshipLabel>
-    </fields>
-    <fields>
-        <label><!-- TCR Type --></label>
-        <name>TCR_Type__c</name>
-    </fields>
-    <fields>
-        <label><!-- TCR --></label>
-        <name>TCR__c</name>
-    </fields>
-    <fields>
-        <label><!-- WTD TCR Decimals --></label>
-        <name>WTD_TCR_Decimals__c</name>
-    </fields>
-    <fields>
-        <help><!-- Weighted Total Current Revenue --></help>
-        <label><!-- Attribute WTD TCR --></label>
-        <name>WTD_TCR__c</name>
-    </fields>
-    <fields>
-        <help><!-- (TDP * Probability %) * Attribute % --></help>
-        <label><!-- Attribute WTD TDP --></label>
-        <name>WTD_TDP__c</name>
     </fields>
     <layouts>
         <layout>Attribute Layout</layout>

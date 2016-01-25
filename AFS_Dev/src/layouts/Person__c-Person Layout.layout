@@ -12,7 +12,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Email__c</field>
             </layoutItems>
             <layoutItems>
@@ -84,6 +84,7 @@
         <fields>NAME</fields>
         <fields>Role__c</fields>
         <fields>Opportunity_Name__c</fields>
+        <fields>Opportunity_Access__c</fields>
         <relatedList>Opportunity_Team_Roles__c.Name__c</relatedList>
     </relatedLists>
     <relatedLists>

@@ -38,25 +38,9 @@
         <name>AFS_High_Priority_Deal__c</name>
     </fields>
     <fields>
-        <help><!-- Provide an introduction to ATS request. Provide explanation of below-target OI%, summarize any management discounts and/or costs assumed to be not billable, etc. --></help>
+        <help><!-- Provide an introduction to ATS request. Provide explanation of below-target OI%, summarize any management discounts and/or costs assumed to be not billable, DSO, etc. For Agilex legacy deals, please specify new ODE. --></help>
         <label><!-- ATS Introduction --></label>
         <name>ATS_Notes__c</name>
-    </fields>
-    <fields>
-        <label><!-- Accenture Digital TCR --></label>
-        <name>Accenture_Digital_TCR__c</name>
-    </fields>
-    <fields>
-        <label><!-- Accenture Digital? --></label>
-        <name>Accenture_Digital__c</name>
-        <picklistValues>
-            <masterLabel>Accenture Digital</masterLabel>
-            <translation><!-- Accenture Digital --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Others</masterLabel>
-            <translation><!-- Others --></translation>
-        </picklistValues>
     </fields>
     <fields>
         <help><!-- Can Account Plan OI% be Met with this deal and other opportunities in the account pipeline? --></help>
@@ -137,10 +121,6 @@
             <masterLabel>Won</masterLabel>
             <translation><!-- Won --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Attribute Type(Digital or Not) --></label>
-        <name>Attribute_Type_Digital_or_Not__c</name>
     </fields>
     <fields>
         <help><!-- Y/N field to indicate if a Bank Gurantee/Letter of Credit is required. If the value &quot;Yes&quot; is selected, attach the Corporate Bank Guarantee Request Form
@@ -526,6 +506,30 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
             <translation><!-- CMS VDC --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Census Digital Transformation</masterLabel>
+            <translation><!-- Census Digital Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Census Mobile</masterLabel>
+            <translation><!-- Census Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Census SE&amp;I Cloud</masterLabel>
+            <translation><!-- Census SE&amp;I Cloud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Census SE&amp;I Program</masterLabel>
+            <translation><!-- Census SE&amp;I Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Census SE&amp;I Project</masterLabel>
+            <translation><!-- Census SE&amp;I Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Census UTS</masterLabel>
+            <translation><!-- Census UTS --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>DHS EAGLE II, FC1-Unrestricted (AFS &amp; ASMR)</masterLabel>
             <translation><!-- DHS EAGLE II, FC1-Unrestricted (AFS &amp; ASMR) --></translation>
         </picklistValues>
@@ -538,12 +542,16 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
             <translation><!-- DLA EBS --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>DLA EBS ECSI</masterLabel>
-            <translation><!-- DLA EBS ECSI --></translation>
+            <masterLabel>DLA RDSS</masterLabel>
+            <translation><!-- DLA RDSS --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>DOE/NNSA TEPS (CTA member)</masterLabel>
             <translation><!-- DOE/NNSA TEPS (CTA member) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSCA SCES</masterLabel>
+            <translation><!-- DSCA SCES --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Dept of Education EDSS</masterLabel>
@@ -576,6 +584,10 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
         <picklistValues>
             <masterLabel>DoS ILMS</masterLabel>
             <translation><!-- DoS ILMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FBI HRSource</masterLabel>
+            <translation><!-- FBI HRSource --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>FBI IT TRIPLE S</masterLabel>
@@ -642,6 +654,10 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
             <translation><!-- IRS RAS BPA --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>IT MSA</masterLabel>
+            <translation><!-- IT MSA --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Interior BOEMRE MRMSS</masterLabel>
             <translation><!-- Interior BOEMRE MRMSS --></translation>
         </picklistValues>
@@ -706,6 +722,10 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
             <translation><!-- PSC IDIQ --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>SAM</masterLabel>
+            <translation><!-- SAM --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>SSA A&amp;A</masterLabel>
             <translation><!-- SSA A&amp;A --></translation>
         </picklistValues>
@@ -760,6 +780,22 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
         <picklistValues>
             <masterLabel>VA T4 (ASMR)</masterLabel>
             <translation><!-- VA T4 (ASMR) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DB Competitor --></label>
+        <name>DB_Competitor__c</name>
+        <picklistValues>
+            <masterLabel>Competitor A</masterLabel>
+            <translation><!-- Competitor A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor B</masterLabel>
+            <translation><!-- Competitor B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor C</masterLabel>
+            <translation><!-- Competitor C --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -868,22 +904,6 @@ No is not an acceptable answer. Please review the checklist link in the Custom L
             <masterLabel>USA - Wilmington</masterLabel>
             <translation><!-- USA - Wilmington --></translation>
         </picklistValues>
-    </fields>
-    <fields>
-        <label><!-- Digital Attribute Count --></label>
-        <name>Digital_Attribute_Count__c</name>
-    </fields>
-    <fields>
-        <label><!-- Digital TCR --></label>
-        <name>Digital_TCR_Currency__c</name>
-    </fields>
-    <fields>
-        <label><!-- Digital TCR % --></label>
-        <name>Digital_TCR_Percent__c</name>
-    </fields>
-    <fields>
-        <label><!-- Digital TCR --></label>
-        <name>Digital_TCR__c</name>
     </fields>
     <fields>
         <help><!-- Anticipated release date of the Draft RFP. This date field may be equal to or before the &quot;RFP Release&quot; date field. --></help>
@@ -1184,18 +1204,6 @@ No is not an acceptable answer. Please review the MFC Decision Matrix link in th
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Non Digital Attribute --></label>
-        <name>Non_Digital_Attribute__c</name>
-    </fields>
-    <fields>
-        <label><!-- Non Digital TCR % --></label>
-        <name>Non_Digital_TCR_Percent__c</name>
-    </fields>
-    <fields>
-        <label><!-- Non Digital TCR --></label>
-        <name>Non_Digital_TCR__c</name>
-    </fields>
-    <fields>
         <help><!-- Y/N field to indicate if Organizational Conflict of Interest review has been completed
 
 Applies to Opp Type: 
@@ -1235,10 +1243,6 @@ If yes, Foreign Travel Coordinator approval required: federal.ap55.required@acce
         <help><!-- Read only field to all users except OSPs. Notes field for the OSPs to leverage when adding comments to the opportunity --></help>
         <label><!-- OSP Notes --></label>
         <name>OSP_Notes__c</name>
-    </fields>
-    <fields>
-        <label><!-- Opp Year --></label>
-        <name>Opp_Year__c</name>
     </fields>
     <fields>
         <help><!-- Number that is system-generated when a new opportunity is created. Opportunity ID field is read-only. --></help>
@@ -1652,64 +1656,20 @@ Excludes: Options --></help>
         <name>Stage_1A_Entry_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Stage 1A Offline sent --></label>
-        <name>Stage_1A_Offline_sent__c</name>
-    </fields>
-    <fields>
         <label><!-- Stage 1B Entry Date --></label>
         <name>Stage_1B_Entry_Date__c</name>
-    </fields>
-    <fields>
-        <label><!-- Stage 1B Offline sent --></label>
-        <name>Stage_1B_Offline_sent__c</name>
     </fields>
     <fields>
         <label><!-- Stage 2A Entry Date --></label>
         <name>Stage_2A_Entry_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Stage 2A Offline sent --></label>
-        <name>Stage_2A_Offline_sent__c</name>
-    </fields>
-    <fields>
         <label><!-- Stage 2B Entry Date --></label>
         <name>Stage_2B_Entry_Date__c</name>
     </fields>
     <fields>
-        <label><!-- Stage 2B Offline sent --></label>
-        <name>Stage_2B_Offline_sent__c</name>
-    </fields>
-    <fields>
         <label><!-- Stage 3 Entry Date --></label>
         <name>Stage_3_Entry_Date__c</name>
-    </fields>
-    <fields>
-        <label><!-- Stage 3 Offline sent --></label>
-        <name>Stage_3_Offline_sent__c</name>
-    </fields>
-    <fields>
-        <label><!-- Stage --></label>
-        <name>Stage__c</name>
-        <picklistValues>
-            <masterLabel>Stage 1A</masterLabel>
-            <translation><!-- Stage 1A --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Stage 1B</masterLabel>
-            <translation><!-- Stage 1B --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Stage 2A</masterLabel>
-            <translation><!-- Stage 2A --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Stage 2B</masterLabel>
-            <translation><!-- Stage 2B --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Stage 3</masterLabel>
-            <translation><!-- Stage 3 --></translation>
-        </picklistValues>
     </fields>
     <fields>
         <help><!-- Use this field to request advancement to a subsequent stage when all required fields are complete.
@@ -1747,10 +1707,6 @@ Please note: there may be additional fields on the Related Lists (e.g., Financia
         <picklistValues>
             <masterLabel>Client Withdrew</masterLabel>
             <translation><!-- Client Withdrew --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Closed</masterLabel>
-            <translation><!-- Closed --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Lost</masterLabel>
@@ -1858,10 +1814,6 @@ For example:
         <help><!-- This formula field is a blended target OI% based on service group OI values and target OI%. --></help>
         <label><!-- TCR OI% --></label>
         <name>TCR_OI__c</name>
-    </fields>
-    <fields>
-        <label><!-- TCR for Dashboard --></label>
-        <name>TCR_for_Dashboard__c</name>
     </fields>
     <fields>
         <help><!-- OI% over life of contract (including options) --></help>
@@ -2200,10 +2152,6 @@ Best Case: 10% --></help>
         </picklistValues>
     </fields>
     <fields>
-        <label><!-- Won Or Open Status --></label>
-        <name>Won_Or_Open_Status__c</name>
-    </fields>
-    <fields>
         <label><!-- Won Rate --></label>
         <name>Won_Rate__c</name>
     </fields>
@@ -2240,10 +2188,6 @@ Best Case: 10% --></help>
         <sections>
             <label><!-- Lost --></label>
             <section>Lost</section>
-        </sections>
-        <sections>
-            <label><!-- Offline Email Approval --></label>
-            <section>Offline Email Approval</section>
         </sections>
         <sections>
             <label><!-- POC --></label>
@@ -2287,10 +2231,6 @@ Best Case: 10% --></help>
         <name>Actual_Contract_Sign_Date_before_dates</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- OPP-075: You are approving this Opportunity to a stage beyond the current Status/Stage Requested. Please re-submit Status/Stage Requested as the stage you have currently selected as the Approved Status/Stage. --></errorMessage>
-        <name>Approve_status_equal_to_requested</name>
-    </validationRules>
-    <validationRules>
         <errorMessage><!-- OPP-042-002: Required --></errorMessage>
         <name>Bank_Guarantee_Letter_of_Credit_is_req</name>
     </validationRules>
@@ -2319,7 +2259,7 @@ Best Case: 10% --></help>
         <name>Client_Industry_Area_of_Service_is_req</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- OPP-021: Please enter a Close Date after or equal to today&apos;s Date. --></errorMessage>
+        <errorMessage><!-- OPP-021: Please enter an Expected Contract Sign Date after or equal to today&apos;s Date. --></errorMessage>
         <name>CloseDate_cannot_be_in_the_past</name>
     </validationRules>
     <validationRules>
@@ -2367,7 +2307,7 @@ Best Case: 10% --></help>
         <name>Extended_From_Opp_ID_is_req_Extension</name>
     </validationRules>
     <validationRules>
-        <errorMessage><!-- OPP-005: You must provide an Opp Name in the Extended From field when Opportunity Type equals Option or Extension. --></errorMessage>
+        <errorMessage><!-- OPP-005: You must provide an Opp Name in the Extended From field when Opportunity Type equals Option. --></errorMessage>
         <name>Extended_From_Opp_ID_is_req_Option</name>
     </validationRules>
     <validationRules>
@@ -2397,10 +2337,6 @@ Best Case: 10% --></help>
     <validationRules>
         <errorMessage><!-- OPP-041-014: Required --></errorMessage>
         <name>OCONUS_Work_Required_at_Stage_1A</name>
-    </validationRules>
-    <validationRules>
-        <errorMessage><!-- OPP-074: You must save Opportunity with Status/Stage Requested as 3 before you can submit to Won. Please re-submit Status/Stage Requested as Won after Status/Stage Requested as 3 has been approved. --></errorMessage>
-        <name>Opp_Approved_Status_3_Before_Won</name>
     </validationRules>
     <validationRules>
         <errorMessage><!-- OPP-030: Please enter an Outsourcing Start Date before the Outsourcing End Date. --></errorMessage>
@@ -2579,10 +2515,6 @@ Best Case: 10% --></help>
         <name>Complexity_Category_Abbreviation</name>
     </webLinks>
     <webLinks>
-        <label><!-- Custom_Schedule --></label>
-        <name>Custom_Schedule</name>
-    </webLinks>
-    <webLinks>
         <label><!-- Field_Stage_Matrix_Guide --></label>
         <name>Field_Stage_Matrix_Guide</name>
     </webLinks>
@@ -2601,18 +2533,6 @@ Best Case: 10% --></help>
     <webLinks>
         <label><!-- New --></label>
         <name>New</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- NewButton --></label>
-        <name>NewButton</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Open_Opportunities --></label>
-        <name>Open_Opportunities</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Opportunity_Schedules --></label>
-        <name>Opportunity_Schedules</name>
     </webLinks>
     <webLinks>
         <label><!-- Policy_Compliance --></label>

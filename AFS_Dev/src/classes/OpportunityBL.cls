@@ -337,6 +337,7 @@ public class OpportunityBL {
         
         oppValue.addAll(newOpportunity);
         oppTeamRole = [SELECT Id,Name__c,Opportunity_Name__c,Role__c FROM Opportunity_Team_Roles__c WHERE Opportunity_Name__c in : opplineSetId and role__c =: UTIL_Constants.OPPDIRECTOR LIMIT 50000];
+        
         for(Opportunity_Team_Roles__c oppTR : oppTeamRole){
             personId.add(oppTR.Name__c);
         }
@@ -351,7 +352,7 @@ public class OpportunityBL {
                 && newOpportunity[i].The_Opportunity_involves_activities_now__c != null){
                     if(newOpportunity[i].Subject_countries_client_operates__c != oldOpportunityVal[i].Subject_countries_client_operates__c || newOpportunity[i].Client_Industry_Area_of_Service__c != oldOpportunityVal[i].Client_Industry_Area_of_Service__c 
                     || newOpportunity[i].Export_Transfer_of_Products_Software__c != oldOpportunityVal[i].Export_Transfer_of_Products_Software__c || newOpportunity[i].The_Opportunity_involves_activities_now__c != oldOpportunityVal[i].The_Opportunity_involves_activities_now__c ){
-                        if(newOpportunity[i].Subject_countries_client_operates__c.equals(UTIL_Constants.NONEAPPLY) && newOpportunity[i].Client_Industry_Area_of_Service__c.equals(UTIL_Constants.IAMNOTSURE)
+                        if(newOpportunity[i].Subject_countries_client_operates__c.equals(UTIL_Constants.NONEAPPLY) && newOpportunity[i].Client_Industry_Area_of_Service__c.equals(UTIL_Constants.NONEAPPLY)
                          && newOpportunity[i].Export_Transfer_of_Products_Software__c.trim().equals(UTIL_Constants.STRING_NO) && newOpportunity[i].The_Opportunity_involves_activities_now__c.equals(UTIL_Constants.STRING_NO)){
                             ++compCount;
                         }
@@ -375,7 +376,6 @@ public class OpportunityBL {
                                 for(String perName : PersonName){   
                                     if(pers.id.equals(perName)){
                                         sendTo.add(pers.Email__c);
-
                                     }                   
                                 }
                             }
@@ -391,101 +391,10 @@ public class OpportunityBL {
                             
                         mail.setToAddresses(sendTo);
                         mails.add(mail);
-
                 }
             }
-        if(!sendTo.IsEmpty()){
-             Messaging.sendEmail(mails);         
+        if(sendTo != null){
+            Messaging.sendEmail(mails);         
         }
-    }
-    
-    /**
-    public static void setRevenueSchedule(Map<Id, Opportunity> oldOpportunityMap, Map<Id, Opportunity> newOpportunityMap){
-        List<Opportunity_Schedule__c> schedules = new List<Opportunity_Schedule__c>();
-        Set<Id> oppIds = new Set<Id>();
-        Date minDate = System.today();
-        Date maxDate = System.today();
-        Opportunity oldOpp = null;
-        for(Opportunity oppRecord : newOpportunityMap.values()){
-            if(oldOpportunityMap <> null && !oldOpportunityMap.isEmpty()){
-                oldOpp = oldOpportunityMap.get(oppRecord.Id);
-            }
-            
-            if(oppRecord.Total_Current_Revenue__c <> null && oppRecord.Total_Current_Revenue__c > 0 && 
-                    ((oppRecord.Consulting_Start__c <> null && oppRecord.Consulting_End__c <> null) || 
-                    (oppRecord.Outsourcing_Start__c <> null && oppRecord.Outsourcing_End__c <> null)) &&
-                    (oldOpp == null || (oppRecord.Total_Current_Revenue__c <> oldOpp.Total_Current_Revenue__c ||
-                    oppRecord.Consulting_Start__c <> oldOpp.Consulting_Start__c ||
-                    oppRecord.Consulting_End__c <> oldOpp.Consulting_End__c ||
-                    oppRecord.Outsourcing_Start__c <> oldOpp.Outsourcing_Start__c ||
-                    oppRecord.Outsourcing_End__c <> oldOpp.Outsourcing_End__c))){
-            System.debug(LoggingLevel.ERROR,'OLD====================== :' + oldOpp.Total_Current_Revenue__c);
-            System.debug(LoggingLevel.ERROR,'NEW====================== :' + oppRecord.Total_Current_Revenue__c);
-            
-            if(oppRecord.Total_Current_Revenue__c <> null && oppRecord.Total_Current_Revenue__c > 0 && 
-                    ((oppRecord.Consulting_Start__c <> null && oppRecord.Consulting_End__c <> null) || 
-                    (oppRecord.Outsourcing_Start__c <> null && oppRecord.Outsourcing_End__c <> null))){
-                    System.debug(LoggingLevel.ERROR,'DEE======================DEE');
-                    minDate = oppRecord.Consulting_Start__c;
-                    
-                    if(oppRecord.Outsourcing_Start__c <> null && (minDate == null || minDate > oppRecord.Outsourcing_Start__c)){
-                        minDate = oppRecord.Outsourcing_Start__c;
-                    }
-                    
-                    maxDate = oppRecord.Consulting_End__c;
-                    
-                    if(oppRecord.Outsourcing_End__c <> null && (maxDate == null || maxDate < oppRecord.Outsourcing_End__c)){
-                        maxDate = oppRecord.Outsourcing_End__c;
-                    }
-                    
-                    Integer installments = minDate.monthsBetween(maxDate) + 1;                  
-                    for (Integer i = 0; i < installments; i++) {
-                        schedules.add(new Opportunity_Schedule__c(
-                            Opportunity__c = oppRecord.Id,
-                            Date__c = minDate.addMonths(i),
-                            Revenue__c = (oppRecord.Total_Current_Revenue__c / installments).SetScale(2),
-                            Custom_Revenue__c = 0.00
-                            )
-                        );
-                    }
-                    
-                    oppIds.add(oppRecord.Id);
-            }
-        }
-        
-        try{
-            List<Opportunity_Schedule__c> schedulesToDelete = [SELECT Id FROM Opportunity_Schedule__c WHERE Opportunity__c IN :oppIds LIMIT 50000];
-            
-            if(!schedulesToDelete.isEmpty()){
-                Database.delete(schedulesToDelete, true);
-            }
-            if(!schedules.isEmpty()){
-                Database.insert(schedules, true);
-            }
-            
-        }catch(Exception e){
-            System.debug(LoggingLevel.ERROR,e.getMessage());
-        }
-    }
-    
-    
-    public static void initializeRevenue(Map<Id, OpportunityLineItem> newOpportunityLineItemMap){
-        Map<Id, Id> oppIds = new Map<Id, Id>();
-        
-        Map<Id, OpportunityLineItem> oppLineItems = new Map<Id, OpportunityLineItem>(
-            [SELECT Id, Opportunity.Id, Revenue__c FROM OpportunityLineItem WHERE Id IN :newOpportunityLineItemMap.keySet() LIMIT 50000]);
-        for(OpportunityLineItem oppLineItem : oppLineItems.values()){
-            oppIds.put(oppLineItem.Opportunity.Id, oppLineItem.Id);
-        }
-        
-        Map<Id, Opportunity> oppRecords = new Map<Id, Opportunity>(
-            [SELECT Id, Total_Current_Revenue__c, Consulting_Start__c, Consulting_End__c, Outsourcing_Start__c, Outsourcing_End__c FROM Opportunity
-            WHERE ID IN :oppIds.keySet() LIMIT 50000]);
-        
-        for(Opportunity oppRecord : oppRecords.values()){
-           // oppRecord.Total_Current_Revenue__c += newOpportunityLineItemMap.get(oppIds.get(oppRecord.Id)).Revenue__c;
-        }
-        
-        setRevenueSchedule(new Map<Id, Opportunity>(), oppRecords);
-    }*/
+    }  
 }

@@ -36,10 +36,6 @@
             <operator>equals</operator>
             <values>VPA</values>
         </dashboardFilterOptions>
-        <dashboardFilterOptions>
-            <operator>equals</operator>
-            <values>Enterprise Management</values>
-        </dashboardFilterOptions>
         <name>Summary Customer</name>
     </dashboardFilters>
     <dashboardFilters>
@@ -74,10 +70,6 @@
         <dashboardFilterOptions>
             <operator>equals</operator>
             <values>Virginia Procurement Authority</values>
-        </dashboardFilterOptions>
-        <dashboardFilterOptions>
-            <operator>equals</operator>
-            <values>Enterprise Management</values>
         </dashboardFilterOptions>
         <name>Client Account</name>
     </dashboardFilters>

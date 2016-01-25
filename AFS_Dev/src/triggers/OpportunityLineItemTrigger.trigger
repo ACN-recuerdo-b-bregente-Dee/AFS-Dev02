@@ -25,7 +25,7 @@ If(tm!= null && tm.Active__c == TRUE)
         handler.OnBeforeDelete(Trigger.old, Trigger.newMap);
     }
     else if(Trigger.isDelete && Trigger.isAfter){
-        handler.OnAfterDelete(Trigger.oldMap, Trigger.newMap);
+        handler.OnAfterDelete(Trigger.old, Trigger.newMap);
     }
     
     //else if(Trigger.isUnDelete){

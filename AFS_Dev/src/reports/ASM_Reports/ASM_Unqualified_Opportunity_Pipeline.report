@@ -32,11 +32,6 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>STAGE_NAME</column>
-            <operator>equals</operator>
-            <value>0,1A,1B,2A,2B,3</value>
-        </criteriaItems>
-        <criteriaItems>
             <column>Opportunity.Reporting_Status__c</column>
             <operator>equals</operator>
             <value>Unqualified</value>

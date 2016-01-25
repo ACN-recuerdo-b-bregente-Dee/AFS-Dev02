@@ -236,7 +236,7 @@ Fields required to enter stage 2A and beyond</inlineHelpText>
         <fullName>Type__c</fullName>
         <externalId>false</externalId>
         <label>Service Group</label>
-        <length>10</length>
+        <length>18</length>
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
@@ -252,13 +252,6 @@ Fields required to enter stage 2A and beyond</inlineHelpText>
     </fields>
     <fields>
         <fullName>UnitPrice</fullName>
-    </fields>
-    <fields>
-        <fullName>VF_Checkbox__c</fullName>
-        <defaultValue>false</defaultValue>
-        <externalId>false</externalId>
-        <label>VF Checkbox</label>
-        <type>Checkbox</type>
     </fields>
     <validationRules>
         <fullName>Consulting_Date_is_Required</fullName>
@@ -350,25 +343,15 @@ Other_Cost_Components__c &lt;&gt; null || Other_Cost_Components__c &gt; 0
         <errorMessage>FIN-005: Sum of cost components (HW/SW costs, Subcontractor Expenses, Other Cost Components) cannot be greater than Total Costs.</errorMessage>
     </validationRules>
     <webLinks>
-        <fullName>Schedules</fullName>
+        <fullName>View_Schedule</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
         <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
         <linkType>url</linkType>
-        <masterLabel>Custom Schedule</masterLabel>
-        <openType>replace</openType>
+        <masterLabel>View Schedule</masterLabel>
+        <openType>sidebar</openType>
         <protected>false</protected>
-        <url>/apex/schedulePage?oppId={!OpportunityLineItem.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Standard_Schedule</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>Standard Schedule</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <url>/apex/StdSchedulePage?oppId={!OpportunityLineItem.Id}</url>
+        <url>/apex/DisplayScheduleRecords?oppId={!OpportunityLineItem.Id}</url>
     </webLinks>
 </CustomObject>

@@ -94,6 +94,19 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>Attribute__c</fullName>
+        <externalId>false</externalId>
+        <label>Attribute</label>
+        <referenceTo>Attribute__c</referenceTo>
+        <relationshipLabel>Attribute Summary</relationshipLabel>
+        <relationshipName>Attribute_Summary</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
         <fullName>Opportunity__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
@@ -134,5 +147,5 @@
     </nameField>
     <pluralLabel>Attribute Summary</pluralLabel>
     <searchLayouts/>
-    <sharingModel>Read</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

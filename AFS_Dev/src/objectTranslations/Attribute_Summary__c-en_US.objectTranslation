@@ -29,6 +29,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Attribute --></label>
+        <name>Attribute__c</name>
+        <relationshipLabel><!-- Attribute Summary --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Opportunity --></label>
         <name>Opportunity__c</name>
         <relationshipLabel><!-- Attribute Summary --></relationshipLabel>
@@ -49,12 +54,5 @@
             <translation><!-- 3 --></translation>
         </picklistValues>
     </fields>
-    <layouts>
-        <layout>Attribute Summary Layout</layout>
-        <sections>
-            <label><!-- Custom Links --></label>
-            <section>Custom Links</section>
-        </sections>
-    </layouts>
     <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

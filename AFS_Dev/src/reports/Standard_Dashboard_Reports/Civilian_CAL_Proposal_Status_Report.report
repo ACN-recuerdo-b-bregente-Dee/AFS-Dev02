@@ -12,10 +12,10 @@
         <chartType>HorizontalBarStackedTo100</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
-        <groupingColumn>OPPORTUNITY_NAME</groupingColumn>
+        <groupingColumn>Opportunity.RFP_Release_Date__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_TOP</location>
-        <secondaryGroupingColumn>Opportunity.RFP_Release_Date__c</secondaryGroupingColumn>
+        <secondaryGroupingColumn>OPPORTUNITY_NAME</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>

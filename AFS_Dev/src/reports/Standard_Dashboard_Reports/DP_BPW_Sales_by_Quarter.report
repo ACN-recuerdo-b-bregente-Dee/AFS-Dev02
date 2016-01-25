@@ -87,7 +87,7 @@
         <criteriaItems>
             <column>Opportunity.Best_Probable_Worst__c</column>
             <operator>equals</operator>
-            <value>Best,Probable Win,Possible Loss,Worst,Exclude</value>
+            <value>Best,Probable Win,Possible Loss,Worst</value>
         </criteriaItems>
         <criteriaItems>
             <column>Opportunity.Reporting_Status__c</column>

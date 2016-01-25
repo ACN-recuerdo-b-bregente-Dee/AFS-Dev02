@@ -125,10 +125,6 @@
                 <fullName>08 - IC</fullName>
                 <default>false</default>
             </picklistValues>
-            <picklistValues>
-                <fullName>09 - TC2</fullName>
-                <default>false</default>
-            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackHistory>false</trackHistory>

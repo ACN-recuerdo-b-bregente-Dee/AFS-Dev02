@@ -63,7 +63,8 @@
             <p><b>ATS Introduction: </b>{!relatedTo.ATS_Notes__c}</p>
             <p><b>For Contract Vehicles, please provide responses to the following: </b></p>
             <p>Sales Committed for First Year? {!relatedTo.Sales_Committed_for_First_Year__c}</p>
-            <p>PoC Responsible? {!relatedTo.PoC_Responsible__r.Name}</p>
+            <p>PoC Responsible? {!relatedTo.PoC_Responsible__c}</p>
+            <br/>
             <br/>
             
             <!-- Approval to Submit-->
@@ -116,7 +117,7 @@
                     </td>
                 </tr>
                 <tr>  
-                    <td> Outsourcing End Date </td>
+                    <td> Outsourcing End Dates </td>
                     <td><apex:outputText value="{0, date, MM/dd/yyyy}">
                             <apex:param value="{!relatedTo.Outsourcing_End__c}"  /> 
                         </apex:outputText> 
@@ -125,7 +126,7 @@
                 </tr>   
                 <tr>
                     <td>Account Plan OI% </td>
-                    <td>{!relatedTo.Account_Plan_OI__c}%</td>
+                    <td>{!relatedTo.Account_Plan_OI__c} %</td>
                 </tr>
                 <tr>
                     <td>Can Account Plan OI% Be Met? </td>
@@ -266,7 +267,7 @@
 
                     <td>{!opp.PriceBookEntry.name}</td>
                     <td>{!opp.OI__c}%</td>
-                    <td>{!opp.Target_OI__c}</td>
+                    <td>{!opp.Target_OI__c}%</td>
                     <td>
                         <apex:outputText value="${0,number,###,###,###,##0}">  
                         <apex:param value="{!opp.Revenue__c}"/>  

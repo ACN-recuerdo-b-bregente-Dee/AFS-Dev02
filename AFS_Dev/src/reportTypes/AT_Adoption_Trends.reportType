@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>AT_Adoption_Trend__c</baseObject>
+    <category>admin</category>
+    <deployed>true</deployed>
+    <description>Reports based on snapshots saved to the Adoption Trends (AT_Adoption_Trend) object</description>
+    <label>AT: Adoption Trends</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Editing_User__c</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Object__c</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Record_Count__c</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Snapshot_Date__c</field>
+            <table>AT_Adoption_Trend__c</table>
+        </columns>
+        <masterLabel>Adoption Trends</masterLabel>
+    </sections>
+</ReportType>

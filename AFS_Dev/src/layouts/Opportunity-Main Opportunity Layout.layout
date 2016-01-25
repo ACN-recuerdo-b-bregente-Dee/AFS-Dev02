@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Generate_Approval_Email</customButtons>
-    <customButtons>Custom_Schedule</customButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -70,26 +69,6 @@
                 <behavior>Edit</behavior>
                 <field>Initiating_Org__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Digital_TCR__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Digital_TCR_Percent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Non_Digital_TCR__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Non_Digital_TCR_Percent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Attribute_Type_Digital_or_Not__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -127,10 +106,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Industry_Sub_Segment__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Digital_Attribute_Count__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
@@ -245,10 +220,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Proposal_Submitted__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Opp_Year__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -669,41 +640,6 @@
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Offline Email Approval</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage_1A_Offline_sent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage_1B_Offline_sent__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage_2A_Offline_sent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage_2B_Offline_sent__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Stage_3_Offline_sent__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
-    </layoutSections>
-    <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
@@ -770,29 +706,7 @@
         <fields>Attribute_Type__c</fields>
         <fields>Attribute_Value__c</fields>
         <fields>AttributePercent__c</fields>
-        <fields>Attribute_TCR__c</fields>
-        <fields>Attribute_TDP__c</fields>
-        <fields>WTD_TCR__c</fields>
-        <fields>WTD_TDP__c</fields>
-        <fields>WTD_TCR_Decimals__c</fields>
-        <fields>Digital_TCR__c</fields>
-        <fields>Attribute_Type_Digital_or_Not__c</fields>
         <relatedList>Attribute__c.Opportunity_Name__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <excludeButtons>New</excludeButtons>
-        <fields>NAME</fields>
-        <fields>Attribute_Percent__c</fields>
-        <fields>Attribute_TCR__c</fields>
-        <relatedList>Attribute_Summary__c.Opportunity__c</relatedList>
-        <sortField>NAME</sortField>
-        <sortOrder>Asc</sortOrder>
-    </relatedLists>
-    <relatedLists>
-        <fields>MemberName</fields>
-        <fields>OppAccessLevel</fields>
-        <fields>TeamMemberRole</fields>
-        <relatedList>RelatedOpportunitySalesTeam</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>Role__c</fields>

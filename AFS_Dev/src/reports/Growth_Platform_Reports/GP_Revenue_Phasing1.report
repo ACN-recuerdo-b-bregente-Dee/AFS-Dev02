@@ -66,7 +66,7 @@
         <criteriaItems>
             <column>OpportunityLineItem.Type__c</column>
             <operator>equals</operator>
-            <value>03 - IO,05 - SI,06 - TC,01 - AO</value>
+            <value>01 - AO,02 - BPO,03 - IO,04 - MC,05 - SI,06 - TC</value>
         </criteriaItems>
         <criteriaItems>
             <column>Opportunity.Reporting_Status__c</column>
@@ -77,6 +77,11 @@
             <column>Opportunity.Portfolio__c</column>
             <operator>notEqual</operator>
             <value>Defense - ASM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SCHEDULE_QUANTITY</column>
+            <operator>notEqual</operator>
+            <value>1</value>
         </criteriaItems>
     </filter>
     <format>Matrix</format>

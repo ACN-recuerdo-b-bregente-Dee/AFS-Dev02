@@ -6,10 +6,10 @@
     <loginUrl>https://login.windows.net/0ee6c63b-4eab-4748-b74a-d1dc22fc1a24/saml2</loginUrl>
     <logoutUrl>https://login.windows.net/0ee6c63b-4eab-4748-b74a-d1dc22fc1a24/saml2</logoutUrl>
     <name>Azure_SSO</name>
-    <oauthTokenEndpoint>https://smartafs--Dev.cs10.my.salesforce.com/services/oauth2/token?so=00DJ0000003Pip5</oauthTokenEndpoint>
+    <oauthTokenEndpoint>https://smartafs--Dev02.cs10.my.salesforce.com/services/oauth2/token?so=00DJ0000003SF8E</oauthTokenEndpoint>
     <redirectBinding>true</redirectBinding>
     <requestSignatureMethod>0</requestSignatureMethod>
-    <salesforceLoginUrl>https://smartafs--Dev.cs10.my.salesforce.com?so=00DJ0000003Pip5</salesforceLoginUrl>
+    <salesforceLoginUrl>https://smartafs--Dev02.cs10.my.salesforce.com?so=00DJ0000003SF8E</salesforceLoginUrl>
     <samlEntityId>https://smartafs.my.salesforce.com</samlEntityId>
     <samlVersion>SAML2_0</samlVersion>
     <userProvisioning>false</userProvisioning>

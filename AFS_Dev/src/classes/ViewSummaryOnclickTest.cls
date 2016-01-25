@@ -10,9 +10,9 @@
  * @Class This class Summary_View_OnclickTest is used to test this class
  */
 private class ViewSummaryOnclickTest{
-
+/*    
     private static Id opportunityId; 
-    //private static final ID MAIN = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Main Record Type').getRecordTypeId();
+    private static final ID MAIN = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get('Main Record Type').getRecordTypeId();
     
      
     static void prepdata() {
@@ -111,8 +111,6 @@ private class ViewSummaryOnclickTest{
    
     static testmethod void testStageView() {
     
-        ViewSummaryOnclick vsoc = new ViewSummaryOnclick();
-        /**
         prepdata();
         
         system.test.startTest();
@@ -140,7 +138,7 @@ private class ViewSummaryOnclickTest{
         String errorReceived3 = ViewSummaryOnclick.recordtypecahng(Main, rectype2.substring(0,15));
         System.assertNotEquals(null, errorReceived2);
         System.assertNotEquals(null, errorReceived3);
-        */
+        
     } 
-    
+    */
 }

@@ -129,8 +129,8 @@ private class AttributeBLTest{
     * - Test Person
     */     
         Person__c testPerson = new Person__c(
-            Name='Test0 name',
-            email__c='test0@email.com',
+            Name='Test name',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
         database.insert(testPerson,true);
@@ -258,8 +258,8 @@ private class AttributeBLTest{
     * - Test Person
     */     
         Person__c testPerson = new Person__c(
-            Name='Test1A name',
-            email__c='test1A@email.com',
+            Name='Test name',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
             database.insert(testPerson,true);
@@ -400,8 +400,8 @@ private class AttributeBLTest{
     * - Test Person
     */     
         Person__c testPerson = new Person__c(
-            Name='Test1B name',
-            email__c='test1B@email.com',
+            Name='Test name',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
         database.insert(testPerson,true);
@@ -741,8 +741,8 @@ private class AttributeBLTest{
     * - Test Person
     */     
         Person__c testPerson = new Person__c(
-            Name='Test2A2 name',
-            email__c='test2A2@email.com',
+            Name='Test name',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
         database.insert(testPerson,true);

@@ -3,10 +3,8 @@
     <customButtons>Generate_Summary_Customer</customButtons>
     <customButtons>Generate_CostPoint_Invoice_Customer</customButtons>
     <excludeButtons>DataDotComAccountInsights</excludeButtons>
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
-    <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -208,17 +206,6 @@
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedEntityHistoryList</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Team_Member__c</fields>
-        <fields>Team_Role__c</fields>
-        <fields>Account_Access__c</fields>
-        <fields>Opportunity_Access__c</fields>
-        <fields>Status__c</fields>
-        <fields>Account_Owner__c</fields>
-        <fields>CREATED_DATE</fields>
-        <fields>NAME</fields>
-        <relatedList>Account_Team_Role__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

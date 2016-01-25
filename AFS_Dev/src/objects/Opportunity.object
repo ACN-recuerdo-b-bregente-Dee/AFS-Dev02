@@ -125,45 +125,12 @@
     <fields>
         <fullName>ATS_Notes__c</fullName>
         <externalId>false</externalId>
-        <inlineHelpText>Provide an introduction to ATS request. Provide explanation of below-target OI%, summarize any management discounts and/or costs assumed to be not billable, etc.</inlineHelpText>
+        <inlineHelpText>Provide an introduction to ATS request. Provide explanation of below-target OI%, summarize any management discounts and/or costs assumed to be not billable, DSO, etc. For Agilex legacy deals, please specify new ODE.</inlineHelpText>
         <label>ATS Introduction</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Accenture_Digital_TCR__c</fullName>
-        <externalId>false</externalId>
-        <label>Accenture Digital TCR</label>
-        <summarizedField>Attribute__c.Digital_TCR__c</summarizedField>
-        <summaryFilterItems>
-            <field>Attribute__c.Attribute_Type__c</field>
-            <operation>equals</operation>
-            <value>Accenture Digital</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Attribute__c.Opportunity_Name__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Accenture_Digital__c</fullName>
-        <externalId>false</externalId>
-        <label>Accenture Digital?</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Accenture Digital</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Others</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>AccountId</fullName>
@@ -184,7 +151,7 @@
             <infoMessage>Only active client Accounts are displayed in the search results</infoMessage>
             <isOptional>false</isOptional>
         </lookupFilter>
-        <trackHistory>false</trackHistory>
+        <trackHistory>true</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -304,17 +271,6 @@
         </picklist>
         <trackHistory>true</trackHistory>
         <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>Attribute_Type_Digital_or_Not__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( Digital_Attribute_Count__c &gt; 1, &quot;Digital&quot;, &quot;Non Digital&quot;)</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Attribute Type(Digital or Not)</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Bank_Guarantee_Letter_of_Credit__c</fullName>
@@ -835,7 +791,31 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>Census Digital Transformation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Census Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Census SE&amp;I Cloud</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Census SE&amp;I Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Census SE&amp;I Project</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>CFPB MC BPA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Census UTS</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -875,7 +855,7 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>DLA EBS ECSI</fullName>
+                <fullName>DLA RDSS</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -900,6 +880,14 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
             </picklistValues>
             <picklistValues>
                 <fullName>DoS ILMS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSCA SCES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FBI HRSource</fullName>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -975,6 +963,10 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>IT MSA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>JITC</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1031,6 +1023,10 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>SAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>SSA A&amp;A</fullName>
                 <default>false</default>
             </picklistValues>
@@ -1084,6 +1080,29 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
             </picklistValues>
             <picklistValues>
                 <fullName>VA T4 (ASMR)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DB_Competitor__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and can delete this field.</description>
+        <externalId>false</externalId>
+        <label>DB Competitor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Competitor A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor C</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -1219,58 +1238,7 @@ IF (ISPICKVAL(Reporting_Status__c, &apos;Client Withdrew&apos;) ,Total_Current_R
     </fields>
     <fields>
         <fullName>Description</fullName>
-        <trackHistory>true</trackHistory>
-    </fields>
-    <fields>
-        <fullName>Digital_Attribute_Count__c</fullName>
-        <externalId>false</externalId>
-        <label>Digital Attribute Count</label>
-        <summaryFilterItems>
-            <field>Attribute__c.Attribute_Type__c</field>
-            <operation>equals</operation>
-            <value>Accenture Digital</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Attribute__c.Opportunity_Name__c</summaryForeignKey>
-        <summaryOperation>count</summaryOperation>
         <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Digital_TCR_Currency__c</fullName>
-        <externalId>false</externalId>
-        <label>Digital TCR</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
-    </fields>
-    <fields>
-        <fullName>Digital_TCR_Percent__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( Total_Current_Revenue__c = 0, 0, (Digital_TCR__c / Total_Current_Revenue__c  ))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Digital TCR %</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Digital_TCR__c</fullName>
-        <externalId>false</externalId>
-        <label>Digital TCR</label>
-        <summarizedField>Attribute__c.Digital_TCR__c</summarizedField>
-        <summaryFilterItems>
-            <field>Attribute__c.Attribute_Type__c</field>
-            <operation>equals</operation>
-            <value>Accenture Digital</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Attribute__c.Opportunity_Name__c</summaryForeignKey>
-        <summaryOperation>sum</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
     </fields>
     <fields>
         <fullName>Draft_RFP_Release_Date__c</fullName>
@@ -1744,43 +1712,6 @@ No is not an acceptable answer. Please review the MFC Decision Matrix link in th
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
-        <fullName>Non_Digital_Attribute__c</fullName>
-        <externalId>false</externalId>
-        <label>Non Digital Attribute</label>
-        <summaryFilterItems>
-            <field>Attribute__c.Attribute_Type_Digital_or_Not__c</field>
-            <operation>equals</operation>
-            <value>Non Digital</value>
-        </summaryFilterItems>
-        <summaryForeignKey>Attribute__c.Opportunity_Name__c</summaryForeignKey>
-        <summaryOperation>count</summaryOperation>
-        <trackHistory>false</trackHistory>
-        <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>Non_Digital_TCR_Percent__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( Total_Current_Revenue__c = 0, 0, (Non_Digital_TCR__c  / Total_Current_Revenue__c ))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Non Digital TCR %</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Percent</type>
-    </fields>
-    <fields>
-        <fullName>Non_Digital_TCR__c</fullName>
-        <externalId>false</externalId>
-        <formula>Total_Current_Revenue__c -  Digital_TCR__c</formula>
-        <label>Non Digital TCR</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
-    </fields>
-    <fields>
         <fullName>OCI_Review_Complete__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Y/N field to indicate if Organizational Conflict of Interest review has been completed
@@ -1837,16 +1768,6 @@ If yes, Foreign Travel Coordinator approval required: federal.ap55.required@acce
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
-    </fields>
-    <fields>
-        <fullName>Opp_Year__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( (MONTH(CloseDate) &gt;=9 &amp;&amp; YEAR( CloseDate ) = YEAR(TODAY()) - 1)  || (MONTH(CloseDate) &gt;=1 &amp;&amp; MONTH(CloseDate) &lt;=8) &amp;&amp; YEAR(CloseDate) = YEAR(Today())  , &quot;Current&quot;, IF( MONTH(CloseDate) &gt;=9 &amp;&amp; YEAR( CloseDate ) = YEAR(TODAY()) || MONTH(CloseDate) &lt;=8 &amp;&amp; YEAR(CloseDate) = YEAR(TODAY()) + 1, &quot;Next&quot;,&quot;&quot;))</formula>
-        <label>Opp Year</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Opportunity_Auto_Id__c</fullName>
@@ -2610,25 +2531,9 @@ Excludes: Options</inlineHelpText>
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Stage_1A_Offline_sent__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage 1A Offline sent</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Stage_1B_Entry_Date__c</fullName>
         <externalId>false</externalId>
         <label>Stage 1B Entry Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Stage_1B_Offline_sent__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage 1B Offline sent</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
@@ -2642,25 +2547,9 @@ Excludes: Options</inlineHelpText>
         <type>Date</type>
     </fields>
     <fields>
-        <fullName>Stage_2A_Offline_sent__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage 2A Offline sent</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
         <fullName>Stage_2B_Entry_Date__c</fullName>
         <externalId>false</externalId>
         <label>Stage 2B Entry Date</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Stage_2B_Offline_sent__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage 2B Offline sent</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
@@ -2672,44 +2561,6 @@ Excludes: Options</inlineHelpText>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Stage_3_Offline_sent__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage 3 Offline sent</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Date</type>
-    </fields>
-    <fields>
-        <fullName>Stage__c</fullName>
-        <externalId>false</externalId>
-        <label>Stage</label>
-        <picklist>
-            <picklistValues>
-                <fullName>Stage 1A</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stage 1B</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stage 2A</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stage 2B</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Stage 3</fullName>
-                <default>false</default>
-            </picklistValues>
-            <sorted>false</sorted>
-        </picklist>
-        <trackHistory>false</trackHistory>
-        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Status_Stage_Requested__c</fullName>
@@ -2756,10 +2607,6 @@ Please note: there may be additional fields on the Related Lists (e.g., Financia
             </picklistValues>
             <picklistValues>
                 <fullName>Lost</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Closed</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -2925,18 +2772,6 @@ For example:
         <summaryOperation>max</summaryOperation>
         <trackHistory>false</trackHistory>
         <type>Summary</type>
-    </fields>
-    <fields>
-        <fullName>TCR_for_Dashboard__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF(  Attribute_Type_Digital_or_Not__c  == &apos;Digital&apos;,  Digital_TCR__c  , IF(  Non_Digital_Attribute__c  &gt; 1, Non_Digital_TCR__c/ Non_Digital_Attribute__c , Non_Digital_TCR__c) )</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>TCR for Dashboard</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>2</scale>
-        <trackHistory>false</trackHistory>
-        <type>Currency</type>
     </fields>
     <fields>
         <fullName>TDP__c</fullName>
@@ -3395,16 +3230,6 @@ Best Case: 10%</inlineHelpText>
         <type>Picklist</type>
     </fields>
     <fields>
-        <fullName>Won_Or_Open_Status__c</fullName>
-        <externalId>false</externalId>
-        <formula>IF( ISPICKVAL( Reporting_Status__c , &apos;Won&apos;) , &apos;Won&apos;,  IF( OR(ISPICKVAL( Reporting_Status__c , &apos;Qualified&apos;),ISPICKVAL( Reporting_Status__c , &apos;Unqualified&apos;)) , &apos;Open&apos;,  TEXT(Reporting_Status__c)) )</formula>
-        <label>Won Or Open Status</label>
-        <required>false</required>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Won_Rate__c</fullName>
         <externalId>false</externalId>
         <formula>IF (ISPICKVAL(Reporting_Status__c,&apos;Won&apos;), Total_Current_Revenue__c,0)</formula>
@@ -3418,14 +3243,17 @@ Best Case: 10%</inlineHelpText>
         <unique>false</unique>
     </fields>
     <listViews>
-        <fullName>All_Opportunities</fullName>
+        <fullName>All_Opportunities8</fullName>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
         <columns>ACCOUNT.NAME</columns>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
         <columns>OPPORTUNITY.TYPE</columns>
-        <columns>OPPORTUNITY.PROBABILITY</columns>
-        <columns>RFP_Release_Date__c</columns>
-        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>CORE.USERS.ALIAS</columns>
         <filterScope>Everything</filterScope>
         <label>All Opportunities</label>
     </listViews>
@@ -3452,42 +3280,30 @@ Best Case: 10%</inlineHelpText>
     </listViews>
     <listViews>
         <fullName>ClosingThisMonth</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
         <columns>ACCOUNT.NAME</columns>
-        <columns>Total_Current_Revenue__c</columns>
-        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.NAME</columns>
         <columns>OPPORTUNITY.STAGE_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Win_Probability__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>Hierarchy_Level__c</columns>
+        <columns>Best_Probable_Worst__c</columns>
         <filterScope>Everything</filterScope>
         <filters>
-            <field>OPPORTUNITY.CLOSED</field>
+            <field>Reporting_Status__c</field>
             <operation>equals</operation>
-            <value>0</value>
+            <value>Unqualified,Qualified</value>
         </filters>
         <filters>
             <field>OPPORTUNITY.CLOSE_DATE</field>
-            <operation>equals</operation>
+            <operation>lessOrEqual</operation>
             <value>THIS_MONTH</value>
         </filters>
-        <label>ECSD this Month</label>
-    </listViews>
-    <listViews>
-        <fullName>Deal_Team_View</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>Status_Stage_Requested__c</columns>
-        <columns>OPPORTUNITY.STAGE_NAME</columns>
-        <columns>Best_Probable_Worst__c</columns>
-        <columns>RFP_Release_Date__c</columns>
-        <columns>Proposal_Submission_Date__c</columns>
-        <columns>OPPORTUNITY.CLOSE_DATE</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>OPPORTUNITY.RECORDTYPE</field>
-            <operation>equals</operation>
-            <value>012U00000001mIZ</value>
-        </filters>
-        <label>Deal Team View</label>
+        <label>3. ECSD &lt; Month-End</label>
     </listViews>
     <listViews>
         <fullName>MyOpportunities</fullName>
@@ -3529,29 +3345,6 @@ Best Case: 10%</inlineHelpText>
         <label>New This Week</label>
     </listViews>
     <listViews>
-        <fullName>Open_Opportunities</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
-        <columns>ACCOUNT.NAME</columns>
-        <columns>OPPORTUNITY.AMOUNT</columns>
-        <columns>OPPORTUNITY.CLOSE_DATE</columns>
-        <columns>OPPORTUNITY.STAGE_NAME</columns>
-        <columns>CORE.USERS.ALIAS</columns>
-        <columns>Reporting_Status__c</columns>
-        <columns>Type_of_Work__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Reporting_Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed,Won,Lost</value>
-        </filters>
-        <filters>
-            <field>Type_of_Work__c</field>
-            <operation>equals</operation>
-            <value>C,O,C/O</value>
-        </filters>
-        <label>Open Opportunities with C/O</label>
-    </listViews>
-    <listViews>
         <fullName>Opp_Wins_and_Losses_Current_FY</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -3581,11 +3374,44 @@ Best Case: 10%</inlineHelpText>
         <label>Opp Wins and Losses Current FY</label>
     </listViews>
     <listViews>
-        <fullName>Sales_Approval_View</fullName>
-        <columns>OPPORTUNITY.NAME</columns>
+        <fullName>PSD_this_Month_Stage_2B</fullName>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
         <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Win_Probability__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>Hierarchy_Level__c</columns>
+        <columns>Best_Probable_Worst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>0,1A,1B,2A</value>
+        </filters>
+        <filters>
+            <field>Proposal_Submission_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>2. PSD &lt; Month-End, Stage &lt; 2B</label>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Approval_View</fullName>
+        <columns>Opportunity_ID__c</columns>
         <columns>Portfolio__c</columns>
         <columns>Sub_Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
         <columns>Status_Stage_Requested__c</columns>
         <columns>Approved_Status_Stage__c</columns>
         <columns>Reporting_Status__c</columns>
@@ -3604,6 +3430,39 @@ Best Case: 10%</inlineHelpText>
         <label>Sales Approval View</label>
     </listViews>
     <listViews>
+        <fullName>Start_this_Month</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Win_Probability__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>Hierarchy_Level__c</columns>
+        <columns>Best_Probable_Worst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>Consulting_Start__c</field>
+            <operation>lessOrEqual</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <filters>
+            <field>Outsourcing_Start__c</field>
+            <operation>lessOrEqual</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>4. Start Date &lt; Month-End</label>
+    </listViews>
+    <listViews>
         <fullName>Status_Stage_Entry_Dates</fullName>
         <columns>OPPORTUNITY.NAME</columns>
         <columns>ACCOUNT.NAME</columns>
@@ -3616,13 +3475,341 @@ Best Case: 10%</inlineHelpText>
         <filterScope>Everything</filterScope>
         <label>Status/Stage Entry Dates</label>
     </listViews>
+    <listViews>
+        <fullName>Time_Over_Target1</fullName>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>Sub_Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Capture_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <label>Time Over Target</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Time_Over_Target_ASM</fullName>
+        <booleanFilter>(1 OR 4) AND 2 AND 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>Capture_Status__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Portfolio__c</field>
+            <operation>equals</operation>
+            <value>Defense - ASM</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <label>Time Over Target - ASM</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+            <group>Civilian_RO</group>
+            <group>Civilian_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Time_Over_Target_Civilian</fullName>
+        <booleanFilter>(1 OR 4) and 2 and 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>Capture_Status__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <filters>
+            <field>Portfolio__c</field>
+            <operation>equals</operation>
+            <value>Civilian</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Time Over Target - Civilian</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+            <group>Civilian_RO</group>
+            <group>Civilian_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Time_Over_Target_Defense</fullName>
+        <booleanFilter>(1 or 4) aND 2 AND 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>Capture_Status__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <filters>
+            <field>Portfolio__c</field>
+            <operation>equals</operation>
+            <value>Defense</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Time Over Target - Defense</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+            <group>Defense_RO</group>
+            <group>Defense_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Time_Over_Target_Export</fullName>
+        <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>Contract_Vehicle__c</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <columns>Opportunity_Team_Roles__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Capture_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <label>Time Over Target - Xport</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Time_Over_Target_SCS</fullName>
+        <booleanFilter>(1 or 4) and 2 and 3</booleanFilter>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Proposal_Submission_Date__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Top_Opportunity__c</columns>
+        <columns>Capture_Status__c</columns>
+        <columns>ToT_Category__c</columns>
+        <columns>Black_Hat_Review__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Top_Opportunity__c</field>
+            <operation>equals</operation>
+            <value>AFS</value>
+        </filters>
+        <filters>
+            <field>Portfolio__c</field>
+            <operation>equals</operation>
+            <value>Safety &amp; Citizen Services</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>AFS_High_Priority_Deal__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Time Over Target - SCS</label>
+        <sharedTo>
+            <group>AFS_RO</group>
+            <group>AFS_RW</group>
+            <group>ASM_RO</group>
+            <group>ASM_RW</group>
+            <group>Safety_Citizen_Services_RO</group>
+            <group>Safety_Citizen_Services_RW</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X1_RFP_Month_End_Stage_2A1</fullName>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>Win_Probability__c</columns>
+        <columns>RFP_Release_Date__c</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>Hierarchy_Level__c</columns>
+        <columns>Best_Probable_Worst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified,Qualified</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.STAGE_NAME</field>
+            <operation>equals</operation>
+            <value>0,1A,1B</value>
+        </filters>
+        <filters>
+            <field>RFP_Release_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>1. RFP &lt; Month-End, Stage &lt; 2A</label>
+    </listViews>
+    <listViews>
+        <fullName>X5_Unqualified_Extensions</fullName>
+        <columns>Opportunity_ID__c</columns>
+        <columns>Reporting_Status__c</columns>
+        <columns>Portfolio__c</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>Total_Current_Revenue__c</columns>
+        <columns>Total_Deal_Potential__c</columns>
+        <columns>OPPORTUNITY.TYPE</columns>
+        <columns>Hierarchy_Level__c</columns>
+        <columns>Best_Probable_Worst__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.TYPE</field>
+            <operation>equals</operation>
+            <value>Extension</value>
+        </filters>
+        <filters>
+            <field>Reporting_Status__c</field>
+            <operation>equals</operation>
+            <value>Unqualified</value>
+        </filters>
+        <label>5. Unqualified Extensions</label>
+    </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
         <excludedStandardButtons>New</excludedStandardButtons>
-        <listViewButtons>NewButton</listViewButtons>
-        <listViewButtons>Opportunity_Schedules</listViewButtons>
+        <listViewButtons>New</listViewButtons>
         <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>OPPORTUNITY.TYPE</lookupDialogsAdditionalFields>
@@ -3643,17 +3830,16 @@ Best Case: 10%</inlineHelpText>
         <searchFilterFields>OPPORTUNITY.TYPE</searchFilterFields>
         <searchFilterFields>Best_Probable_Worst__c</searchFilterFields>
         <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Opportunity_ID__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Reporting_Status__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OPPORTUNITY.TYPE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Portfolio__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Sub_Portfolio__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>RFP_Release_Date__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Proposal_Submission_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reporting_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Total_Current_Revenue__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.TYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Overall_Start_Date__c</searchResultsAdditionalFields>
         <searchResultsCustomButtons>New</searchResultsCustomButtons>
-        <searchResultsCustomButtons>NewButton</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
     <validationRules>
@@ -3690,12 +3876,6 @@ ISPICKVAL( Status_Stage_Requested__c , &quot;3&quot;)
         <description>The Actual Contract Sign Date validation rule: This date field should never come before the Draft RFP Release Date, RFP Release Date, and Proposal Submission Date.</description>
         <errorConditionFormula>OR(OR( Actual_Contract_Sign_Date__c &lt;=   Draft_RFP_Release_Date__c  ,Actual_Contract_Sign_Date__c &lt;=  RFP_Release_Date__c ),Actual_Contract_Sign_Date__c &lt;=  Proposal_Submission_Date__c)</errorConditionFormula>
         <errorMessage>OPP-022: Please enter an Actual Contract Sign Date after the Draft RFP Release Date, RFP Release Date, and Proposal Submission Date.</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Approve_status_equal_to_requested</fullName>
-        <active>true</active>
-        <errorConditionFormula>AND(ISCHANGED(Approved_Status_Stage__c),(TEXT(Approved_Status_Stage__c) != TEXT( Status_Stage_Requested__c )))</errorConditionFormula>
-        <errorMessage>OPP-075: You are approving this Opportunity to a stage beyond the current Status/Stage Requested. Please re-submit Status/Stage Requested as the stage you have currently selected as the Approved Status/Stage.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Bank_Guarantee_Letter_of_Credit_is_req</fullName>
@@ -3843,7 +4023,7 @@ CloseDate &lt;  DATEVALUE(CreatedDate)
 )
 )</errorConditionFormula>
         <errorDisplayField>CloseDate</errorDisplayField>
-        <errorMessage>OPP-021: Please enter a Close Date after or equal to today&apos;s Date.</errorMessage>
+        <errorMessage>OPP-021: Please enter an Expected Contract Sign Date after or equal to today&apos;s Date.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Complexity_Categ_is_required_at_Stage_1A</fullName>
@@ -3957,17 +4137,16 @@ ISPICKVAL( Status_Stage_Requested__c , &quot;3&quot;)
     <validationRules>
         <fullName>Extended_From_Opp_ID_is_req_Extension</fullName>
         <active>true</active>
-        <errorConditionFormula>AND(
-OR(ISPICKVAL(Type,&quot;Extension&quot;),ISPICKVAL(Type,&quot;Option&quot;)),ISBLANK(Extended_From_Opp_ID__c))</errorConditionFormula>
+        <errorConditionFormula>AND(ISPICKVAL(Type,&quot;Extension&quot;),ISBLANK(Extended_From_Opp_ID__c))</errorConditionFormula>
         <errorDisplayField>Extended_From_Opp_ID__c</errorDisplayField>
         <errorMessage>OPP-002: You must provide an Opp Name in the Extended From field when Opportunity Type equals Extension</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Extended_From_Opp_ID_is_req_Option</fullName>
         <active>true</active>
-        <errorConditionFormula>AND(OR ( ISPICKVAL(Type, &quot;Extension&quot;),ISPICKVAL(Type,&quot;Option&quot;)),ISBLANK(Extended_From_Opp_ID__c))</errorConditionFormula>
+        <errorConditionFormula>AND(ISPICKVAL(Type,&quot;Option&quot;),ISBLANK(Extended_From_Opp_ID__c))</errorConditionFormula>
         <errorDisplayField>Extended_From_Opp_ID__c</errorDisplayField>
-        <errorMessage>OPP-005: You must provide an Opp Name in the Extended From field when Opportunity Type equals Option or Extension.</errorMessage>
+        <errorMessage>OPP-005: You must provide an Opp Name in the Extended From field when Opportunity Type equals Option.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Hierarchy_Level_is_required</fullName>
@@ -4125,13 +4304,6 @@ ISPICKVAL( Status_Stage_Requested__c , &quot;3&quot;)
 )</errorConditionFormula>
         <errorDisplayField>ONCONUS_Work_Required__c</errorDisplayField>
         <errorMessage>OPP-041-014: Required</errorMessage>
-    </validationRules>
-    <validationRules>
-        <fullName>Opp_Approved_Status_3_Before_Won</fullName>
-        <active>true</active>
-        <description>To force the correct escalation order before declaring an opportunity as won</description>
-        <errorConditionFormula>AND(ISPICKVAL(Status_Stage_Requested__c, &apos;Won&apos;), NOT(ISPICKVAL(PRIORVALUE(Status_Stage_Requested__c), &apos;3&apos;)), ISCHANGED(Status_Stage_Requested__c) )</errorConditionFormula>
-        <errorMessage>OPP-074: You must save Opportunity with Status/Stage Requested as 3 before you can submit to Won. Please re-submit Status/Stage Requested as Won after Status/Stage Requested as 3 has been approved.</errorMessage>
     </validationRules>
     <validationRules>
         <fullName>Outsourcing_Start_Before_End_Date</fullName>
@@ -4823,17 +4995,6 @@ ISBLANK(TEXT(Win_Probability__c))
         <url>https://ts.accenturefederal.com/sites/AFS_IT_Organization/_layouts/xlviewer.aspx?id=/sites/AFS_IT_Organization/Enterprise%20Applications/Initiatives/Capture%20Mgt/Complexity%20Criteria_Abbreviated.xlsx&amp;Source=https%3A%2F%2Fts%2Eaccenturefederal%2Ecom%2Fsites%2FAFS%5FIT%5FOrganization%2FEnterprise%2520Applications%2FForms%2FAllItems%2Easpx%3FRootFolder%3D%252Fsites%252FAFS%255FIT%255FOrganization%252FEnterprise%2520Applications%252FInitiatives%252FCapture%2520Mgt%26InitialTabId%3DRibbon%252EDocument%26VisibilityContext%3DWSSTabPersistence&amp;DefaultItemOpen=1</url>
     </webLinks>
     <webLinks>
-        <fullName>Custom_Schedule</fullName>
-        <availability>online</availability>
-        <displayType>button</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>Custom Schedule</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <url>/apex/customSchedulePage?oppId={!Opportunity.Id}</url>
-    </webLinks>
-    <webLinks>
         <fullName>Field_Stage_Matrix_Guide</fullName>
         <availability>online</availability>
         <description>Link to the Field Matrix guide by stage</description>
@@ -4946,46 +5107,8 @@ else
         <url>/006/e?retURL=%2F{!Account.Id}
 &amp;lookupcmpgn=1
 &amp;accid={!Account.Id}
-&amp;opp3=(Auto)
 &amp;ent=Opportunity
 &amp;opp11=0</url>
-    </webLinks>
-    <webLinks>
-        <fullName>NewButton</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>New</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <requireRowSelection>false</requireRowSelection>
-        <url>/006/e?retURL=%2F{!Opportunity.Id}&amp;accid={!Opportunity.Id}
-&amp;RecordType=012q00000000L1EAAU&amp;cancelURL=%2F{!Opportunity.Id}</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Open_Opportunities</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>Open Opportunities</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-        <url>/apex/openOpportunitySchedules</url>
-    </webLinks>
-    <webLinks>
-        <fullName>Opportunity_Schedules</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <encodingKey>UTF-8</encodingKey>
-        <linkType>url</linkType>
-        <masterLabel>Opportunity Schedules</masterLabel>
-        <openType>replace</openType>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-        <url>/apex/openOpportunityPage</url>
     </webLinks>
     <webLinks>
         <fullName>Policy_Compliance</fullName>

@@ -6,7 +6,7 @@
    @Version <1.0>
    @reference <Referenced program names>
   */
-public without sharing class OpportunityTeamRoleBL {
+public class OpportunityTeamRoleBL {
 
     /**
     *  To delete Opportunity Team and copy over the Access level in standard Opportunity Team and OpportunityShare 
@@ -266,10 +266,8 @@ public without sharing class OpportunityTeamRoleBL {
                 database.Delete(teamMembersToDelete,false);
                 database.Delete(opportunitySharesToDelete,false);
             }
-           
             database.insert(teamMembersToInsert,false);
             database.insert(opportunitySharesToInsert,false);
-            
         } catch(exception e){
             System.debug(e.getMessage());
         }

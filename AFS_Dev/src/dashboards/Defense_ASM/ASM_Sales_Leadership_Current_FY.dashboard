@@ -201,7 +201,7 @@
             <showPercentage>true</showPercentage>
             <showValues>true</showValues>
             <sortBy>RowLabelAscending</sortBy>
-            <title>Pipeline by Status</title>
+            <title>Inactive by Status</title>
             <useReportChart>false</useReportChart>
         </components>
         <components>

@@ -697,7 +697,6 @@
         <columns>Sub_Portfolio__c</columns>
         <columns>Portfolio__c</columns>
         <columns>Client_Account_Lead__c</columns>
-        <columns>ACCOUNT.TYPE</columns>
         <filterScope>Everything</filterScope>
         <label>All Accounts</label>
     </listViews>

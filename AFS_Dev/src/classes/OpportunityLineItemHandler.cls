@@ -25,12 +25,9 @@ public with sharing class OpportunityLineItemHandler {
     //public void OnAfterInsert(OpportunityLineItem[] newOpportunityLineItems){
     /**Call your helper class for After Insert*/
     public void onAfterInsert(Map<Id, OpportunityLineItem> newOpportunityLineItemMap){
-        //Call your helper class
-        //OpportunityBL.initializeRevenue(newOpportunityLineItemMap);
+        //Call your helper class   
         RevenueBL.setRevenueSchedule(newOpportunityLineItemMap, UTIL_Constants.OPPLINEITEMHANDLER_LINE_MAP_INSERT);
         CalculateFinancialSummaryBL.calFinancialSummary1(newOpportunityLineItemMap.values(), false);
-        RevenueBL.setOpportunityRevenue(newOpportunityLineItemMap);
-        //AttributeSummary.calculateAttributeSummary(newOpportunityLineItemMap);
     }
     
     /**Call your helper class for Before Update*/                
@@ -46,12 +43,9 @@ public with sharing class OpportunityLineItemHandler {
     public void onAfterUpdate(Map<Id, OpportunityLineItem> oldOpportunityLineItemMap,  Map<Id, OpportunityLineItem> newOpportunityLineItemMap){
         //Call your helper class
         //if (firstRunForUpdate) {
-          //  firstRunForUpdate = false;     
-                
+          //  firstRunForUpdate = false;          
             RevenueBL.setRevenueSchedule(newOpportunityLineItemMap, UTIL_Constants.OPPLINEITEMHANDLER_LINE_MAP_UPDATE);
             CalculateFinancialSummaryBL.calFinancialSummary1(newOpportunityLineItemMap.values(), false);
-            RevenueBL.setOpportunityRevenue(newOpportunityLineItemMap);
-            //AttributeSummary.calculateAttributeSummary(newOpportunityLineItemMap);
             
         //}
     }
@@ -63,11 +57,9 @@ public with sharing class OpportunityLineItemHandler {
     }
     
     /**Call your helper class for After Delete*/
-    public void onAfterDelete(Map<ID, OpportunityLineItem> deletedOpportunityLineItems, Map<ID, OpportunityLineItem> OpportunityLineItemMap){
+    public void onAfterDelete(OpportunityLineItem[] deletedOpportunityLineItems, Map<ID, OpportunityLineItem> OpportunityLineItemMap){
         //Call your helper class
-         CalculateFinancialSummaryBL.calFinancialSummary1(deletedOpportunityLineItems.values(), false);
-         RevenueBL.setOpportunityRevenue(deletedOpportunityLineItems);
-         //AttributeSummary.calculateAttributeSummary(deletedOpportunityLineItems);
+         CalculateFinancialSummaryBL.calFinancialSummary1(deletedOpportunityLineItems, false);
     }
     
     /**Call your helper class for UnDelete*/

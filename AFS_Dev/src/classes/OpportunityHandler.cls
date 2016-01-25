@@ -24,7 +24,7 @@ public with sharing class OpportunityHandler {
     }
     
     /**Call your helper class for After Insert*/
-    public void onAfterInsert(Map<Id, Opportunity> newOpportunityMap){
+    public void onAfterInsert(Opportunity[] newOpportunitiess){
         //Call your helper class
     }
     
@@ -53,7 +53,7 @@ public with sharing class OpportunityHandler {
         if (firstRunForAfterUpdate) {
            firstRunForAfterUpdate= false;
            getErrorMessage += OpportunityBL.requireFields(oldOpportunityMap,newOpportunityMap.values());
-           //OpportunityBL.setRevenueSchedule(oldOpportunityMap, newOpportunityMap);
+          
            RevenueBL.rescheduleRevenue(oldOpportunityMap.values(), newOpportunityMap.values());
            
         }

@@ -57,10 +57,6 @@
         </dashboardFilterOptions>
         <dashboardFilterOptions>
             <operator>equals</operator>
-            <values>Equal Employment Opportunity Commission</values>
-        </dashboardFilterOptions>
-        <dashboardFilterOptions>
-            <operator>equals</operator>
             <values>United States Postal Service</values>
         </dashboardFilterOptions>
         <dashboardFilterOptions>

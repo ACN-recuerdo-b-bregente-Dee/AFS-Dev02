@@ -127,7 +127,6 @@
                         <li>
                             If Service Group revenue exists, sum of Attribute %'s for each Service Group must equal 100%
                         </li>
-                        
                     </ul>
                 <li>
                     Attribute %s
@@ -135,9 +134,6 @@
                     <ul>
                         <li>
                             For Service Group Offerings, percentages are of <strong>Service Group revenue only</strong>
-                            <br>
-                            <strong>Note:</strong> Financial attribute calculation for service group offerring is not available at this time and will be left blank.
-                            </br>
                         </li>
                         <li>
                             For all other Attribute Types, percentages are of opportunity <strong>Total Current Revenue (TCR)</strong>
@@ -193,11 +189,7 @@
                         <apex:column value="{!att.Attribute_Type__c}" styleClass="offering mapType" headerValue="Attribute Type"/>
                         <apex:column value="{!att.Attribute_Value__c}" styleClass="offering mapValue" headerValue="Attribute Value"/>
                         <apex:column value="{!att.AttributeTxt__c}" styleClass="offering mapOffer" headerValue="Attribute %"/>
-                        <apex:column value="{!att.Attribute_TCR__c}" styleClass="offering" headerValue="Attribute TCR"/>
-                        <apex:column value="{!att.Attribute_TDP__c}" styleClass="offering" headerValue="Attribute TDP"/>
-                        <apex:column value="{!att.WTD_TCR__c}" styleClass="offering" headerValue="Attribute Weighted TCR"/>
-                        <apex:column value="{!att.WTD_TDP__c}" styleClass="offering" headerValue="Attribute Weighted TDP"/>
-                        <apex:column headerValue="Sub Total">
+                        <apex:column headerValue="Total">
                             <apex:facet name="footer">{!offerings[key].Total}%</apex:facet>
                         </apex:column>                
                     </apex:pageBlockTable>

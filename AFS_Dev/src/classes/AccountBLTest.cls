@@ -3,7 +3,6 @@
  * @author: Lhea Valencia
  * Date: 04/21/2015
  * Test Class for Account BL
- Test for jenkins
  */
 @isTest(SeeAllData=true)
 private class AccountBLTest {

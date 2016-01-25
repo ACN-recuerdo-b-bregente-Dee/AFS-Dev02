@@ -87,10 +87,6 @@ Fields required to enter stage 2A and beyond --></help>
         <label><!-- Type of Work --></label>
         <name>Type_of_Work__c</name>
     </fields>
-    <fields>
-        <label><!-- VF Checkbox --></label>
-        <name>VF_Checkbox__c</name>
-    </fields>
     <layouts>
         <layout>Opportunity Product Layout</layout>
         <sections>
@@ -136,11 +132,7 @@ Fields required to enter stage 2A and beyond --></help>
         <name>Sum_of_Cost_Comp_cannot_be_greater_TC</name>
     </validationRules>
     <webLinks>
-        <label><!-- Schedules --></label>
-        <name>Schedules</name>
-    </webLinks>
-    <webLinks>
-        <label><!-- Standard_Schedule --></label>
-        <name>Standard_Schedule</name>
+        <label><!-- View_Schedule --></label>
+        <name>View_Schedule</name>
     </webLinks>
 </CustomObjectTranslation>

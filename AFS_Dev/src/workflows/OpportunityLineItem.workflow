@@ -19,30 +19,6 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
-        <fullName>Update_HW_SW_Costs_to_null</fullName>
-        <field>HW_SW_Costs__c</field>
-        <name>Update HW/SW Costs to null</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Null</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Update_Other_Cost_Components_to_null</fullName>
-        <field>Other_Cost_Components__c</field>
-        <name>Update Other Cost Components to null</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Null</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Update_Subcontractor_Expenses_to_null</fullName>
-        <field>Subcontractor_Expenses__c</field>
-        <name>Update Subcontractor Expenses to null</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Null</operation>
-        <protected>false</protected>
-    </fieldUpdates>
-    <fieldUpdates>
         <fullName>Update_Target_OI</fullName>
         <field>Target_OI__c</field>
         <formula>PricebookEntry.Product2.Target_OI__c</formula>
@@ -75,43 +51,5 @@
         </criteriaItems>
         <description>Set cost components N/A checkbox to True if Service Group = BPO</description>
         <triggerType>onAllChanges</triggerType>
-    </rules>
-    <rules>
-        <fullName>Update Cost Components to null</fullName>
-        <actions>
-            <name>Update_HW_SW_Costs_to_null</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Update_Other_Cost_Components_to_null</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <actions>
-            <name>Update_Subcontractor_Expenses_to_null</name>
-            <type>FieldUpdate</type>
-        </actions>
-        <active>true</active>
-        <booleanFilter>(1 OR 2 OR 3) AND 4</booleanFilter>
-        <criteriaItems>
-            <field>OpportunityLineItem.HW_SW_Costs__c</field>
-            <operation>greaterOrEqual</operation>
-            <value>0</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>OpportunityLineItem.Other_Cost_Components__c</field>
-            <operation>greaterOrEqual</operation>
-            <value>0</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>OpportunityLineItem.Subcontractor_Expenses__c</field>
-            <operation>greaterOrEqual</operation>
-            <value>0</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>OpportunityLineItem.Type__c</field>
-            <operation>equals</operation>
-            <value>04 - MC</value>
-        </criteriaItems>
-        <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
 </Workflow>

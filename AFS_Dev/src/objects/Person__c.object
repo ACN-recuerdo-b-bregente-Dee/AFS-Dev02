@@ -59,7 +59,7 @@
         <fullName>Email__c</fullName>
         <externalId>false</externalId>
         <label>Email</label>
-        <required>false</required>
+        <required>true</required>
         <trackHistory>true</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Email</type>
@@ -113,6 +113,10 @@
         <fullName>All</fullName>
         <columns>NAME</columns>
         <columns>Email__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>User_Type__c</columns>
+        <columns>Status__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>

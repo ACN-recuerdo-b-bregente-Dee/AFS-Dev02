@@ -7,11 +7,4 @@
         <shortDescription>LEGAL_QUESTION_1</shortDescription>
         <value>The Opportunity involves activities (now or in the foreseeable future) or the client operates in, the following countries:</value>
     </labels>
-    <labels>
-        <fullName>Mock_Deployment_Label</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Mock Deployment Label</shortDescription>
-        <value>Test Value</value>
-    </labels>
 </CustomLabels>

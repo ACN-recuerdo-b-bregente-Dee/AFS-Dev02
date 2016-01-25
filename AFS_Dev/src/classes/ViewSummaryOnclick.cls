@@ -7,20 +7,19 @@
    @reference                    <Referenced program names>
 */
 global without sharing class ViewSummaryOnclick { 
-
-    //private static Id mainRecordType  = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(UTIL_Constants.OPP_REC_TYPE_MAIN).getRecordTypeId();
-    //private static Id sViewRecordType  = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(UTIL_Constants.OPP_REC_TYPE_SVIEW).getRecordTypeId();
-    //private static Boolean callFrmSummaryViewClass = false;
+/*
+    private static Id mainRecordType  = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(UTIL_Constants.OPP_REC_TYPE_MAIN).getRecordTypeId();
+    private static Id sViewRecordType  = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(UTIL_Constants.OPP_REC_TYPE_SVIEW).getRecordTypeId();
+    private static Boolean callFrmSummaryViewClass = false;
  
-    /**
+    
     *  Method is passing the id and OG values on record type
     *  @name                 recordtypecahng
     *  @param                Id oppredId     <description>
     *  @param                String view     <description>
     *  @return               String          <Description about the return parameter>
     *  @throws exception     <exception description>
-    */  
-    /**
+      
     webservice static String recordTypeCahng(Id oppredId,String view){
 
         String excepMsg = UTIL_Constants.STRING_EMPTY;

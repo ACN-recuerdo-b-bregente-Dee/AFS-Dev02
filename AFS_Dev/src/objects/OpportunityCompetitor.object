@@ -161,6 +161,10 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>PriceWaterhouseCoppers</fullName>
                 <default>false</default>
             </picklistValues>

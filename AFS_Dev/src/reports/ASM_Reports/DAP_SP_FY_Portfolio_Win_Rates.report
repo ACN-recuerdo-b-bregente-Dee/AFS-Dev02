@@ -62,11 +62,6 @@ Opportunity.Won_Rate__c:AVG/Opportunity.Closed_Rate__c:AVG)</calculatedFormula>
             <operator>equals</operator>
             <value>Defense - ASM</value>
         </criteriaItems>
-        <criteriaItems>
-            <column>Opportunity.Reporting_Status_Since__c</column>
-            <operator>equals</operator>
-            <value>THIS_FISCAL_QUARTER,LAST_N_FISCAL_QUARTERS:4</value>
-        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -106,6 +101,6 @@ Opportunity.Won_Rate__c:AVG/Opportunity.Closed_Rate__c:AVG)</calculatedFormula>
     <showDetails>true</showDetails>
     <timeFrameFilter>
         <dateColumn>Opportunity.Reporting_Status_Since__c</dateColumn>
-        <interval>INTERVAL_CUSTOM</interval>
+        <interval>INTERVAL_PREVCURFY</interval>
     </timeFrameFilter>
 </Report>

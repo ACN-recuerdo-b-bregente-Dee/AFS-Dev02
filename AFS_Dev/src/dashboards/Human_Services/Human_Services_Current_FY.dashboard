@@ -175,6 +175,10 @@
             <operator>equals</operator>
             <values>FNP_Washington Metropolitan Area Transit Authority (WMATA)</values>
         </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Equal Employment Opportunity Commission</values>
+        </dashboardFilterOptions>
         <name>Client Account</name>
     </dashboardFilters>
     <dashboardType>SpecifiedUser</dashboardType>

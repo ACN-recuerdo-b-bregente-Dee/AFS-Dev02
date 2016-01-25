@@ -10,7 +10,7 @@
 /*
 * - OpportunityBLTest
 */
-private without sharing class OpportunityBLTest{
+private with sharing class OpportunityBLTest{
 
     private static Id testPersonGlobalId;
     private static Opportunity recordOppCost;
@@ -123,8 +123,8 @@ private without sharing class OpportunityBLTest{
     * - Test Person
     */     
         Person__c testPerson = new Person__c(
-            Name='Test name for Person',
-            email__c='testPerson@email.com',
+            Name='Test name',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
         database.insert(testPerson,true);
@@ -351,7 +351,7 @@ private without sharing class OpportunityBLTest{
         */     
         Person__c testPerson2 = new Person__c(
             Name='Test name for Team Role',
-            email__c='test21@email.com',
+            email__c='test@email.com',
             user_type__c='AFS'
         ); 
             database.insert(testPerson2,true);         

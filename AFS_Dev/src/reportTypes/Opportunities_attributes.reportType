@@ -3,9 +3,9 @@
     <baseObject>Opportunity</baseObject>
     <category>opportunities</category>
     <deployed>true</deployed>
-    <description>Opportunities and attributes</description>
+    <description>Opportunities with attributes</description>
     <join>
-        <outerJoin>true</outerJoin>
+        <outerJoin>false</outerJoin>
         <relationship>Attributes__r</relationship>
     </join>
     <label>Opportunities and attributes</label>
@@ -24,11 +24,6 @@
             <checkedByDefault>false</checkedByDefault>
             <field>IsPrivate</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Accenture_Digital_TCR__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
@@ -52,11 +47,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_Type_Digital_or_Not__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Amount</field>
             <table>Opportunity</table>
         </columns>
@@ -68,11 +58,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ExpectedRevenue</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>TCR_for_Dashboard__c</field>
             <table>Opportunity</table>
         </columns>
         <columns>
@@ -92,16 +77,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Non_Digital_TCR__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>All_TCR_excpt_ACN_Dig__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>NextStep</field>
             <table>Opportunity</table>
         </columns>
@@ -112,23 +87,8 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>TCR_Type__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>IsClosed</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_Check__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -142,13 +102,8 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>AttributePercent__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Name</field>
-            <table>Opportunity.Attributes__r</table>
+            <field>Campaign</field>
+            <table>Opportunity</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -157,38 +112,8 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Campaign</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Opportunity_Name__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Pricebook2</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Digital_TCR__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_TDP__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -197,48 +122,13 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>TCR__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WTD_TCR__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Territory2</field>
             <table>Opportunity</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_TypeName__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Total_Current_Revenue__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_Type__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WTD_TCR_Decimals__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_TCR__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -257,28 +147,8 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_Type_Digital_or_Not__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>AttributeTxt__c</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastActivityDate</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Opportunity.Attributes__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>WTD_TDP__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -304,11 +174,6 @@
             <checkedByDefault>false</checkedByDefault>
             <field>RFP_Release_Date__c</field>
             <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Attribute_Value__c</field>
-            <table>Opportunity.Attributes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -583,21 +448,6 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>The_Opportunity_involves_activities_now__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Digital_Attribute_Count__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Summary_Customer__c</field>
-            <table>Opportunity</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Summary_Customer_ID__c</field>
             <table>Opportunity</table>
         </columns>
         <masterLabel>Opportunities</masterLabel>
