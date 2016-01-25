@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>15.0</apiVersion>
+    <available>true</available>
+    <description>Product Line Item Attachment Sample code - how you can access Product Line Items in an email template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Product Line Item Attachment Sample</name>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

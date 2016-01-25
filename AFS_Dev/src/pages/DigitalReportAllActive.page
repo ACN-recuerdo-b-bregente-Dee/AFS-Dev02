@@ -1,0 +1,37 @@
+<apex:page controller="DigitalReportAllActiveController" showHeader="false" showChat="false" standardStylesheets="true" sidebar="false">
+
+    <apex:outputLabel for="title" value="Overall TCR: " style="font-weight:700"  /> 
+    <apex:outputText id="title" value="{0, number, $0,000}"  >
+        <apex:param value="{!chartData[0].overalTotalCurrency}" />
+    </apex:outputText><br/> 
+    
+    <apex:outputLabel for="title2" value="Overall Accenture Digital %: " style="font-weight:700"  /> 
+    <apex:outputText id="title2" value="{0, number, 0.00}%" >
+        <apex:param value="{!chartData[0].accDigitalTotalPercent}" />
+    </apex:outputText> <br/>  
+    
+    <apex:outputLabel for="title3" value="Overall Accenture Digital TCR: " style="font-weight:700"  /> 
+    <apex:outputText id="title3" value="{0, number, $0,000}"  >
+        <apex:param value="{!chartData[0].accDigitalTotalCurrency}" />
+    </apex:outputText>     
+    
+        <apex:chart height="280" width="380" data="{!ChartData}" resizable="false" theme="Salesforce">
+            <apex:pieSeries dataField="data" labelField="name" highlight="false">
+                <apex:chartTips height="20" width="250" rendererFn="renderChartTip"/>
+                <apex:chartLabel display="none"/>
+            </apex:pieSeries>
+            <apex:legend position="right" font="bold 10px Helvetica"/>
+        </apex:chart>
+<script>
+function renderChartTip(klass, item) {
+    var m = item.storeItem;
+    this.setTitle(m.get('name'));
+    this.update(''
+            + '<table>'
+            + '<tr><td><b></b>&nbsp;</td><td>' + '' + '</td></tr>'
+
+            + '</table>'
+            );
+}
+</script>
+</apex:page>

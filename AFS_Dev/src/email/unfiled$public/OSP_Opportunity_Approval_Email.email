@@ -1,0 +1,58 @@
+The following opportunity requires immediate approval decision for {!Opportunity.Name} for {!Account.Name}. 
+
+Below is a snapshot of the opportunities key areas:
+
+Opportunity Information: 
+
+• Client Classification: {!Opportunity.Client_Classification__c}        
+• Account Name: {!Opportunity.Account}    
+• Opportunity Name: {!Opportunity.Name}    
+• Opp ID: {!Opportunity.Opportunity_ID__c}
+• Hierarchy Level: {!Opportunity.Hierarchy_Level__c}     
+• Probability: {!Opportunity.Probability}     
+• Status/Stage Submitted: {!Opportunity.Status_Stage_Requested__c}    
+• Current Stage {!Opportunity.StageName}     
+• Reporting Status: {!Opportunity.Reporting_Status__c}     
+• Reporting Status Date: {!Opportunity.Reporting_Status_Since__c}     
+  
+Financials: 
+
+• Total Current Revenue: {!Opportunity.Total_Current_Revenue__c}
+• Follow On Revenue: {!Opportunity.Follow_On_Revenue__c}
+• Total Deal Potential: {!Opportunity.Total_Deal_Potential__c}
+• Overall OI%: {!Opportunity.00Nq0000000WdmH}
+• Subcontractor Involvement %: {!Opportunity.Subcontractor_Involvement__c}
+• Overall Total HW/SW: {!Opportunity.Overall_Total_HW_SW__c}
+• Peak Capital Balance: {!Opportunity.Peak_Capital_Balance__c}
+
+Key Dates: 
+
+• Draft RFP Release Date: {!Opportunity.Draft_RFP_Release_Date__c}
+• RFP Release Date: {!Opportunity.RFP_Release_Date__c} 
+• Proposal Submission Date: {!Opportunity.Proposal_Submission_Date__c} 
+• Expected Contract Sign Date: {!Opportunity.CloseDate}    
+• Expected Contract Sign Date Quater:        {!Opportunity.Expected_Contract_Sign_Date_Quarter__c}
+• Actual Contract Sign Date: {!Opportunity.Actual_Contract_Sign_Date__c}    
+• Consulting Start Date: {!Opportunity.Consulting_Start__c}      
+• Consulting End Date: {!Opportunity.Consulting_End__c}         
+• Outsourcing Start Date: {!Opportunity.Outsourcing_Start__c}        
+• Outsourcing End Date: {!Opportunity.Outsourcing_End__c} 
+
+Deal Team: 
+
+• Client Account Lead: {!Account.Client_Account_Lead__c}
+• Opp QA Director: {!Account.Client_QA_Director__c}
+
+Risk: 
+
+• QA Risk Tier Stage 2B: {!Opportunity.QA_Risk_Tier_Stage_2B__c} 
+• QA Assesment Stage 2B: {!Opportunity.QA_Assessment_Stage_2B__c}
+• QA Risk Tier Stage 3: {!Opportunity.QA_Risk_Tier_Stage_3__c}
+• QA Assesment Stage 3: {!Opportunity.QA_Assessment_Stage_3__c}
+• Complexity Category: {!Opportunity.Complexity_Category__c}
+• Complexity Description: {!Opportunity.Complexity_Description__c}
+
+To view further details on this opportunity open the item below:
+
+
+To comply with certain Department of Defense (DoD) regulations and policies, e-mail communications between Accenture Federal Services (AFS) and Accenture (and its affiliates) are subject to review by designated AFS and DoD personnel.

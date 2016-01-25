@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Attribute Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attribute Summary</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute % --></label>
+        <name>Attribute_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute TCR --></label>
+        <name>Attribute_TCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Type(Digital or Non-digital) --></label>
+        <name>Attribute_Type_Digital_or_Non_digital__c</name>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-digital</masterLabel>
+            <translation><!-- Non-digital --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Attribute Summary --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Summary Level --></label>
+        <name>Summary_Level__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Attribute Summary Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

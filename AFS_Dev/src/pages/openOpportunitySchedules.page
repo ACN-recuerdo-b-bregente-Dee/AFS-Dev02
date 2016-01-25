@@ -1,0 +1,41 @@
+<apex:page sidebar="false" controller="OpenOpportunityScheduleExt" showheader="false">
+<!-- Include the Jquery Script files -->
+    <apex:sectionHeader title="" subtitle="Opportunity Schedules"/>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+    </script>
+    <apex:form >
+        <apex:pageBlock id="pageBlockId">
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageMessage title="No Open Opportunities Found" severity="info" strength="3" rendered="false">
+            </apex:pageMessage>
+            <div style="padding-bottom: 5px">
+                <apex:outputText style="padding-left:3px" value="Search By Opportunity Name:"/>&nbsp;
+                <apex:inputText style="padding-left:5px" value="{!opportunityName}"/>
+                &nbsp;&nbsp;&nbsp;
+                <apex:commandButton reRender="pageBlockId" action="{!search}" value="Search" status="filter-status" style="height:22px; padding-left:5px; padding-right:5px; width: 70px"/>
+                &nbsp; &nbsp;
+                <apex:actionStatus id="filter-status" startText="   Please wait..."/>
+            </div>
+            <apex:repeat value="{!opportunitySchedules}" var="oppSched">
+                <apex:pageBlockSection columns="1" id="scheduleSection" title="{!oppSched.oppRecord.Name}" collapsible="true" rendered="{!oppSched.isSelected}">
+                    <apex:pageBlockTable value="{!oppSched.oppLineItemsWrap}" var="oppLineItem">
+                        <apex:column width="10px">
+                            <apex:inputCheckbox value="{!oppLineItem.VF_Checkbox__c}" styleClass="offeringmapcheckbox" />
+                        </apex:column>
+                        <apex:column value="{!oppLineItem.Product2.Name}"/>
+                    </apex:pageBlockTable>
+                    <script>colorPageBlock(document.getElementById("{!$Component.scheduleSection}"), "orange");</script>
+                </apex:pageBlockSection>
+                <script>  
+                    twistSection(document.getElementById('img_{!$Component.scheduleSection}')); 
+                </script>
+            </apex:repeat>
+            <apex:pageblockButtons >
+                <apex:commandButton value="Return" action="{!cancelOrReturn}"/>
+                <apex:commandButton value="Custom Schedule" action="{!customSchedules}"/>            
+                <apex:commandButton value="Cancel" action="{!cancelOrReturn}"/>
+            </apex:pageblockButtons>            
+        </apex:pageBlock>
+    </apex:form>      
+</apex:page>

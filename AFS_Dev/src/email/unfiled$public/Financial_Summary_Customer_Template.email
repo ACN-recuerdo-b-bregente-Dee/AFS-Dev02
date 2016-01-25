@@ -1,0 +1,8 @@
+Project Accounting,
+
+Client {!Account.Name} requires a new Financial Customer. 
+
+https://cs21.salesforce.com/{!Account.Id}
+
+ Thank you, 
+Sales Team

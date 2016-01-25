@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>SMaRT_Training_and_Job_Aids</links>
+    <links>New_Business_Meetings_and_Sales_Process_Support</links>
+    <links>AFS_Policy_Compliance</links>
+    <links>AFS_QA_Risk_Tool</links>
+    <links>Client_Data_Protection_Risk_Assessment</links>
+    <links>Trade_Compliance_Help</links>
+    <links>MFC_Decision_Matrix</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

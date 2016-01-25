@@ -1,0 +1,26 @@
+<apex:page controller="PieChartRemoteController">
+    <apex:pageBlock title="Charts">
+
+        <apex:pageBlockSection title="Standard Visualforce Charting">
+
+            <apex:outputPanel id="theChart">
+            <apex:chart height="350" width="450" data="{!pieData}">
+                <apex:pieSeries dataField="data" labelField="name"/>
+                <apex:legend position="right"/>
+            </apex:chart>
+            </apex:outputPanel>
+            
+            <apex:form >
+                <apex:selectList value="{!chartYear}" size="1">
+                    <apex:selectOptions value="{!chartYearOptions}"/>
+                    <apex:actionSupport event="onchange" reRender="theChart" 
+                        status="actionStatusDisplay"/>
+                </apex:selectList>
+                <apex:actionStatus id="actionStatusDisplay"
+                    startText="loading..." stopText=""/>
+            </apex:form>
+            
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+</apex:page>

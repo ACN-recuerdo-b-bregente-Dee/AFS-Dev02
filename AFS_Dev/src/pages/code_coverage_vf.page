@@ -1,0 +1,85 @@
+<apex:page controller="ctrl_codeCoverage">
+    <style>
+        th{font-size: 15px}
+        .Summary{
+            background-color: {!codeCoverageColor};
+            color: white;
+        }
+        .Total{
+            width:797.5px;
+        }
+        .Uncovered{
+            width:142px;
+        }
+        .Covered{
+            width:124px;
+        }
+        .table-bordered > tfoot > tr > td {
+                border:2px solid #d3d3d3;
+        }
+    /**START - TABLE COLOR SCHEME**/
+        .table-hover > tbody > tr.planWP:hover > td, .table-hover > tbody > tr.planWP:hover > th tr.planWP:hover{
+            background: #e9e7d8 !important;
+            color: #2d2d2d;
+        }
+        
+        tr.planWP > .selected-td{
+            background: #e9e7d8 !important;
+            color: #2d2d2d;
+        }
+
+        .table > tbody > tr.totalEffortRow > td.totalEffortHours, .table > tbody > tr.totalEffortRow > td{
+            background: #BCD2EE;
+        }
+
+        /**END - TABLE COLOR SCHEME**/
+    .table { border-collapse:separate; border-top: 3px solid grey; width: 1186px;
+    </style>
+    <apex:form >
+    <apex:pageMessages />
+    <apex:pageBlock title="Apex Page Code Coverage">
+    <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Export to Excel" action="{!exportToExcel}"/>
+        <apex:commandButton value="Send Email Report" action="{!sendEmail}"/>
+    </apex:pageBlockButtons>
+    
+
+    <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead class="Summary">
+    <th class="Total">
+        Overall Coverage
+    </th>
+    <th class="Covered">
+        {!coveredLines}
+    </th>
+    <th class="Uncovered">
+        {!uncoveredLines}
+    </th>
+    <th class="CodeCoverage">
+        {!codeCoverage}%
+    </th>
+    </thead>
+    </table>
+     <apex:variable var="cnt" value="{!1}" />
+        <apex:pageblockTable value="{!apexPages2}" var="ap">
+            <apex:column >
+                <apex:outputlabel value="{!cnt}">
+                    <apex:variable value="{!cnt+1}" var="cnt"/>
+                </apex:outputlabel>
+            </apex:column>
+            <apex:column headerValue="Class Name">
+                <apex:outputLink value="/{!ap.Id}" target="_blank">{!ap.apexName}</apex:outputLink>
+            </apex:column>
+            <apex:column value="{!ap.ApiVersion}" headerValue="Api"/>
+            <apex:column value="{!ap.LengthWithoutComments}" headerValue="Length Without Comments"/>
+            <apex:column value="{!ap.linescovered}" headerValue="Covered Lines"/>
+            <apex:column value="{!ap.linesUncovered}" headerValue="Uncovered Lines"/>
+            <apex:column headerValue="Coverage %">
+                <font color="{!IF(ap.percentCovered >= 85, 'green', IF(ap.percentCovered < 75, 'red', 'orange'))}">
+                    <apex:outputtext value="{!ap.percentCovered}%" />
+                </font>
+            </apex:column>
+        </apex:pageblockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

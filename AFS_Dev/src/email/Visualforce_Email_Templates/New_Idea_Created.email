@@ -1,0 +1,24 @@
+<messaging:emailTemplate subject="Your Idea {!relatedTo.title} has been created" 
+    recipientType="Contact" 
+    relatedToType="Idea">
+<messaging:htmlEmailBody >
+<font face="verdana" size="2"><img src="https://na1.salesforce.com{!$Resource.Ideas_Image}" /><br/>
+<b>Congratulations</b>, your idea <b> {!relatedTo.title}</b> has been created. 
+<p>
+
+    You can view your idea <a href="https://na1.salesforce.com/ideas/viewIdea.apexp?id={!relatedTo.id}">here</a>, 
+    vote for it, view other great ideas and comment on them! 
+</p></font>
+</messaging:htmlEmailBody>
+
+
+<messaging:plainTextEmailBody >
+
+Congratulations, your idea {!relatedTo.title} has been created.
+
+ You can view your idea here,
+ https://na1.salesforce.com/ideas/viewIdea.apexp?id={!relatedTo.id}
+  
+vote for it, view other great ideas and comment on them! 
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

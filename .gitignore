@@ -1,0 +1,10 @@
+ant-salesforce.jar
+.metadata
+.metadata/*
+.metadata/**
+.metadata/**/*
+AFS_Dev/build.xml
+AFS_Dev/build.properties
+README.md
+Push_git.bat
+sonar-project.properties

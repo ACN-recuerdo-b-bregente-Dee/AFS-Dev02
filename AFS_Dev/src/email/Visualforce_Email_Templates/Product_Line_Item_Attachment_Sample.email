@@ -1,0 +1,254 @@
+<messaging:emailTemplate recipientType="User"
+    relatedToType="Opportunity"
+    subject="Opportunity Approval for: {!relatedTo.name}"
+    replyTo="support@AFS.com" >
+    
+    <messaging:htmlEmailBody >        
+        <html>
+            <body>
+            <STYLE type="text/css">
+
+                table {
+                  border-collapse: separate;
+                  border-spacing: 0;
+                  width: 400px;
+                  margin: 0px
+                }
+                th,
+                td {
+                  padding: 2px;
+                  text-align: center;
+                }
+                th {
+                  font: 11px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+                  color: #F8F8FF;
+                  font-weight: bold;
+                  text-align: center;
+                  background: #42444e;
+                  border: 1px solid #42444e;
+                }
+                tr {
+                  font: 11px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+                }
+                tr:first-child th:first-child {
+                  border-top-left-radius: 2px;
+                }
+                tr:first-child th:last-child {
+                  border-top-right-radius: 2px;
+                }
+                td {
+                  border-right: 1px solid #c6c9cc;
+                  border-bottom: 1px solid #c6c9cc;
+                }
+                td:first-child {
+                  border-left: 1px solid #c6c9cc;
+                }
+                tr:nth-child(even) td {
+                  background: #eaeaed;
+                }
+                tr:last-child td:first-child {
+                  border-bottom-left-radius: 2px;
+                }
+                tr:last-child td:last-child {
+                  border-bottom-right-radius: 2px;
+                }
+                p {
+                font: 11px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+                }
+                
+             </STYLE>
+            <h3>APPROVAL TO SUBMIT </h3>
+            <p>Please reply to this note with your approval decision on <b> {!relatedTo.name}</b> for <b> {!relatedTo.Account.name}.</b> </p>
+            <h3>Proposal - Final Approval to Submit Request</h3>
+            <p><b>All approval requests should be accompanied by a short summary that includes: </b></p>
+            <p>•    Brief overview of the deal </p>
+            <p>•    Confirmation that the deal is affordable within the account plan for the fiscal year </p>
+            <p>•    Explanation for OI deviation (if applicable) </p>
+            <p>•    Brief recap of last review with leadership </p>
+            <p>•    Identification of unique characteristics of the deal, and/or risks and how they will be mitigated </p>
+            <p>•    Any additional pertinent information to support leadership approval decision </p>
+            <br/>
+            <p><b>For IDIQs/BPAs/MSAs, please provide responses to the following:</b></p>
+            <p>•    What sales have we committed to in the account plan for the first year of the contract? </p>
+            <p>•    Who is on point to deliver this sales number?</p>
+            <br/>
+            <br/>
+            
+            <!-- Approval to Submit-->
+            <table>
+                <tr>
+                    <th colspan= "2"> Approval to Submit </th>
+                </tr>
+                <tr> 
+                    <td> Account Name </td>
+                    <td> {!relatedTo.Account.name}</td>          
+                </tr>
+                <tr>
+                    <td> Opportunity Name </td>
+                    <td>{!relatedTo.name}</td>          
+                </tr>
+                <tr>  
+                    <td> Contract Number </td>
+                    <td>{!relatedTo.Solicitation_Contract_Number__c}</td>          
+                </tr>
+           
+                <tr>  
+                    <td> Opp ID </td>
+                    <td>{!relatedTo.Opportunity_ID__c}</td>         
+                </tr>
+               
+                <tr>  
+                    <td> Consulting Start/End Dates </td>
+                    <td>{!relatedTo.Consulting_Start__c} - {!relatedTo.Consulting_End__c}</td>        
+                </tr>
+                <tr>  
+                    <td> Outsourcing Start/End Dates </td>
+                    <td>{!relatedTo.Outsourcing_Start__c} - {!relatedTo.Outsourcing_End__c}</td>        
+                </tr>   
+                <tr>  
+                    <td> TCR </td>
+                    <td>{!relatedTo.Total_Current_Revenue__c}</td>        
+                </tr>
+                <tr> 
+                    <td> TDP </td>
+                    <td> {!relatedTo.Total_Deal_Potential__c}</td>          
+                </tr>
+                <tr>
+                    <td> TCR OI% </td>
+                    <td>{!relatedTo.TCR_OI__c}</td>          
+                </tr>
+                <tr>  
+                    <td> TDP OI% </td>
+                    <td>{!relatedTo.TDP__c}</td>          
+                </tr>
+           
+                <tr>  
+                    <td> Peak Capital balance </td>
+                    <td>{!relatedTo.Peak_Capital_Balance__c}</td>         
+                </tr>
+               
+                <tr>  
+                    <td> Bank Guarantee/Letter of Credit </td>
+                    <td>{!relatedTo.Bank_Guarantee_Letter_of_Credit__c}</td>        
+                </tr>
+                <tr>  
+                    <td> Subcontractor Involvement % </td>
+                    <td>{!relatedTo.Subcontractor_Involvement__c}</td>        
+                </tr>   
+                <tr>  
+                    <td> Estimator Confirm Compliance? </td>
+                    <td>{!relatedTo.Estimator_Confirm_Compliance__c}</td>                           
+                </tr>
+                <tr>  
+                    <td> Estimate Not Confirm Compliance </td>
+                    <td>{!relatedTo.Estimate_Not_Confirm_Compliance__c}</td>        
+                </tr>
+                <tr> 
+                    <td> Proposal Include Scope Complexity? </td>
+                    <td> {!relatedTo.Proposal_Include_Scope_Complexity__c}</td>          
+                </tr>
+                <tr>
+                    <td> Scope Complexity Within Guidelines? </td>
+                    <td>{!relatedTo.Scope_Complexity_Within_Guidelines__c}</td>          
+                </tr>
+                <tr>  
+                    <td> Scope Substantiated in BOE? </td>
+                    <td>{!relatedTo.Scope_Substantiated_in_BOE__c}</td>          
+                </tr>
+           
+                <tr>  
+                    <td> Pricing Trigger MFC? </td>
+                    <td>{!relatedTo.Pricing_Trigger_MFC__c}</td>         
+                </tr>
+               
+                <tr>  
+                    <td> Travel Assumed to be Not Billable? </td>
+                    <td>{!relatedTo.Travel_Assumed_to_be_Not_Billable__c}</td>        
+                </tr>
+                <tr>  
+                    <td> If Travel Is Billable, Explain </td>
+                    <td>{!relatedTo.If_Travel_Is_Billable_Explain__c}</td>        
+                </tr>   
+                <tr>  
+                    <td> OCONUS Work Required? </td>
+                    <td>{!relatedTo.ONCONUS_Work_Required__c}</td>                          
+                </tr>   
+               <tr>
+                    <td> Date of Opportunity QA Review 2B </td>
+                    <td>{!relatedTo.Date_of_Opportunity_QA_Review_2B__c}</td>          
+                </tr>
+                <tr>  
+                    <td> Has QA Been Documented and Finalized in QA Tool? </td>
+                    <td>{!relatedTo.QA_been_documented_and_finalized_in_QA__c}</td>          
+                </tr>
+           
+                <tr>  
+                    <td> If QA is Not finalized and Documented in QA Tool </td>
+                    <td>{!relatedTo.QA_Not_Documented_and_Finalized_in_QA_To__c}</td>         
+                </tr>
+               
+                <tr>  
+                    <td> Date of CM Review </td>
+                    <td>{!relatedTo.Date_of_Contract_Management_Review_Date__c}</td>        
+                </tr>
+                <tr>  
+                    <td> Add introduction to ATS request (summarize any management discounts and/or costs assumed to be not billable, etc). </td>
+                    <td>{!relatedTo.ATS_Notes__c}</td>        
+                </tr> 
+           </table>
+
+                       
+
+                    <!-- Product Line Items -->
+            <table>
+                <tr>
+                    <th colspan= "5"> Opportunity Line Items </th>
+                </tr>
+                <tr > 
+                    <th>Product Name</th><th>OI</th><th>Target OI</th><th>Revenue</th><th>Total Costs</th>
+                </tr>
+                <apex:repeat var="opp" value="{!relatedTo.OpportunityLineItems}">
+                <tr>
+
+                    <td>{!opp.PriceBookEntry.name}</td>
+                    <td>{!opp.OI__c}%</td>
+                    <td>{!opp.Target_OI__c}</td>
+                    <td>
+                                       <apex:outputText value="${0,number,###,###,###,##0.00}">  
+                                       <apex:param value="{!opp.Revenue__c}"/>  
+                                       </apex:outputText> 
+
+                    </td>
+                    <td>
+                                       <apex:outputText value="${0,number,###,###,###,##0.00}">  
+                                       <apex:param value="{!opp.Total_Costs__c}"/>  
+                                       </apex:outputText> 
+                    </td>
+                </tr>
+                </apex:repeat>                 
+           </table>
+
+                    <!-- Opportunity Team Roles -->
+            <table>
+                <tr>
+                    <th colspan= "3"> Opportunity Team Roles </th>
+                </tr>
+                <tr > 
+                    <th>Name</th><th>Role</th><th>Sales Credit%</th>
+                </tr>
+                <apex:repeat var="OTRoles" value="{!relatedTo.Opportunity_Teams_Sales_Credit__r}">
+                <tr>
+
+                    <td>{!OTRoles.Name__c}</td>
+                    <td>{!OTRoles.Role__c}</td>
+                    <td>{!OTRoles.Sales_Credit__c}%</td>
+
+                </tr>
+                </apex:repeat>                 
+           </table>        
+           <p />          
+            </body>
+        </html>
+    </messaging:htmlEmailBody> 
+               
+</messaging:emailTemplate>

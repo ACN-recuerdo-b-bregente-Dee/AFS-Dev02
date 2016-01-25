@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Team Role</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Team Roles</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Access --></label>
+        <name>Account_Access__c</name>
+        <picklistValues>
+            <masterLabel>Read Only</masterLabel>
+            <translation><!-- Read Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read/Write</masterLabel>
+            <translation><!-- Read/Write --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>Account_Owner__c</name>
+        <relationshipLabel><!-- Account Team Roles (Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Team Roles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case Access --></label>
+        <name>Case_Access__c</name>
+        <picklistValues>
+            <masterLabel>Read Only</masterLabel>
+            <translation><!-- Read Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read/Write</masterLabel>
+            <translation><!-- Read/Write --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact Access --></label>
+        <name>Contact_Access__c</name>
+        <picklistValues>
+            <masterLabel>Read Only</masterLabel>
+            <translation><!-- Read Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read/Write</masterLabel>
+            <translation><!-- Read/Write --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Access --></label>
+        <name>Opportunity_Access__c</name>
+        <picklistValues>
+            <masterLabel>Read Only</masterLabel>
+            <translation><!-- Read Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read/Write</masterLabel>
+            <translation><!-- Read/Write --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team Member --></label>
+        <name>Team_Member__c</name>
+        <relationshipLabel><!-- Account Team Roles (Team Member) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Team Role --></label>
+        <name>Team_Role__c</name>
+        <picklistValues>
+            <masterLabel>Business Development Director</masterLabel>
+            <translation><!-- Business Development Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CFM</masterLabel>
+            <translation><!-- CFM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Account Lead</masterLabel>
+            <translation><!-- Client Account Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client QA Director</masterLabel>
+            <translation><!-- Client QA Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Director</masterLabel>
+            <translation><!-- Commercial Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global CAL</masterLabel>
+            <translation><!-- Global CAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managing Director MC</masterLabel>
+            <translation><!-- Managing Director MC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSP</masterLabel>
+            <translation><!-- OSP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations Lead</masterLabel>
+            <translation><!-- Operations Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMO</masterLabel>
+            <translation><!-- PMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio Lead</masterLabel>
+            <translation><!-- Portfolio Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub Portfolio Lead</masterLabel>
+            <translation><!-- Sub Portfolio Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Account Lead</masterLabel>
+            <translation><!-- Technology Account Lead --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Account Team Role Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Team Member should not be the same with Account Owner --></errorMessage>
+        <name>Team_Member_not_equal_to_Account_Owner</name>
+    </validationRules>
+</CustomObjectTranslation>

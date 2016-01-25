@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Attribute</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Attributes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accenture Digital TCR --></label>
+        <name>Accenture_Digital_TCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- All TCR excpt ACN Dig --></label>
+        <name>All_TCR_excpt_ACN_Dig__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute % --></label>
+        <name>AttributePercent__c</name>
+    </fields>
+    <fields>
+        <label><!-- AttributeTxt --></label>
+        <name>AttributeTxt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Check --></label>
+        <name>Attribute_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute TCR --></label>
+        <name>Attribute_TCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute TDP --></label>
+        <name>Attribute_TDP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Type Name --></label>
+        <name>Attribute_TypeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Type(Digital or Not) --></label>
+        <name>Attribute_Type_Digital_or_Not__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Type --></label>
+        <name>Attribute_Type__c</name>
+        <picklistValues>
+            <masterLabel>ADMIN:Digital Customer</masterLabel>
+            <translation><!-- ADMIN:Digital Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADMIN:Digital Enterprise</masterLabel>
+            <translation><!-- ADMIN:Digital Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO Offerings</masterLabel>
+            <translation><!-- AO Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accenture Digital</masterLabel>
+            <translation><!-- Accenture Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alliance</masterLabel>
+            <translation><!-- Alliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Horizontals/Initiatives</masterLabel>
+            <translation><!-- Horizontals/Initiatives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO Offerings</masterLabel>
+            <translation><!-- IO Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry Business Services</masterLabel>
+            <translation><!-- Industry Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC Offerings</masterLabel>
+            <translation><!-- MC Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI Offerings</masterLabel>
+            <translation><!-- SI Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC Offerings</masterLabel>
+            <translation><!-- TC Offerings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventures &amp; Acquisitions</masterLabel>
+            <translation><!-- Ventures &amp; Acquisitions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value --></label>
+        <name>Attribute_Value__c</name>
+        <picklistValues>
+            <masterLabel>ADOBE</masterLabel>
+            <translation><!-- ADOBE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS - Synergy</masterLabel>
+            <translation><!-- AFS - Synergy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMAZON WEB SERVICES (AWS)</masterLabel>
+            <translation><!-- AMAZON WEB SERVICES (AWS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Application Management</masterLabel>
+            <translation><!-- AO-Application Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Application Modernization</masterLabel>
+            <translation><!-- AO-Application Modernization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Capacity Services</masterLabel>
+            <translation><!-- AO-Capacity Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Microsoft</masterLabel>
+            <translation><!-- AO-Microsoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Oracle</masterLabel>
+            <translation><!-- AO-Oracle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-SAP</masterLabel>
+            <translation><!-- AO-SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Testing Services</masterLabel>
+            <translation><!-- AO-Testing Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO-Workday</masterLabel>
+            <translation><!-- AO-Workday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APIGEE</masterLabel>
+            <translation><!-- APIGEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APPLE</masterLabel>
+            <translation><!-- APPLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASM - Synergy</masterLabel>
+            <translation><!-- ASM - Synergy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accenture Cloud Platform-Cloud Managed Services</masterLabel>
+            <translation><!-- Accenture Cloud Platform-Cloud Managed Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agilex - Standalone</masterLabel>
+            <translation><!-- Agilex - Standalone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agilex - Synergy</masterLabel>
+            <translation><!-- Agilex - Synergy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analytics</masterLabel>
+            <translation><!-- Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Modernization</masterLabel>
+            <translation><!-- Application Modernization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BMC</masterLabel>
+            <translation><!-- BMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CALLIDUS</masterLabel>
+            <translation><!-- CALLIDUS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CISCO</masterLabel>
+            <translation><!-- CISCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLICKSOFTWARE</masterLabel>
+            <translation><!-- CLICKSOFTWARE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud-Agile Infrastructure (IaaS)</masterLabel>
+            <translation><!-- Cloud-Agile Infrastructure (IaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud-Apps and Platform Services (PaaS)</masterLabel>
+            <translation><!-- Cloud-Apps and Platform Services (PaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud-Business Process as a Service (BPaaS)</masterLabel>
+            <translation><!-- Cloud-Business Process as a Service (BPaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud-SaaS Services</masterLabel>
+            <translation><!-- Cloud-SaaS Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cloud-Strategy</masterLabel>
+            <translation><!-- Cloud-Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyber</masterLabel>
+            <translation><!-- Cyber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-DIGITAL DEFENSE TRANSFORMATION</masterLabel>
+            <translation><!-- D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-DIGITAL DEFENSE TRANSFORMATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-ERP SOLUTION AND SERVICES</masterLabel>
+            <translation><!-- D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-ERP SOLUTION AND SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-MILITARY HEALTH</masterLabel>
+            <translation><!-- D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-MILITARY HEALTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-PUBLIC SAFETY SERVICES-INTELLIGENCE</masterLabel>
+            <translation><!-- D&amp;PS-PUBLIC SAFETY SERVICES-INTELLIGENCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-PUBLIC SAFETY SERVICES-POLICING</masterLabel>
+            <translation><!-- D&amp;PS-PUBLIC SAFETY SERVICES-POLICING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-PUBLIC SAFETY SERVICES-REHABILITATION</masterLabel>
+            <translation><!-- D&amp;PS-PUBLIC SAFETY SERVICES-REHABILITATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;PS-PUBLIC SAFETY SERVICES-SMART BORDERS</masterLabel>
+            <translation><!-- D&amp;PS-PUBLIC SAFETY SERVICES-SMART BORDERS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DELL</masterLabel>
+            <translation><!-- DELL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital &amp; Cust Exp</masterLabel>
+            <translation><!-- Digital &amp; Cust Exp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Applications</masterLabel>
+            <translation><!-- Digital Applications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Commerce</masterLabel>
+            <translation><!-- Digital Commerce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Connected Devices</masterLabel>
+            <translation><!-- Digital Connected Devices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Connected Products</masterLabel>
+            <translation><!-- Digital Connected Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Content Management</masterLabel>
+            <translation><!-- Digital Content Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Corporate Functions</masterLabel>
+            <translation><!-- Digital Corporate Functions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Customer Experience (Design &amp; Innovation)</masterLabel>
+            <translation><!-- Digital Customer Experience (Design &amp; Innovation) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Customer Service</masterLabel>
+            <translation><!-- Digital Customer Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Marketing</masterLabel>
+            <translation><!-- Digital Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Sales</masterLabel>
+            <translation><!-- Digital Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Social Media and Collaboration</masterLabel>
+            <translation><!-- Digital Social Media and Collaboration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Strategy &amp; Business Architecture</masterLabel>
+            <translation><!-- Digital Strategy &amp; Business Architecture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital Supply Chain, Manufacturing, Operations</masterLabel>
+            <translation><!-- Digital Supply Chain, Manufacturing, Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMC</masterLabel>
+            <translation><!-- EMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F&amp;EP</masterLabel>
+            <translation><!-- F&amp;EP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GOOGLE</masterLabel>
+            <translation><!-- GOOGLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-CLINICAL SERVICES-CLINICAL OPTIMIZATION</masterLabel>
+            <translation><!-- HEALTH-CLINICAL SERVICES-CLINICAL OPTIMIZATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-CLINICAL SERVICES-CONNECTED HEALTH</masterLabel>
+            <translation><!-- HEALTH-CLINICAL SERVICES-CONNECTED HEALTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-CLINICAL SERVICES-EMR</masterLabel>
+            <translation><!-- HEALTH-CLINICAL SERVICES-EMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-CLINICAL SERVICES-MEDICAL IMAGING</masterLabel>
+            <translation><!-- HEALTH-CLINICAL SERVICES-MEDICAL IMAGING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-CLINICAL SERVICES-VIRTUAL HEALTH</masterLabel>
+            <translation><!-- HEALTH-CLINICAL SERVICES-VIRTUAL HEALTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-CRM-CUSTOMER SERVICE</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-CRM-CUSTOMER SERVICE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-CRM-SALES &amp; MARKETING</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-CRM-SALES &amp; MARKETING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-HIX HEALTH INSURANCE EXCHANGE</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-HIX HEALTH INSURANCE EXCHANGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-MEDICAID MGMT INFO SYSTEM</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-MEDICAID MGMT INFO SYSTEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-PAYER OPS-CLAIMS</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-PAYER OPS-CLAIMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-PAYER OPS-GROUP SERVICES</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-PAYER OPS-GROUP SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ADMIN-PAYER OPS-NETWORK</masterLabel>
+            <translation><!-- HEALTH-HEALTH ADMIN-PAYER OPS-NETWORK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-AESG(H)</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-AESG(H) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ENTERPRISE IT</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ENTERPRISE IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ERP</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ERP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FACILITIES</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FACILITIES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FINANCE</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FINANCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-HCM</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-HCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-OTHER</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-OTHER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-SUPPLY CHAIN</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-SUPPLY CHAIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH ENTERPRISE OPS-PAYMENT &amp; REIMBURSEMENT</masterLabel>
+            <translation><!-- HEALTH-HEALTH ENTERPRISE OPS-PAYMENT &amp; REIMBURSEMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH MGMT-POPULATION HEALTH MANAGEMENT</masterLabel>
+            <translation><!-- HEALTH-HEALTH MGMT-POPULATION HEALTH MANAGEMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEALTH-HEALTH MGMT-STARS &amp; RISK SCORE ACCURACY</masterLabel>
+            <translation><!-- HEALTH-HEALTH MGMT-STARS &amp; RISK SCORE ACCURACY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - HW</masterLabel>
+            <translation><!-- HP - HW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - SW</masterLabel>
+            <translation><!-- HP - SW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HS-INTEGRATED SOCIAL SERVICES</masterLabel>
+            <translation><!-- HS-INTEGRATED SOCIAL SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HS-INTEGRATED SOCIAL SERVICES-PENSIONS TRANSFORMATION</masterLabel>
+            <translation><!-- HS-INTEGRATED SOCIAL SERVICES-PENSIONS TRANSFORMATION --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM - HW</masterLabel>
+            <translation><!-- IBM - HW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IBM - SW</masterLabel>
+            <translation><!-- IBM - SW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INFORMATICA</masterLabel>
+            <translation><!-- INFORMATICA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Data Center &amp; Cloud Operations</masterLabel>
+            <translation><!-- IO-Data Center &amp; Cloud Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Infrastructure Capacity Services</masterLabel>
+            <translation><!-- IO-Infrastructure Capacity Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Infrastructure Management Operations</masterLabel>
+            <translation><!-- IO-Infrastructure Management Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Managed Security Operations</masterLabel>
+            <translation><!-- IO-Managed Security Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Network Operations</masterLabel>
+            <translation><!-- IO-Network Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO-Workplace Operations</masterLabel>
+            <translation><!-- IO-Workplace Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive</masterLabel>
+            <translation><!-- Interactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JDA</masterLabel>
+            <translation><!-- JDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MICROSOFT</masterLabel>
+            <translation><!-- MICROSOFT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobility</masterLabel>
+            <translation><!-- Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NETAPP</masterLabel>
+            <translation><!-- NETAPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NETSUITE</masterLabel>
+            <translation><!-- NETSUITE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - BI/Analytics</masterLabel>
+            <translation><!-- ORACLE - BI/Analytics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - CX/Cloud Apps</masterLabel>
+            <translation><!-- ORACLE - CX/Cloud Apps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - EBS/JDE</masterLabel>
+            <translation><!-- ORACLE - EBS/JDE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - EPM</masterLabel>
+            <translation><!-- ORACLE - EPM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - Functional Other</masterLabel>
+            <translation><!-- ORACLE - Functional Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - General</masterLabel>
+            <translation><!-- ORACLE - General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - OES &amp; Database</masterLabel>
+            <translation><!-- ORACLE - OES &amp; Database --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - Peoplesoft</masterLabel>
+            <translation><!-- ORACLE - Peoplesoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - Siebel</masterLabel>
+            <translation><!-- ORACLE - Siebel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ORACLE - Technology</masterLabel>
+            <translation><!-- ORACLE - Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OTHER - ALLIANCE NOT LISTED</masterLabel>
+            <translation><!-- OTHER - ALLIANCE NOT LISTED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEGASYSTEMS</masterLabel>
+            <translation><!-- PEGASYSTEMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS DIGITAL CITIZEN SERVICES-DIGITAL CITIZEN SERVICES</masterLabel>
+            <translation><!-- PS DIGITAL CITIZEN SERVICES-DIGITAL CITIZEN SERVICES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REDHAT</masterLabel>
+            <translation><!-- REDHAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SALESFORCE</masterLabel>
+            <translation><!-- SALESFORCE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAP</masterLabel>
+            <translation><!-- SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAS</masterLabel>
+            <translation><!-- SAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SERVICENOW</masterLabel>
+            <translation><!-- SERVICENOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for Java</masterLabel>
+            <translation><!-- SI-Application Svcs for Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for Mainframe</masterLabel>
+            <translation><!-- SI-Application Svcs for Mainframe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for Microsoft</masterLabel>
+            <translation><!-- SI-Application Svcs for Microsoft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for Oracle</masterLabel>
+            <translation><!-- SI-Application Svcs for Oracle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for SAP</masterLabel>
+            <translation><!-- SI-Application Svcs for SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for SalesForce</masterLabel>
+            <translation><!-- SI-Application Svcs for SalesForce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Svcs for Workday</masterLabel>
+            <translation><!-- SI-Application Svcs for Workday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Application Testing Svcs</masterLabel>
+            <translation><!-- SI-Application Testing Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Business Analysis Svcs</masterLabel>
+            <translation><!-- SI-Business Analysis Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Capacity Svcs</masterLabel>
+            <translation><!-- SI-Capacity Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Engineering Services</masterLabel>
+            <translation><!-- SI-Engineering Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Finance &amp; Enterprise Services</masterLabel>
+            <translation><!-- SI-Finance &amp; Enterprise Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Industry Solutions (IS)</masterLabel>
+            <translation><!-- SI-Industry Solutions (IS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Info Mgmt-Attributable to Accenture Digital</masterLabel>
+            <translation><!-- SI-Info Mgmt-Attributable to Accenture Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Modernization Svcs</masterLabel>
+            <translation><!-- SI-Modernization Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Program, Project &amp; Service Mgmt Svcs</masterLabel>
+            <translation><!-- SI-Program, Project &amp; Service Mgmt Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Sales &amp; Customer Services</masterLabel>
+            <translation><!-- SI-Sales &amp; Customer Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Sourcing &amp; Procurement Services</masterLabel>
+            <translation><!-- SI-Sourcing &amp; Procurement Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Supply Chain Services</masterLabel>
+            <translation><!-- SI-Supply Chain Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Talent &amp; HR Services</masterLabel>
+            <translation><!-- SI-Talent &amp; HR Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI-Technology Architecture Svcs</masterLabel>
+            <translation><!-- SI-Technology Architecture Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYMANTEC</masterLabel>
+            <translation><!-- SYMANTEC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared Services</masterLabel>
+            <translation><!-- Shared Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy</masterLabel>
+            <translation><!-- Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainability-Operational Excellence</masterLabel>
+            <translation><!-- Sustainability-Operational Excellence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sustainability-Technology &amp; Intelligent Infrastructure</masterLabel>
+            <translation><!-- Sustainability-Technology &amp; Intelligent Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T&amp;O</masterLabel>
+            <translation><!-- T&amp;O --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Data Center Transformation</masterLabel>
+            <translation><!-- TC-Data Center Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-Application Modernization Strategy</masterLabel>
+            <translation><!-- TC-ITS-Application Modernization Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-Application Strategy</masterLabel>
+            <translation><!-- TC-ITS-Application Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-Enterprise Architecture Services</masterLabel>
+            <translation><!-- TC-ITS-Enterprise Architecture Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-IT Strategy Svcs</masterLabel>
+            <translation><!-- TC-ITS-IT Strategy Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-IT Transformation Svcs</masterLabel>
+            <translation><!-- TC-ITS-IT Transformation Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-ITS-Information &amp; Analytics Strategy</masterLabel>
+            <translation><!-- TC-ITS-Information &amp; Analytics Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Infrastructure Transformation</masterLabel>
+            <translation><!-- TC-Infrastructure Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Network Transformation</masterLabel>
+            <translation><!-- TC-Network Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Operations Transformation</masterLabel>
+            <translation><!-- TC-Operations Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Security Transformation</masterLabel>
+            <translation><!-- TC-Security Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC-Workplace Transformation</masterLabel>
+            <translation><!-- TC-Workplace Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TERADATA</masterLabel>
+            <translation><!-- TERADATA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIBCO</masterLabel>
+            <translation><!-- TIBCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UC &amp; Network</masterLabel>
+            <translation><!-- UC &amp; Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VERIZON</masterLabel>
+            <translation><!-- VERIZON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VMWARE</masterLabel>
+            <translation><!-- VMWARE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WORKDAY</masterLabel>
+            <translation><!-- WORKDAY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Digital TCR --></label>
+        <name>Digital_TCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+        <relationshipLabel><!-- Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- TCR Type --></label>
+        <name>TCR_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- TCR --></label>
+        <name>TCR__c</name>
+    </fields>
+    <fields>
+        <label><!-- WTD TCR Decimals --></label>
+        <name>WTD_TCR_Decimals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Weighted Total Current Revenue --></help>
+        <label><!-- Attribute WTD TCR --></label>
+        <name>WTD_TCR__c</name>
+    </fields>
+    <fields>
+        <help><!-- (TDP * Probability %) * Attribute % --></help>
+        <label><!-- Attribute WTD TDP --></label>
+        <name>WTD_TDP__c</name>
+    </fields>
+    <layouts>
+        <layout>Attribute Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Attributes --></label>
+        <name>Add_Attributes</name>
+    </webLinks>
+</CustomObjectTranslation>

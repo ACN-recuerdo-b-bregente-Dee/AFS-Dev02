@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" tabStyle="Opportunity">
+    <apex:pageMessage title="Please enter all financial information in thousands." severity="info" strength="3">
+        <h1 style="margin-left: 8px;">Please remember to save often.</h1>
+        <p style="margin-left: 8px; margin-top: 1px">If you navigate away from the opportunity record before saving (e.g., click on any button, link, or tab), your changes will be lost.</p>
+    </apex:pageMessage>
+</apex:page>

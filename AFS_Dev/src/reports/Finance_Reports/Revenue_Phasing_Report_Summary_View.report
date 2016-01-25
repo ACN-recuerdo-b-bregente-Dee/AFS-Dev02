@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ROUND(REVENUE_AMOUNT:SUM,0)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Scheduled Revenue (Thousands)</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>ROUND(PROBABILITY:AVG*REVENUE_AMOUNT:SUM,0)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>WTD Scheduled Revenue (Thousands)</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_27931464</developerName>
+        <masterLabel>Contract Type</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>AO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BPO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MC - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SI - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TC - CostPlus</sourceValue>
+            </sourceValues>
+            <value>CostPlus</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>AO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BPO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MC - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SI - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TC - Fixed Price</sourceValue>
+            </sourceValues>
+            <value>Fixed Price</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>AO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BPO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MC - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SI - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TC - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>Time &amp; Materials</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_95232113</developerName>
+        <masterLabel>Service Group</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>PRODUCT_NAME</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>AO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>AO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>AO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>AO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>BPO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BPO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>BPO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>BPO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>IO - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IO - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>IO - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>IO</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>MC - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MC - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>MC - Fixed Price</sourceValue>
+            </sourceValues>
+            <value>MC</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>SI - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SI - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>SI - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>SI</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>TC - CostPlus</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TC - Fixed Price</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>TC - Time &amp; Materials</sourceValue>
+            </sourceValues>
+            <value>TC</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity.Opportunity_ID__c</field>
+    </columns>
+    <columns>
+        <field>Account.CostPoint_Invoice_Customer__c</field>
+    </columns>
+    <columns>
+        <field>Account.CostPoint_Invoice_Customer_ID__c</field>
+    </columns>
+    <columns>
+        <field>PROBABILITY</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Portfolio__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Type_of_Work__c</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Reporting_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Best_Probable_Worst__c</field>
+    </columns>
+    <columns>
+        <field>CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Total_Current_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Total_WTD_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Total_Deal_Potential__c</field>
+    </columns>
+    <columns>
+        <field>PRODUCT_NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_95232113</field>
+    </columns>
+    <columns>
+        <field>BucketField_27931464</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Revenue__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.OI_Value__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.OI__c</field>
+    </columns>
+    <columns>
+        <field>OpportunityLineItem.Target_OI__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Consulting_Start__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Consulting_End__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Consulting_Total_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Outsourcing_Start__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Outsourcing_End__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Outsourcing_Total_Revenue__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Expected_Contract_Sign_Date_Quarter__c</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE_BY</field>
+    </columns>
+    <columns>
+        <field>FULL_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Reporting_Status__c</column>
+            <operator>equals</operator>
+            <value>Unqualified,Qualified</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Portfolio__c</column>
+            <operator>notEqual</operator>
+            <value>Defense - ASM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SCHEDULE_QUANTITY</column>
+            <operator>notEqual</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>FiscalQuarter</dateGranularity>
+        <field>REVENUE_DATE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Month</dateGranularity>
+        <field>REVENUE_MONTH</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Summary_Customer__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OPPORTUNITY_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Revenue Phasing Report - Summary View</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>OpportunitySchedule@Opportunity.Opportunity_Team_Roles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>REVENUE_DATE</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

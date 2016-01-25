@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>RedirectAttribute</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>RedirectAttribute</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accenture_Digital_TCR__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TEXT(Attribute_Type__c) == &apos;Accenture Digital&apos;, AttributePercent__c *  Opportunity_Name__r.Total_Current_Revenue__c  ,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Accenture Digital TCR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>All_TCR_excpt_ACN_Dig__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Attribute_Type__c, &quot;Accenture Digital&quot;) , Opportunity_Name__r.Total_Current_Revenue__c -  Accenture_Digital_TCR__c  , Opportunity_Name__r.Total_Current_Revenue__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>All TCR excpt ACN Dig</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>AttributePercent__c</fullName>
+        <externalId>false</externalId>
+        <label>Attribute %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AttributeTxt__c</fullName>
+        <description>Temporary holder of attribute % value</description>
+        <externalId>false</externalId>
+        <label>AttributeTxt</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attribute_Check__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Attribute Check</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_TCR__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(  ISPICKVAL(Attribute_Type__c, &apos;IO Offerings&apos;)  ,ISPICKVAL(Attribute_Type__c, &apos;MC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;SI Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;TC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;AO Offerings&apos;)) , 
+
+ NULL,
+
+ Opportunity_Name__r.Total_Current_Revenue__c *  AttributePercent__c)</formula>
+        <label>Attribute TCR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_TDP__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(  ISPICKVAL(Attribute_Type__c, &apos;IO Offerings&apos;)  ,ISPICKVAL(Attribute_Type__c, &apos;MC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;SI Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;TC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;AO Offerings&apos;)) , 
+
+ NULL,
+
+Opportunity_Name__r.Total_Deal_Potential__c *  AttributePercent__c)</formula>
+        <label>Attribute TDP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_TypeName__c</fullName>
+        <description>This will holds the value of Map String Id for each Attribute type record.</description>
+        <externalId>false</externalId>
+        <label>Attribute Type Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attribute_Type_Digital_or_Not__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Attribute_Type__c , &quot;Accenture Digital&quot;) , &quot;Digital&quot;, &quot;Non Digital&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attribute Type(Digital or Not)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attribute_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Attribute Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accenture Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ADMIN:Digital Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ADMIN:Digital Enterprise</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO Offerings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Horizontals/Initiatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industry Business Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO Offerings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MC Offerings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI Offerings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC Offerings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ventures &amp; Acquisitions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Attribute Value</label>
+        <picklist>
+            <controllingField>Attribute_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Accenture Cloud Platform-Cloud Managed Services</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ADOBE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AFS - Synergy</fullName>
+                <controllingFieldValues>Ventures &amp; Acquisitions</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agilex - Standalone</fullName>
+                <controllingFieldValues>Ventures &amp; Acquisitions</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agilex - Synergy</fullName>
+                <controllingFieldValues>Ventures &amp; Acquisitions</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMAZON WEB SERVICES (AWS)</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analytics</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <controllingFieldValues>Accenture Digital</controllingFieldValues>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Application Management</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Application Modernization</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Capacity Services</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Microsoft</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Oracle</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-SAP</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Testing Services</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AO-Workday</fullName>
+                <controllingFieldValues>AO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APIGEE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APPLE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASM - Synergy</fullName>
+                <controllingFieldValues>Ventures &amp; Acquisitions</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BMC</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CALLIDUS</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CISCO</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CLICKSOFTWARE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud-Agile Infrastructure (IaaS)</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud-Apps and Platform Services (PaaS)</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud-Business Process as a Service (BPaaS)</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud-SaaS Services</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cloud-Strategy</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyber</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-DIGITAL DEFENSE TRANSFORMATION</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-ERP SOLUTION AND SERVICES</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-ENTERPRISE SERVICES FOR DEFENSE-MILITARY HEALTH</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-PUBLIC SAFETY SERVICES-INTELLIGENCE</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-PUBLIC SAFETY SERVICES-POLICING</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-PUBLIC SAFETY SERVICES-REHABILITATION</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>D&amp;PS-PUBLIC SAFETY SERVICES-SMART BORDERS</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DELL</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital &amp; Cust Exp</fullName>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Applications</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Commerce</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Connected Devices</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Connected Products</fullName>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Content Management</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Corporate Functions</fullName>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Customer Experience (Design &amp; Innovation)</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Customer Service</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Marketing</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Sales</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Social Media and Collaboration</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Strategy &amp; Business Architecture</fullName>
+                <controllingFieldValues>ADMIN:Digital Customer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital Supply Chain, Manufacturing, Operations</fullName>
+                <controllingFieldValues>ADMIN:Digital Enterprise</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMC</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F&amp;EP</fullName>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GOOGLE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-CLINICAL SERVICES-CLINICAL OPTIMIZATION</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-CLINICAL SERVICES-CONNECTED HEALTH</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-CLINICAL SERVICES-EMR</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-CLINICAL SERVICES-MEDICAL IMAGING</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-CLINICAL SERVICES-VIRTUAL HEALTH</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-CRM-CUSTOMER SERVICE</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-CRM-SALES &amp; MARKETING</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-HIX HEALTH INSURANCE EXCHANGE</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-MEDICAID MGMT INFO SYSTEM</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-PAYER OPS-CLAIMS</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-PAYER OPS-GROUP SERVICES</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ADMIN-PAYER OPS-NETWORK</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-AESG(H)</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ENTERPRISE IT</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-ERP</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FACILITIES</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-FINANCE</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-HCM</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-OTHER</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-BACK OFFICE-SUPPLY CHAIN</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH ENTERPRISE OPS-PAYMENT &amp; REIMBURSEMENT</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH MGMT-POPULATION HEALTH MANAGEMENT</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HEALTH-HEALTH MGMT-STARS &amp; RISK SCORE ACCURACY</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - HW</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - SW</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HS-INTEGRATED SOCIAL SERVICES</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HS-INTEGRATED SOCIAL SERVICES-PENSIONS TRANSFORMATION</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IBM - HW</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IBM - SW</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INFORMATICA</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interactive</fullName>
+                <controllingFieldValues>Accenture Digital</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Data Center &amp; Cloud Operations</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Infrastructure Capacity Services</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Infrastructure Management Operations</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Managed Security Operations</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Network Operations</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO-Workplace Operations</fullName>
+                <controllingFieldValues>IO Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JDA</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MICROSOFT</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobility</fullName>
+                <controllingFieldValues>Accenture Digital</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NETAPP</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NETSUITE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations</fullName>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - BI/Analytics</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - CX/Cloud Apps</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - EBS/JDE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - EPM</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - Functional Other</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - General</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - OES &amp; Database</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - Peoplesoft</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - Siebel</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ORACLE - Technology</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER - ALLIANCE NOT LISTED</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEGASYSTEMS</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PS DIGITAL CITIZEN SERVICES-DIGITAL CITIZEN SERVICES</fullName>
+                <controllingFieldValues>Industry Business Services</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>REDHAT</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SALESFORCE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAP</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAS</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SERVICENOW</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shared Services</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for Java</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for Mainframe</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for Microsoft</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for Oracle</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for SalesForce</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for SAP</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Svcs for Workday</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Application Testing Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Business Analysis Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Capacity Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Engineering Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Finance &amp; Enterprise Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Industry Solutions (IS)</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Info Mgmt-Attributable to Accenture Digital</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Modernization Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Program, Project &amp; Service Mgmt Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Sales &amp; Customer Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Sourcing &amp; Procurement Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Supply Chain Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Talent &amp; HR Services</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI-Technology Architecture Svcs</fullName>
+                <controllingFieldValues>SI Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategy</fullName>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sustainability-Operational Excellence</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sustainability-Technology &amp; Intelligent Infrastructure</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SYMANTEC</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;O</fullName>
+                <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Data Center Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Infrastructure Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-Application Modernization Strategy</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-Application Strategy</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-Enterprise Architecture Services</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-Information &amp; Analytics Strategy</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-IT Strategy Svcs</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-ITS-IT Transformation Svcs</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Network Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Operations Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Security Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC-Workplace Transformation</fullName>
+                <controllingFieldValues>TC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TERADATA</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TIBCO</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UC &amp; Network</fullName>
+                <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VERIZON</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VMWARE</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WORKDAY</fullName>
+                <controllingFieldValues>Alliance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Modernization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Digital_TCR__c</fullName>
+        <externalId>false</externalId>
+        <label>Digital TCR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Attributes</relationshipLabel>
+        <relationshipName>Attributes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>TCR_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT(Attribute_Type__c) == &apos;Accenture Digital&apos;, &apos;Accenture Digital&apos;, &apos;Others&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TCR Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TCR__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Attribute_Type_Digital_or_Not__c == &apos;Digital&apos;,  Attribute_TCR__c ,   IF( Opportunity_Name__r.Non_Digital_Attribute__c &gt; 1,   Opportunity_Name__r.Non_Digital_TCR__c/ Opportunity_Name__r.Non_Digital_Attribute__c , Opportunity_Name__r.Non_Digital_TCR__c) )</formula>
+        <label>TCR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>WTD_TCR_Decimals__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(  ISPICKVAL(Attribute_Type__c, &apos;IO Offerings&apos;)  ,ISPICKVAL(Attribute_Type__c, &apos;MC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;SI Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;TC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;AO Offerings&apos;)) , 
+
+ NULL,
+
+(Opportunity_Name__r.Total_WTD_Revenue__c *  AttributePercent__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WTD TCR Decimals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>WTD_TCR__c</fullName>
+        <description>Weighted Total Current Revenue</description>
+        <externalId>false</externalId>
+        <formula>IF( OR(  ISPICKVAL(Attribute_Type__c, &apos;IO Offerings&apos;)  ,ISPICKVAL(Attribute_Type__c, &apos;MC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;SI Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;TC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;AO Offerings&apos;)) , 
+
+ NULL,
+
+Opportunity_Name__r.Total_WTD_Revenue__c *  AttributePercent__c)</formula>
+        <inlineHelpText>Weighted Total Current Revenue</inlineHelpText>
+        <label>Attribute WTD TCR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>WTD_TDP__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( OR(  ISPICKVAL(Attribute_Type__c, &apos;IO Offerings&apos;)  ,ISPICKVAL(Attribute_Type__c, &apos;MC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;SI Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;TC Offerings&apos;),ISPICKVAL(Attribute_Type__c, &apos;AO Offerings&apos;)) , 
+
+ NULL,
+
+( Opportunity_Name__r.Total_Deal_Potential__c *  Opportunity_Name__r.Probability ) *  AttributePercent__c)</formula>
+        <inlineHelpText>(TDP * Probability %) * Attribute %</inlineHelpText>
+        <label>Attribute WTD TDP</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Attribute</label>
+    <nameField>
+        <displayFormat>Att-{0000000000}</displayFormat>
+        <label>Attribute Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Attributes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Attributes</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Attributes</masterLabel>
+        <openType>sidebar</openType>
+        <page>AddAttribute</page>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+    </webLinks>
+</CustomObject>

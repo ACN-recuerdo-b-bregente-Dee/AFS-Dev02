@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approved B&amp;P</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approved B&amp;P</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approved B&amp;P --></label>
+        <name>Approved_B_P__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver Level --></label>
+        <name>Approver_Level__c</name>
+        <picklistValues>
+            <masterLabel>AFS</masterLabel>
+            <translation><!-- AFS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio</masterLabel>
+            <translation><!-- Portfolio --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Year --></label>
+        <name>Fiscal_Year__c</name>
+        <picklistValues>
+            <masterLabel>FY14</masterLabel>
+            <translation><!-- FY14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY15</masterLabel>
+            <translation><!-- FY15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY16</masterLabel>
+            <translation><!-- FY16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY17</masterLabel>
+            <translation><!-- FY17 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+        <relationshipLabel><!-- Approved B&amp;P --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quarter --></label>
+        <name>Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Q1</masterLabel>
+            <translation><!-- Q1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q2</masterLabel>
+            <translation><!-- Q2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q3</masterLabel>
+            <translation><!-- Q3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Q4</masterLabel>
+            <translation><!-- Q4 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Approved B&amp;P Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

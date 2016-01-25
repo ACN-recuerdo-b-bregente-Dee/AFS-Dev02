@@ -1,0 +1,11 @@
+<apex:page controller="DigitalReportAllActiveController">
+
+    <apex:pageBlock title="Digital">
+        <apex:pageblockSection >
+            <apex:pageblockTable value="{!digitalAtt}" var="dig">
+                <apex:column headerValue="Opportunity Name" value="{!dig.Opportunity_Name__c}"/>
+                <apex:column headerValue="Attribute Type" value="{!dig.Attribute_Type__c}"/>
+            </apex:pageblockTable>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+</apex:page>

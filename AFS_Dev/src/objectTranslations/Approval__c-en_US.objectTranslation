@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Approval</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Approvals</value>
+    </caseValues>
+    <fields>
+        <help><!-- This field will be updated with the date the opportunity record was approved by the Sales Ops. --></help>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Method --></label>
+        <name>Approval_Method__c</name>
+        <picklistValues>
+            <masterLabel>ATS</masterLabel>
+            <translation><!-- ATS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board of Managers</masterLabel>
+            <translation><!-- Board of Managers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Committee</masterLabel>
+            <translation><!-- Capital Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NBM</masterLabel>
+            <translation><!-- NBM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offline Approval</masterLabel>
+            <translation><!-- Offline Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Notes --></label>
+        <name>Approval_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Once the opportunity record has been approved, the Sales Ops will update this field with the appropriate approved stage. --></help>
+        <label><!-- Approved Stage --></label>
+        <name>Approved_Stage__c</name>
+        <picklistValues>
+            <masterLabel>1A</masterLabel>
+            <translation><!-- 1A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1B</masterLabel>
+            <translation><!-- 1B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2A</masterLabel>
+            <translation><!-- 2A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2B</masterLabel>
+            <translation><!-- 2B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approver Role --></label>
+        <name>Approver_Role__c</name>
+        <picklistValues>
+            <masterLabel>AFS BPO Lead</masterLabel>
+            <translation><!-- AFS BPO Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS CEO</masterLabel>
+            <translation><!-- AFS CEO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS CFO</masterLabel>
+            <translation><!-- AFS CFO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS COO</masterLabel>
+            <translation><!-- AFS COO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS MC Lead</masterLabel>
+            <translation><!-- AFS MC Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS Sales Lead</masterLabel>
+            <translation><!-- AFS Sales Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFS TGP Lead</masterLabel>
+            <translation><!-- AFS TGP Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board of Managers</masterLabel>
+            <translation><!-- Board of Managers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAL</masterLabel>
+            <translation><!-- CAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capital Committee</masterLabel>
+            <translation><!-- Capital Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCAL</masterLabel>
+            <translation><!-- DCAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portfolio Lead</masterLabel>
+            <translation><!-- Portfolio Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Architect</masterLabel>
+            <translation><!-- Solution Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TGP Capability Group Lead</masterLabel>
+            <translation><!-- TGP Capability Group Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TGP Capability Lead</masterLabel>
+            <translation><!-- TGP Capability Lead --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- Opportunity Approvals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+        <relationshipLabel><!-- Opportunity Approvals --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Approval Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

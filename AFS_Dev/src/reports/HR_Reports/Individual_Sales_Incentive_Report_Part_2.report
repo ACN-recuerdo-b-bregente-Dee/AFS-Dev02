@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Quote.Total_Current_Revenue__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Quote.Services_Revenue__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Quote.Overall_Total_HW_SW__c</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_ID__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Portfolio__c</column>
+            <operator>notEqual</operator>
+            <value>Defense - ASM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>QUOTE_NAME</column>
+            <operator>equals</operator>
+            <value>Snapshot for Approved Stage 2A,Snapshot for Approved Stage Won</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Individual Sales Incentive Report Part 2</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>QuoteProduct</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <sortColumn>OPPORTUNITY_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

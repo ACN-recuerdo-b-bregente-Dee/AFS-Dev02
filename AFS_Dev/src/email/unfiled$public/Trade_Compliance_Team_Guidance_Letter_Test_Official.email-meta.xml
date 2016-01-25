@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Global Trade Compliance Team Guidance Accenture Federal Services (AFS)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>sample</letterhead>
+    <name>Trade Compliance Team Guidance Letter Official</name>
+    <style>freeForm</style>
+    <subject>AFS Trade Compliance Guidance - {!Opportunity.Name}</subject>
+    <textOnly>Global Trade Compliance Team Guidance
+
+Accenture Federal Services (AFS)
+
+You have been identified as the Opportunity Director in Salesforce for the opportunity noted below. This note provides instructions about actions you are required to take to keep your team compliant with Accenture Trade Controls, and where to go for assistance if needed.
+
+Opportunity ID: {!Opportunity.Opportunity_Auto_Id__c}
+Opportunity Name: {!Opportunity.Name}
+Client Name: {!Opportunity.Account}
+Opportunity Stage: {!Opportunity.Status_Stage_Requested__c}
+Compliance Survey Details: Click here
+
+What Do I Need to Do?
+
+Select the best option from below that fits your opportunity pursuit at this point in time.  Select only one (1):
+
+1. Implement the Engagement-Specific Plan found in the links below  – Review engagement plan guidance with existing team members. New team members rolling on to the engagement should receive this information prior to performing any work for the engagement
+
+2. Implement the basic AFS Technology Control Plan (TCP) – Review trade compliance guidance addressed in the TCP with your team prior to opportunity escalation. Note: Upon hire, all AFS employees are required to review the TCP and take annual TCP training. Employees are required to review and sign off on the TCP.
+
+3. Obtain AFS Global Team Guidance – If your opportunity doesn’t fit options 1 and 2, contact Barbara Overall: barbara.j.overall@accenturefederal.com.
+
+Engagement-Specific Plans:
+1. Air Force Modeling and Simulation Training Toolkit (AFMSTT) Engagement Trade Compliance Plan
+2. Guidelines for Lean Six Sigma Engagements
+3. Integrated Logistics Management System (ILMS) Compliance Plan
+4. Joint Cross Domain eXchange (JCDX) Foreign Military Sales Program Trade Compliance Plan
+5. Joint Cross Domain eXchange/Republic of Korea (JCDX/ROK) Site Reps Trade Compliance Plan
+6. Mobile User Objective System Satellite (MUOS) Program Trade Compliance Plan
+7. Net Centric Commanders’ Decision Services (NetCDS) Engagement Trade Compliance Plan
+8. Trade Compliance Plan for Services Involving Military Installations Abroad
+
+
+If you need questions please contact Barbara Overall:  &lt;barbara.j.overall@accenturefederal.com&gt;</textOnly>
+    <type>html</type>
+</EmailTemplate>
