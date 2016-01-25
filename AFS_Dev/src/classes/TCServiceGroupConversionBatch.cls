@@ -124,6 +124,7 @@ global class TCServiceGroupConversionBatch implements Database.Batchable<sObject
              toUpdateAndInsert.add(attribute);
         }                                
              
+             
         Database.upsert(toUpdateAndInsert);                            
     }
      
