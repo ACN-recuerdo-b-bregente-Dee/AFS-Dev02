@@ -1,9 +1,0 @@
-<apex:page standardController="Opportunity" tabStyle="Opportunity">
-    <apex:form >
-        <apex:outputPanel >
-        <apex:pageMessages id="msg"/>
-        
-        <h>You dont have access permission on this button</H>
-        </apex:outputPanel>
-    </apex:form>
-</apex:page>

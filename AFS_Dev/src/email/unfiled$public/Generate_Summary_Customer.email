@@ -1,6 +1,0 @@
-Project Accounting,
-
-{!Account.Name}  from the {!Account.Portfolio__c} portfolio requires a new Summary Customer. 
-
-Thank you,
-Sales Team

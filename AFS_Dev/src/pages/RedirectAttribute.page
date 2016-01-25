@@ -1,6 +1,0 @@
-<!--
-    Author       : Marvin Bonifacio
-    Date Created : 
-    Description  : Page to redirect User to AddAttribute page on any action e.g. Add, Edit or Delete Attribute.
--->
-<apex:page standardController="Attribute__c" extensions="RedirectAttributeExt" action="{!redirect}"/>

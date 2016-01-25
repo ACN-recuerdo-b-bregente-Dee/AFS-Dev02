@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <available>true</available>
-    <encodingKey>ISO-8859-1</encodingKey>
-    <name>OSP Opportunity Approval Email</name>
-    <style>none</style>
-    <subject>{!Opportunity.Account};  {!Opportunity.Name}; {!Opportunity.Opportunity_ID__c} ; {!Opportunity.Status_Stage_Requested__c}</subject>
-    <type>text</type>
-</EmailTemplate>

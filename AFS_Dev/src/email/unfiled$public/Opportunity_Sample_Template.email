@@ -1,5 +1,0 @@
-Hi {!Username},
-
-Opportunity {!Opportunity.Name} is for your approval.
-
- {!Product2.ProductCode}

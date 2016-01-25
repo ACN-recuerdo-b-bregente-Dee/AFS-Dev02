@@ -1,9 +1,0 @@
-{!Account_Team_Role__c.Team_Member__c} is requesting to access {!Account_Team_Role__c.Account__c} as {!Account_Team_Role__c.Team_Role__c}.
-
-To approve or reject this item, click this link https://smartafs--dev.cs10.my.salesforce.com/{!Account_Team_Role__c.Id} or reply to this email email with one of these words in the first line of the email message: APPROVE, APPROVED, YES, REJECT, REJECTED, NO.
-
-If replying via email, you can also add comments on the second line. 
-
-Thank you, 
-
-AFS Team

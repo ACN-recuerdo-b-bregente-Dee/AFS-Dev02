@@ -1,9 +1,0 @@
-Hi,
-
-Portfolio:                                    {!Opportunity.Portfolio__c}
-Client:                                        {!Opportunity.Account}      
-Opp Name:                               {!Opportunity.Name}
-Opp Id:                                       {!Opportunity.Opportunity_ID__c}
-Status/Stage Requested:       {!Opportunity.Status_Stage_Requested__c}
-
-Thank you.

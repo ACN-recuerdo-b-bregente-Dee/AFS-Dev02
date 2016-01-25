@@ -1,9 +1,0 @@
-<apex:page controller="AccentureTCRReportCotroller" showHeader="false" showChat="false" standardStylesheets="true" sidebar="false">
-        <apex:chart height="270" width="370" data="{!ChartData}" resizable="false" theme="Salesforce" animate="true">
-            <apex:pieSeries dataField="data" labelField="name" highlight="false"  tips="true">
-                <apex:chartTips height="20" width="250" />
-                <apex:chartLabel display="none" />
-            </apex:pieSeries>
-            <apex:legend position="bottom" font="bold 11px Helvetica"/>
-        </apex:chart>
-</apex:page>
