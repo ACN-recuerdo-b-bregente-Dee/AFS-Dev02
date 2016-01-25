@@ -104,8 +104,27 @@ global class TCServiceGroupConversionBatch implements Database.Batchable<sObject
     
     private void insertAttributeSplit(Set<Id> oppIds, Decimal strategyPercentage, Decimal icPercentage){
         
-        List<Attribute__c> attributes = [SELECT AttributePercent__c, Attribute_Type__c, Attribute_Value__c, Opportunity_Name__c FROM Attribute__c WHERE
-                                        Opportunity_Name__c IN :oppIds];
+        List<Attribute__c> toUpdateAndInsert = new List<Attribute__c>();
+        for(Attribute__c attribute : [SELECT AttributePercent__c, Attribute_Type__c, Attribute_Value__c, Opportunity_Name__c FROM Attribute__c WHERE
+                                        Attribute_Type__c = 'TC Offerings' AND Opportunity_Name__c IN :oppIds]){
+            toUpdateAndInsert.add(new Attribute__c(
+                Attribute_Type__c = 'Strategy Offerings',
+                Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','Strategy-'),
+                AttributePercent__c = attribute.AttributePercent__c * strategyPercentage,
+                AttributeTxt__c = attribute.AttributePercent__c * strategyPercentage + '%',
+                Attribute_TypeName__c = 'Strategy Offerings',
+                Opportunity_Name__c = attribute.Opportunity_Name__c));
+                
+             attribute.Attribute_Type__c = 'IC Offerings';
+             attribute.Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','IC-');
+             attribute.AttributePercent__c = attribute.AttributePercent__c * icPercentage;
+             attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
+             attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
+             
+             toUpdateAndInsert.add(attribute);
+        }                                
+             
+        Database.upsert(toUpdateAndInsert);                            
     }
      
     global void finish(Database.BatchableContext BC){
