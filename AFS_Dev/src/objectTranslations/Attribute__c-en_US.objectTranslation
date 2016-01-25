@@ -420,6 +420,54 @@
             <translation><!-- IBM - SW --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>IC-Data Center Transformation</masterLabel>
+            <translation><!-- IC-Data Center Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-Application Modernization Strategy</masterLabel>
+            <translation><!-- IC-ITS-Application Modernization Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-Application Strategy</masterLabel>
+            <translation><!-- IC-ITS-Application Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-Enterprise Architecture Services</masterLabel>
+            <translation><!-- IC-ITS-Enterprise Architecture Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-IT Strategy Svcs</masterLabel>
+            <translation><!-- IC-ITS-IT Strategy Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-IT Transformation Svcs</masterLabel>
+            <translation><!-- IC-ITS-IT Transformation Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-ITS-Information &amp; Analytics Strategy</masterLabel>
+            <translation><!-- IC-ITS-Information &amp; Analytics Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-Infrastructure Transformation</masterLabel>
+            <translation><!-- IC-Infrastructure Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-Network Transformation</masterLabel>
+            <translation><!-- IC-Network Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-Operations Transformation</masterLabel>
+            <translation><!-- IC-Operations Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-Security Transformation</masterLabel>
+            <translation><!-- IC-Security Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC-Workplace Transformation</masterLabel>
+            <translation><!-- IC-Workplace Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>INFORMATICA</masterLabel>
             <translation><!-- INFORMATICA --></translation>
         </picklistValues>
@@ -642,6 +690,54 @@
         <picklistValues>
             <masterLabel>Strategy</masterLabel>
             <translation><!-- Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Data Center Transformation</masterLabel>
+            <translation><!-- Strategy-Data Center Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-Application Modernization Strategy</masterLabel>
+            <translation><!-- Strategy-ITS-Application Modernization Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-Application Strategy</masterLabel>
+            <translation><!-- Strategy-ITS-Application Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-Enterprise Architecture Services</masterLabel>
+            <translation><!-- Strategy-ITS-Enterprise Architecture Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-IT Strategy Svcs</masterLabel>
+            <translation><!-- Strategy-ITS-IT Strategy Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-IT Transformation Svcs</masterLabel>
+            <translation><!-- Strategy-ITS-IT Transformation Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-ITS-Information &amp; Analytics Strategy</masterLabel>
+            <translation><!-- Strategy-ITS-Information &amp; Analytics Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Infrastructure Transformation</masterLabel>
+            <translation><!-- Strategy-Infrastructure Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Network Transformation</masterLabel>
+            <translation><!-- Strategy-Network Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Operations Transformation</masterLabel>
+            <translation><!-- Strategy-Operations Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Security Transformation</masterLabel>
+            <translation><!-- Strategy-Security Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy-Workplace Transformation</masterLabel>
+            <translation><!-- Strategy-Workplace Transformation --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Sustainability-Operational Excellence</masterLabel>
