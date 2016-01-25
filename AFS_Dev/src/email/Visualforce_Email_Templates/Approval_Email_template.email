@@ -1,0 +1,317 @@
+<messaging:emailTemplate recipientType="User"
+    relatedToType="Opportunity"
+    subject=" APPROVAL: {!relatedTo.Account.name} / {!relatedTo.name} / {!relatedTo.Opportunity_ID__c} / {!relatedTo.Status_Stage_Requested__c}  "
+    replyTo="support@AFS.com" >
+    
+    <messaging:htmlEmailBody >        
+        <html>
+            <body>
+            <STYLE type="text/css">
+
+                table {
+                  border: 1px solid #42444e;
+                  border-collapse: separate;
+                  border-spacing: 0;
+                  width: 400px;
+                  margin: 0px
+                }
+                th,
+                td {
+                  padding: 2px;
+                  text-align: left;
+                }
+                th {
+                  font: 11px Tahoma,Verdana,Segoe,sans-serif;
+                  color: #F8F8FF;
+                  font-weight: bold;
+                  text-align: center;
+                  background: #42444e;
+                  border: 1px solid #42444e;
+                }
+                tr {
+                  font: 11px Tahoma,Verdana,Segoe,sans-serif;
+                }
+                tr:first-child th:first-child {
+                  border-top-left-radius: 2px;
+                }
+                tr:first-child th:last-child {
+                  border-top-right-radius: 2px;
+                }
+                td {
+                  border-right: 1px solid #c6c9cc;
+                  border-bottom: 1px solid #c6c9cc;
+                }
+                td:first-child {
+                  border-left: 1px solid #c6c9cc;
+                }
+                tr:nth-child(even) td {
+                  background: #eaeaed;
+                }
+                tr:last-child td:first-child {
+                  border-bottom-left-radius: 2px;
+                }
+                tr:last-child td:last-child {
+                  border-bottom-right-radius: 2px;
+                }
+                p {
+                font: 14px Tahoma,Verdana,Segoe,sans-serif;
+                }
+                
+             </STYLE>
+            
+            <p>The following opportunity requires immediate approval decision for <b> {!relatedTo.name}</b> for <b> {!relatedTo.Account.name}.</b></p>
+            <p>Below is a snapshot of the opportunities key areas:</p>
+     
+            <!-- Opportunity Information-->
+            <table>
+                <tr>
+                    <th colspan= "2"> Opportunity Information </th>
+                </tr>
+                <tr>
+                    <td> Account Name </td>
+                    <td>{!relatedTo.Account.name}</td>          
+                </tr>
+                <tr> 
+                    <td> Client Classification </td>
+                    <td> {!relatedTo.Client_Classification__c}</td>          
+                </tr>
+                <tr>  
+                    <td> Opportunity Name </td>
+                    <td>{!relatedTo.name}</td>          
+                </tr>
+           
+                <tr>  
+                    <td> Opp ID </td>
+                    <td>{!relatedTo.Opportunity_ID__c}</td>         
+                </tr>               
+                <tr>  
+                    <td> Hierarchy Level </td>
+                    <td>{!relatedTo.Hierarchy_Level__c}</td>        
+                </tr>
+                <tr>  
+                    <td> Contract Vehicle </td>
+                    <td>{!relatedTo.Contract_Vehicle__c}</td>        
+                </tr> 
+                              
+                <tr> 
+                    <td> Win Probability </td>
+                    <td> {!relatedTo.Probability}%</td>          
+                </tr>
+                <tr>
+                    <td> Status/Stage Requested </td>
+                    <td>{!relatedTo.Status_Stage_Requested__c}</td>          
+                </tr>
+                <tr>  
+                    <td> Current Stage </td>
+                    <td>{!relatedTo.StageName}</td>          
+                </tr>
+                <tr>  
+                    <td> TCR ($K)</td>   
+                    <td>
+                        <apex:outputText value="${0,number,###,###,###,##0}">  
+                            <apex:param value="{!relatedTo.Total_Current_Revenue__c}"/>  
+                        </apex:outputText> 
+                    </td>
+                </tr>
+                <tr> 
+                    <td> TDP ($K)</td>
+                    <td>
+                        <apex:outputText value="${0,number,###,###,###,##0}">  
+                            <apex:param value="{!relatedTo.Total_Deal_Potential__c}"/>  
+                        </apex:outputText> 
+                    </td>                          
+                </tr>
+                <tr>
+                    <td> TCR OI% </td>  
+                    <td>
+                        <apex:outputText value="{0,number,#,##0.0}%">  
+                            <apex:param value="{!relatedTo.TCR_OI__c}"/>  
+                        </apex:outputText> 
+                    </td>         
+                            
+                </tr>
+                <tr>  
+                    <td> TDP OI% </td>
+                    <td>{!relatedTo.TDP__c}%</td>          
+                </tr>
+                <tr>  
+                    <td> Total Blended Target OI% </td>
+                    <td>
+                        <apex:outputText value="{0,number,#,##0.0}%">  
+                            <apex:param value="{!relatedTo.Blended_Target_OI__c}"/>  
+                        </apex:outputText> 
+                    </td>                           
+                </tr>
+                <tr>  
+                    <td> Peak Capital balance </td>
+                    <td>
+                        <apex:outputText value="${0,number,###,###,###,##0}">  
+                            <apex:param value="{!relatedTo.Peak_Capital_Balance__c}"/>  
+                        </apex:outputText> 
+                    </td>                           
+                </tr>  
+                    <td> Subcontractor Involvement % </td>
+                    <td>{!relatedTo.Subcontractor_Involvement__c}</td>          
+                </tr>                
+                            
+           </table>
+           
+            <!-- Key Dates-->                         
+            <table>
+                <tr>
+                    <th colspan= "2"> Key Dates </th>
+                </tr>
+                <tr> 
+                    <td> Draft RFP Release Date</td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Draft_RFP_Release_Date__c}"  /> 
+                        </apex:outputText>                  
+                    </td>
+                </tr>
+                <tr>
+                    <td> RFP Release Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.RFP_Release_Date__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                          
+                </tr>
+                <tr>  
+                    <td> Proposal Submission Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Proposal_Submission_Date__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                   
+         
+                </tr>
+                <tr>  
+                    <td> Expected Contract Sign Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.CloseDate}"  /> 
+                        </apex:outputText>                  
+                    </td>                       
+       
+                </tr>
+                <tr> 
+                    <td> Consulting Start Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Consulting_Start__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                                  
+                </tr>
+                <tr>
+                    <td> Consulting End Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Consulting_End__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                       
+      
+                </tr>
+                <tr>  
+                    <td> Outsourcing Start Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Outsourcing_Start__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                       
+       
+                </tr>
+                <tr>  
+                    <td> Outsourcing End Date </td>
+                    <td><apex:outputText value="{0, date, MM/dd/yyyy}">
+                            <apex:param value="{!relatedTo.Outsourcing_End__c}"  /> 
+                        </apex:outputText>                  
+                    </td>                       
+     
+                </tr>
+                
+            </table>
+            <table>
+                <tr>
+                    <th colspan= "2"> Risks </th>
+               </tr>
+               <tr> 
+                   <td> QA Risk Tier Stage 2B </td>
+                   <td> {!relatedTo.QA_Risk_Tier_Stage_2B__c}</td>          
+               </tr>
+               
+               <tr>
+                   <td> QA Assesment Stage 2B </td>
+                   <td>{!relatedTo.QA_Assessment_Stage_2B__c}</td>          
+               </tr>
+               
+               <tr>  
+                   <td> QA Risk Tier Stage 3 </td>
+                   <td>{!relatedTo.QA_Risk_Tier_Stage_3__c}</td>          
+               </tr>
+               
+               <tr>  
+                   <td> QA Assesment Stage 3 </td>
+                   <td>{!relatedTo.QA_Assessment_Stage_3__c}</td>         
+               </tr>
+               
+               <tr>  
+                   <td> Complexity Category </td>
+                   <td>{!relatedTo.Complexity_Category__c}</td>        
+               </tr>
+                   
+           </table>
+                    <!-- Product Line Items -->
+            <table>
+                <tr>
+                    <th colspan= "5"> Detailed Financials </th>
+                </tr>
+                <tr > 
+                    <th>Product Name</th><th>OI</th><th>Target OI</th><th>Revenue ($K)</th><th>Total Costs ($K)</th>
+                </tr>
+                <apex:repeat var="opp" value="{!relatedTo.OpportunityLineItems}">
+                <tr>
+
+                    <td>{!opp.PriceBookEntry.name}</td>
+                    <td>{!opp.OI__c}%</td>
+                    <td>{!opp.Target_OI__c}%</td>
+                    <td>
+                                       <apex:outputText value="${0,number,###,###,###,##0}">  
+                                       <apex:param value="{!opp.Revenue__c}"/>  
+                                       </apex:outputText> 
+
+                    </td>
+                    <td>
+                                       <apex:outputText value="${0,number,###,###,###,##0}">  
+                                       <apex:param value="{!opp.Total_Costs__c}"/>  
+                                       </apex:outputText> 
+                    </td>
+                </tr>
+                </apex:repeat>                 
+           </table>
+           
+                               <!-- Opportunity Team Roles -->
+            <table>
+                <tr>
+                    <th colspan= "3"> Opportunity Team Roles </th>
+                </tr>
+                <tr > 
+                    <th>Name</th><th>Role</th><th>Sales Credit%</th>
+                </tr>
+                <apex:repeat var="OTRoles" value="{!relatedTo.Opportunity_Teams_Sales_Credit__r}">
+                <tr>
+
+                    <td>{!OTRoles.Name__r.Name}</td>
+                    <td>{!OTRoles.Role__c}</td>
+                    <td>{!OTRoles.Sales_Credit__c}%</td>
+
+                </tr>
+                </apex:repeat>                 
+           </table>    
+           
+           <p />
+    <p>To view further details on this opportunity open the item below:</p>
+            <a href="https://afscm--dev.cs21.my.salesforce.com/{!relatedTo.id}">View Opportunity</a>
+            <br/><a href="https://afscm--dev.cs21.my.salesforce.com/{!relatedTo.id}/e">Edit Opportunity</a>
+    <br/>
+    <p>To comply with certain Department of Defense (DoD) regulations and policies, e-mail communications between Accenture Federal Services (AFS) and Accenture (and its affiliates) are subject to review by designated AFS and DoD personnel.</p>
+
+           
+            </body>
+        </html>
+    </messaging:htmlEmailBody> 
+               
+</messaging:emailTemplate>

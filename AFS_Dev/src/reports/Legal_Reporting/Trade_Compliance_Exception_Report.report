@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT_NAME</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <field>Opportunity.The_Opportunity_involves_activities_now__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Subject_countries_client_operates__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Client_Industry_Area_of_Service__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Export_Transfer_of_Products_Software__c</field>
+    </columns>
+    <columns>
+        <field>CREATED</field>
+    </columns>
+    <filter>
+        <booleanFilter>((((1 OR 2) OR 3) OR 4) AND 5)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Export_Transfer_of_Products_Software__c</column>
+            <operator>equals</operator>
+            <value>Yes,&quot;I am not sure, please contact me&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.The_Opportunity_involves_activities_now__c</column>
+            <operator>equals</operator>
+            <value>Yes,&quot;I am not sure, please contact me&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Subject_countries_client_operates__c</column>
+            <operator>equals</operator>
+            <value>&quot;I am not sure, please contact me&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Client_Industry_Area_of_Service__c</column>
+            <operator>equals</operator>
+            <value>,&quot;I am not sure, please contact me&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Portfolio__c</column>
+            <operator>notEqual</operator>
+            <value>Defense - ASM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Trade Compliance – Exception Report</name>
+    <params>
+        <name>terr</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.Export_Transfer_of_Products_Software__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

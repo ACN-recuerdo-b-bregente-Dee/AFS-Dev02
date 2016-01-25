@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Adoption Trend</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Adoption Trends</value>
+    </caseValues>
+    <fields>
+        <label><!-- Editing User --></label>
+        <name>Editing_User__c</name>
+        <relationshipLabel><!-- Adoption Trends --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Count --></label>
+        <name>Record_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Snapshot Date --></label>
+        <name>Snapshot_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

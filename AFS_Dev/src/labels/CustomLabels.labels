@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>LEGAL_QUESTION_1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LEGAL_QUESTION_1</shortDescription>
+        <value>The Opportunity involves activities (now or in the foreseeable future) or the client operates in, the following countries:</value>
+    </labels>
+</CustomLabels>

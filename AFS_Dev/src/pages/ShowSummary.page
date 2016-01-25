@@ -1,0 +1,44 @@
+<apex:page standardController="opportunity" sidebar="true" showHeader="true">
+    <apex:sectionHeader title="Opportunity" subtitle="{!Opportunity.Name}"/>
+    <apex:form >
+    <apex:pageMessages ></apex:pageMessages>  
+    <apex:pageBlock title="Opportunity Summary Layout" mode="maindetail">
+    <apex:pageBlockSection title="Opportunity Summary Layout" columns="2">    
+        <apex:inputField value="{!opportunity.AccountID}" label="Account"/>
+        <apex:inputField value="{!opportunity.Client_Classification__c}" label="Client Classification"/>      
+        <apex:inputField value="{!opportunity.Name}" label="Opportunity Name"/>
+        <apex:inputField value="{!opportunity.StageName}" label="Stage/Status Requested"/>
+        <apex:inputField value="{!opportunity.Type}" label="Opportunity Type"/>
+        <apex:inputField value="{!opportunity.Reporting_Status__c}" label="Reporting Status"/>      
+        <apex:inputField value="{!opportunity.Opportunity_Auto_Id__c}" label="Opportunity ID"/>
+        <apex:inputField value="{!opportunity.Approved_Status_Stage__c}" label="Stage Approved"/> 
+        <apex:inputField value="{!opportunity.QA_Risk_Tier_Stage_2B__c}" label="QA Risk Tier 2B"/>
+        <apex:inputField value="{!opportunity.QA_Risk_Tier_Stage_3__c}" label="QA Risk Tier 3"/>            
+        <apex:inputField value="{!opportunity.QA_Assessment_Stage_2B__c}" label="QA Risk Assessment 2B"/> 
+        <apex:inputField value="{!opportunity.QA_Assessment_Stage_3__c}" label="QA Risk Assessment 3"/>
+        <apex:inputField value="{!opportunity.Total_Deal_Potential__c}"/> 
+        <apex:inputField value="{!opportunity.Peak_Capital_Balance__c}"/> 
+        <apex:inputField value="{!opportunity.Subcontractor_Involvement__c}"/> 
+    </apex:pageBlockSection>
+    
+    <!-- <apex:pageBlockSection title="Complexity Category" columns="1"> 
+         <apex:pageBlockSectionItem helpText="Press and hold CTRL to select multiple Line of business">
+             <c:MultiselectPicklist leftLabel="Complexity Description" 
+                    leftOptionsAtt="{!leftselected1}"
+                    rightLabel="Selected Complexity"
+                    rightOptionsAtt="{!rightselected1}"
+                    size="14"
+                    showUpDownButtons="false"
+                width="80%"/>
+         </apex:pageBlockSectionItem>
+
+     
+     </apex:pageBlockSection> -->
+     
+     <apex:pageBlockButtons >
+         <apex:commandButton value="Previous Page" action="{!cancel}"/>
+         <apex:commandButton value="Save" action="{!save}"/>         
+     </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+ </apex:page>

@@ -1,0 +1,85 @@
+APPROVAL TO SUBMIT
+
+Please reply to this note with your approval decision on {!Opportunity.Name} for {!Account.Name}. 
+
+Proposal - Final Approval to Submit Request
+
+All approval requests should be accompanied by a short summary that includes:
+•	Brief overview of the deal
+•	Confirmation that the deal is affordable within the account plan for the fiscal year
+•	Explanation for OI deviation (if applicable)
+•	Brief recap of last review with leadership
+•	Identification of unique characteristics of the deal, and/or risks and how they will be mitigated
+•	Any additional pertinent information to support leadership approval decision
+
+For IDIQs/BPAs/MSAs, please provide responses to the following:
+•	What sales have we committed to in the account plan for the first year of the contract? 
+•	Who is on point to deliver this sales number?
+
+Final Approval to Submit Form:
+
+Client: {!Opportunity.Account}
+
+Opportunity: {!Opportunity.Name}
+
+Contract Number: {!Opportunity.Solicitation_Contract_Number__c}
+
+Opp ID: {!Opportunity.Opportunity_ID__c}
+
+Consulting Start/End Dates: 
+{!Opportunity.Consulting_Start__c} - {!Opportunity.Consulting_End__c}
+
+Outsourcing Start/End Dates:
+{!Opportunity.Outsourcing_Start__c} - {!Opportunity.Outsourcing_End__c}
+
+Bid Type: {!Opportunity.Type}
+
+Total Current Revenue (amount awarded at signing): {!Opportunity.Total_Current_Revenue__c}
+
+Total Deal Potential (Includes Options): {!Opportunity.Total_Deal_Potential__c}
+
+TCR OI%: {!Opportunity.TCR_OI__c}
+
+TDP OI%: {!Opportunity.TDP__c}
+
+Account Plan OI: {!Opportunity.Account_Plan_OI__c}
+
+Can Account OI plan be met with this deal and other opportunities in the account pipeline? {!Opportunity.Account_OI_Plan_Be_Met__c}
+
+Peak Capital Balance: {!Opportunity.Peak_Capital_Balance__c}
+
+Bank Guarantee/Letter of Credit:{!Opportunity.Bank_Guarantee_Letter_of_Credit__c} (if Yes, attach Corporate Bank Guarantee Request Form)
+
+% of Revenue Subcontracted: {!Opportunity.Subcontractor_Involvement__c}
+
+Estimator Confirm Compliance with Policy AFS-0011 (Use of Accenture Delivery Methods): {!Opportunity.Estimator_Confirm_Compliance__c}
+
+Estimate Does Not Confirm Compliance Reason (Required if the estimator does not confirm compliance with Policy AFS-0011): {!Opportunity.Estimate_Not_Confirm_Compliance__c}
+
+Does the estimate in proposal include scope complexity: {!Opportunity.Proposal_Include_Scope_Complexity__c}
+
+If yes, is the scope complexity within guidelines: {!Opportunity.Scope_Complexity_Within_Guidelines__c}
+
+Is the scope complexity substantiated in the Basis of Estimate (BOE): {!Opportunity.Scope_Substantiated_in_BOE__c}
+
+Does pricing trigger a Most Favored Customer (MFC) contract clause: {!Opportunity.Pricing_Trigger_MFC__c}
+
+Is any travel assumed to be not billable: {!Opportunity.Travel_Assumed_to_be_Not_Billable__c}
+
+Explain if Travel Assumed is not billable is answered as Yes: {!Opportunity.If_Travel_Is_Billable_Explain__c}
+
+Does any part of the scope require work to be performed outside the continental US (OCONUS) including US territories, an OCONUS local hire or OCONUS travel by AFS or subcontractors? if yes, Foreign Travel Coordinator approval required: federal.ap55.request@accenturefederal.com) 
+
+PRG Review Date? {!Opportunity.PRG_Review_Date__c}
+
+Date of Opportunity QA Review:  {!Opportunity.Date_of_Opportunity_QA_Review_2B__c}
+ 
+Has the QA been documented and finalized in the QA tool? {!Opportunity.QA_been_documented_and_finalized_in_QA__c}
+
+QA Not Documented and Finalized in QA Tool (NA if QA has been finalized in QA tool): {!Opportunity.QA_Not_Documented_and_Finalized_in_QA_To__c}
+
+If ADM Methods/Estimators will be tailored or will not be used, complete the ADM Tailor/Waiver Request form and submit with the Opportunity QA Review documents. (https://sites.accenture.com/publishing/USFederalOrganization/usfedpractices/Policies/Policy%20AFS-0011.pdf)
+
+Date of CM Review? {!Opportunity.Date_of_Contract_Management_Review_Date__c}
+
+ATS Notes: {!Opportunity.ATS_Notes__c}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When the button is selected the system will send an email notifcation to Project Accounting that a New Financial Customer is required.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Financial Summary Customer Template</name>
+    <style>none</style>
+    <subject>{!Account.Name} requires a new financial customer</subject>
+    <type>text</type>
+</EmailTemplate>

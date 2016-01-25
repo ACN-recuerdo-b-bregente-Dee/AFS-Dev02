@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AFS Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AFS Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- AFS POC Name --></label>
+        <name>AFSPOCName__c</name>
+        <relationshipLabel><!-- AFS Relationships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Contact --></label>
+        <name>RelatedContact__c</name>
+        <relationshipLabel><!-- AFS Relationships --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>AFS Contact Relationship Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

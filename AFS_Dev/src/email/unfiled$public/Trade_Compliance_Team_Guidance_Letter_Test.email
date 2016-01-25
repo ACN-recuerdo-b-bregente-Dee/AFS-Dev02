@@ -1,0 +1,39 @@
+Global Trade Compliance Team Guidance Accenture Federal Services (AFS)
+
+Why Am I Receiving This?
+
+You have been identified as the Opportunity Director for this transaction.  This note provides instructions about actions you need to take, and where to go for assistance if needed.
+
+Opportunity ID: {!Opportunity.Opportunity_ID__c}
+Opportunity Name: {!Opportunity.Name}
+Client Name: {!Opportunity.Account}
+Opportunity Stage: {!Opportunity.Status_Stage_Requested__c}                       
+Opportunity Director e-mail: 
+Compliance Survey Details: 
+
+What Do I Need to Do?
+
+Please select one of the three (3) guidance options noted below that fits your opportunity pursuit at this point in time:
+
+1. Implement the basic
+<a href="http://www.salesforce.com/">Salesforce</a> (TCP) – Review trade compliance guidance addressed in Sections 2 through 6 and Section 8 of the TCP with your team prior to opportunity escalation. Note: Upon hire, all AFS employees are required to be read into the TCP and take refresher training annually
+2. Implement the Engagement-Specific Plan found in the links below – Review engagement plan guidance with existing team members. New team members rolling on to engagement should be read into plan prior to work performance.
+3. AFS Global Team Guidance – If your opportunity cannot meet above guidance called out in Nos. 1 and 2, contact Barbara Overall.
+
+Engagement-Specific Plans:
+1.      AFMSTT Engagement Trade Compliance Plan
+2.      AOC WSI Engagement Trade Compliance Plan
+3.      Trade Compliance Plan for Services Involving US Military Installations Abroad
+4.      Guidelines for Lean Six Sigma Engagements
+5.      JCDX Foreign Military Sales Program Trade Compliance Plan
+6.      Samseo Park Trade Compliance Plan
+7.      Mobile User Objective System Satellite (MUOS) Program Trade Compliance Plan
+8.      NetCDS Engagement Trade Compliance Plan
+9.      NetUSR Engagement Trade Compliance Plan
+10.     Radiant Mercury Trade Compliance Plan for the Accenture TAA with Raytheon Canada, Valcom Consulting Group, and the Canadian DND 
+11.     Radiant Mercury Trade Compliance Plan for the Accenture Technical Assistance Agreement (“TAA”) with the Commonwealth of Australia 
+12.     SGS Engagement Trade Compliance Plan
+13.     Integrated Logistics Management System ("ILMS") Compliance Plan 
+
+What if I Need More Information?
+Please contact Barbara Overall if you need help.

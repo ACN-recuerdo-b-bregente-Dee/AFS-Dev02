@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is an object for the Opportunity Team and Sales Credit Records.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_OI_based_on_Credit__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_Name__r.TCR_OI__c *  Total_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual OI based on Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Booked_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Booked Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Booked_Approved_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Booked Approved By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Team_Roles</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booked_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Booked Approved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Booked_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Booked Fiscal Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <referenceTo>Person__c</referenceTo>
+        <relationshipLabel>Opportunity Team Roles</relationshipLabel>
+        <relationshipName>Opportunity_Teams_Sales_Credit</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Access__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Salesforce License is required for access to be applicable.</inlineHelpText>
+        <label>Opportunity Access</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Read Only</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Read/Write</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Opportunity_Teams_Sales_Credit</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Sales_Credit_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_Name__r.Opportunity_Sales_Credit_Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Sales Credit % Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pipeline_Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Pipeline Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Pipeline_Approved_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pipeline Approved By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Team_Roles1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pipeline_Approved_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Pipeline Approved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pipeline_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Pipeline Fiscal Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>true</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alliance Business Development Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Development Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capture Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Management Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deal Shaper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivery Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enterprise Architect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Horizontal Business Development Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Key Member of Opp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negotiator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity QA Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRG Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proposal Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solution Architect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Credit__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Credit %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Service_Group__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Service Group is required if the role, Solution Architect, was selected</inlineHelpText>
+        <label>Service Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BPO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_the_8_Sales_Credit_Roles__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_Name__r.Sum_of_the_8_Sales_Credit_Roles__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sum of the 8 Sales Credit Roles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Target_OI_based_on_Credit__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_Name__r.Blended_Target_OI__c *  Total_Value__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Target OI based on Credit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity_Name__r.Total_Current_Revenue__c *  Sales_Credit__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <label>Opportunity Team Roles</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Opportunity_Name__c</columns>
+        <columns>Opportunity_Access__c</columns>
+        <columns>Role__c</columns>
+        <columns>Service_Group__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ID-{000000000}</displayFormat>
+        <label>ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Team Roles</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Role__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity_Name__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Name__c</searchFilterFields>
+        <searchFilterFields>Role__c</searchFilterFields>
+        <searchFilterFields>Opportunity_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Opportunity_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Booked_Approved_By_is_required</fullName>
+        <active>true</active>
+        <description>Booked Approved By is required when Booked Status is Approved</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Booked_Approval_Status__c , &quot;Approved&quot;),
+ISBLANK( Booked_Approved_By__c )
+)</errorConditionFormula>
+        <errorDisplayField>Booked_Approved_By__c</errorDisplayField>
+        <errorMessage>TEA-008: Booked Approved By is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Booked_Fields_do_not_apply_to_this_role</fullName>
+        <active>true</active>
+        <description>If Role does not equal: Business Development Director or Capture Lead then the Booked Sales fields (Booked Approval Status, Booked Approved By, Booked Approved Date, and Booked Fiscal Year) should not be edited. (These fields are only updated by HR users)</description>
+        <errorConditionFormula>AND( 
+AND(TEXT( Role__c ) &lt;&gt; &quot;Business Development Director&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Capture Lead&quot;),
+OR(NOT(ISBLANK(TEXT(Booked_Approval_Status__c))), 
+NOT(ISBLANK(Booked_Approved_By__c)), 
+NOT(ISBLANK(Booked_Approved_Date__c)), 
+NOT(ISBLANK(TEXT(Booked_Fiscal_Year__c)))) 
+)</errorConditionFormula>
+        <errorMessage>TEA-011: Sales Credit Booked Sales Approvals fields do not apply to this role.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Booked_Fiscal_Year_is_required</fullName>
+        <active>true</active>
+        <description>Booked Fiscal Year is required when Booked Status is Approved</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Booked_Approval_Status__c , &quot;Approved&quot;),
+ISBLANK  (TEXT(Booked_Fiscal_Year__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Booked_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>TEA-010: Booked Fiscal Year is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Booked_Sales_Approved_Date_required</fullName>
+        <active>true</active>
+        <description>Booked Sales Approved Date required when Booked Status is Approved</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Booked_Approval_Status__c , &quot;Approved&quot;),
+ISBLANK ( Booked_Approved_Date__c )
+)</errorConditionFormula>
+        <errorDisplayField>Booked_Approved_Date__c</errorDisplayField>
+        <errorMessage>TEA-009: Booked Approved Date is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Non_Sales_Credit_Fields</fullName>
+        <active>true</active>
+        <description>Error Message for the rest of the roles that should not have Sales credit:  This role not a creditable role and must be null or &apos;0&apos;</description>
+        <errorConditionFormula>AND( 
+AND( 
+TEXT( Role__c ) &lt;&gt; &quot;Capture Lead&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Delivery Lead&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Solution Architect&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Enterprise Architect&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Business Development Director&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Opportunity Director&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Negotiator&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Deal Shaper&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Alliance Business Development Director&quot;, 
+TEXT( Role__c ) &lt;&gt; &quot;Horizontal Business Development Director&quot; 
+), 
+OR( 
+Sales_Credit__c &lt;&gt; null, Sales_Credit__c &gt; 0.0 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Role__c</errorDisplayField>
+        <errorMessage>TEA-003: Sales credit does not apply to this role. Please enter 0 in Sales Credit %.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Not_Editable_after_Approval</fullName>
+        <active>true</active>
+        <description>After the Record has ‘Pipeline Approval Status’ or ‘Booked Approval Status’ = Approved then that record fields: ‘Name’, ‘Role’, ‘Service Group’, ‘Opportunity Team’, and ‘Role %’ cannot be edited by any profile but the AFS Admin or the AFS HR User</description>
+        <errorConditionFormula>AND(
+	OR(
+	ISPICKVAL(Booked_Approval_Status__c, &quot;Approved&quot;),
+	ISPICKVAL(Pipeline_Approval_Status__c, &quot;Approved&quot;)
+	),
+	OR(
+	ISCHANGED(Name__c),
+	ISCHANGED(Role__c),
+	ISCHANGED(Service_Group__c),
+	ISCHANGED(Opportunity_Name__c),
+	ISCHANGED (Sales_Credit__c)
+	),
+	AND(
+	$Profile.Name &lt;&gt; &quot;AFS Sales Ops&quot;, 
+	$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+	) 
+)</errorConditionFormula>
+        <errorMessage>TEA-015: Only AFS Sales Ops users can change Sales Credit Fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PipeFields_do_not_apply_to_this_role</fullName>
+        <active>true</active>
+        <description>Roles except Business Development Director cannot input pipeline values</description>
+        <errorConditionFormula>AND( 
+TEXT( Role__c ) &lt;&gt; &quot;Business Development Director&quot;, 
+OR(NOT(ISBLANK(TEXT(Pipeline_Approval_Status__c))), 
+NOT(ISBLANK(Pipeline_Approved_By__c)), 
+NOT(ISBLANK(Pipeline_Approved_Date__c)), 
+NOT(ISBLANK(TEXT(Pipeline_Fiscal_Year__c)))) 
+)</errorConditionFormula>
+        <errorMessage>TEA-012: Sales Credit Pipeline Approvals fields do not apply to this role.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Pipeline_Approved_By_is_required</fullName>
+        <active>true</active>
+        <description>When Pipeline Approval Status = Approved then pipeline approved by is manadatory</description>
+        <errorConditionFormula>AND(
+ISPICKVAL ( Pipeline_Approval_Status__c, &quot;Approved&quot; ),
+ISBLANK (  Pipeline_Approved_By__c )
+)</errorConditionFormula>
+        <errorDisplayField>Pipeline_Approved_By__c</errorDisplayField>
+        <errorMessage>TEA-005: Pipeline Approved By is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Pipeline_Approved_Date_is_required</fullName>
+        <active>true</active>
+        <description>When Pipeline Approval Status = Approved then pipeline approved date is manadatory</description>
+        <errorConditionFormula>AND(
+ISPICKVAL ( Pipeline_Approval_Status__c, &quot;Approved&quot; ),
+ISBLANK ( Pipeline_Approved_Date__c )
+)</errorConditionFormula>
+        <errorDisplayField>Pipeline_Approved_Date__c</errorDisplayField>
+        <errorMessage>TEA-006: Pipeline Approved Date is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Pipeline_Fiscal_year_is_required</fullName>
+        <active>true</active>
+        <description>When Pipeline Approval Status = Approved then pipeline fiscal year is mandatory</description>
+        <errorConditionFormula>AND(
+ISPICKVAL ( Pipeline_Approval_Status__c, &quot;Approved&quot; ),
+ISBLANK (TEXT( Pipeline_Fiscal_Year__c ))
+)</errorConditionFormula>
+        <errorDisplayField>Pipeline_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>TEA-007: Pipeline Fiscal Year is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Sales_Credit</fullName>
+        <active>true</active>
+        <description>If the ‘Role’ = Capture Lead, Delivery Lead, Solution/Enterprise Architect, Business Development Director, Opportunity Director, Negotiator, Client QA Director, Deal Shaper, and Bid Manager then Sales Credit is required. (zero to 100%)</description>
+        <errorConditionFormula>AND( 
+OR( 
+ISPICKVAL(Role__c, &quot;Capture Lead&quot;), 
+ISPICKVAL(Role__c, &quot;Delivery Lead&quot;), 
+ISPICKVAL(Role__c, &quot;Solution Architect&quot;), 
+ISPICKVAL(Role__c, &quot;Business Development Director&quot;), 
+ISPICKVAL(Role__c, &quot;Opportunity Director&quot;), 
+ISPICKVAL(Role__c, &quot;Negotiator&quot;), 
+ISPICKVAL(Role__c, &quot;Deal Shaper&quot;), 
+ISPICKVAL(Role__c, &quot;Alliance Business Development Director&quot;), 
+ISPICKVAL(Role__c, &quot;Horizontal Business Development Director&quot;), 
+ISPICKVAL(Role__c, &quot;Enterprise Architect&quot;)), 
+ISBLANK(Sales_Credit__c) 
+)</errorConditionFormula>
+        <errorDisplayField>Sales_Credit__c</errorDisplayField>
+        <errorMessage>TEA-001: Sales Credit % is required. Please enter a value between 0 and 100.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SC_should_not_be_greater_than_100</fullName>
+        <active>true</active>
+        <description>Sales Credit should not be greater than 100%.</description>
+        <errorConditionFormula>AND(
+OR(
+ISPICKVAL(Role__c, &quot;Capture Lead&quot;),
+ISPICKVAL(Role__c, &quot;Delivery Lead&quot;),
+ISPICKVAL(Role__c, &quot;Solution Architect&quot;),
+ISPICKVAL(Role__c, &quot;Business Development Director&quot;),
+ISPICKVAL(Role__c, &quot;Opportunity Director&quot;),
+ISPICKVAL(Role__c, &quot;Negotiator&quot;),
+ISPICKVAL(Role__c, &quot;Deal Shaper&quot;),
+ISPICKVAL(Role__c, &quot;Horizontal Business Development Director&quot;),
+ISPICKVAL(Role__c, &quot;Alliance Business Development Director&quot;),
+ISPICKVAL(Role__c, &quot;Enterprise Architect&quot;)),
+Sales_Credit__c &gt; 1.0
+)</errorConditionFormula>
+        <errorDisplayField>Sales_Credit__c</errorDisplayField>
+        <errorMessage>TEA-002: Sales Credit should not be greater than 100%.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Service_Group_Required</fullName>
+        <active>true</active>
+        <description>If the &apos;Solutions Architect&apos; role is selected then the &apos;Service Group&apos; field is required.</description>
+        <errorConditionFormula>AND
+(
+ISPICKVAL(  Role__c , &quot;Solution Architect&quot;),
+ISBLANK(  TEXT(Service_Group__c)  )
+)</errorConditionFormula>
+        <errorDisplayField>Service_Group__c</errorDisplayField>
+        <errorMessage>TEA-014: You must select a Service Group when the Solutions Architect role is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sum_cannot_exceed_800_Sales_Credit</fullName>
+        <active>true</active>
+        <description>Sum of the 8 Sales Credit Roles cannot exceed 800% Sales Credit</description>
+        <errorConditionFormula>Sum_of_the_8_Sales_Credit_Roles__c   +   Sales_Credit__c &gt; 8.00</errorConditionFormula>
+        <errorMessage>TEA-004: Sum of the 8 Sales Credit Roles cannot exceed 800% Sales Credit.</errorMessage>
+    </validationRules>
+</CustomObject>
