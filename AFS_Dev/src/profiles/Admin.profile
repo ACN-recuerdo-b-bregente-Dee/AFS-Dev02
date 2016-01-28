@@ -156,6 +156,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TCServiceGroupConversionBackup</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TCServiceGroupConversionBatch</apexClass>
         <enabled>true</enabled>
     </classAccesses>
