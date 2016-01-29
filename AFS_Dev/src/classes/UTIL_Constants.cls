@@ -96,6 +96,8 @@ public with sharing class UTIL_Constants {
     public static final String TGP_AO = 'AO Offerings';
     public static final String TGP_IO = 'IO Offerings';
     public static final String TGP_TC = 'TC Offerings';
+    public static final String TGP_IC = 'IC Offerings';
+    public static final String TGP_Strategy = 'S Offerings';
     
     //Created by Pabs 05/29/15
     public static final String TGP_OFFERINGS = 'TGP Offerings';

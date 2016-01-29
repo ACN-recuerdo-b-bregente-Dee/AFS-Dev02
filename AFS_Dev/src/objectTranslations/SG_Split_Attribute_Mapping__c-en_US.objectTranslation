@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SG Split Attribute Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SG Split Attribute Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute Value Origin --></label>
+        <name>Attribute_Value_Origin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Attribute Offering 1 --></label>
+        <name>Child_Attribute_Offering_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Attribute Offering 2 --></label>
+        <name>Child_Attribute_Offering_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Attribute Value 1 --></label>
+        <name>Child_Attribute_Value_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child Attribute Value 2 --></label>
+        <name>Child_Attribute_Value_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- SG Origin --></label>
+        <name>SG_Origin__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

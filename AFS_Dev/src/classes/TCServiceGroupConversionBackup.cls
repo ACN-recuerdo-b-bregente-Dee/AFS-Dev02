@@ -109,28 +109,63 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
     
     private void insertAttributeSplit(Set<Id> oppIds, Decimal strategyPercentage, Decimal icPercentage){
         
+        Map<String, Map<String, String>> attributeMap = retrieveAttributeMappings(UTIL_Constants.TGP_TC);
         List<Attribute__c> toUpdateAndInsert = new List<Attribute__c>();
         for(Attribute__c attribute : [SELECT AttributePercent__c, Attribute_Type__c, Attribute_Value__c, Opportunity_Name__c FROM Attribute__c WHERE
-                                        Attribute_Type__c = 'TC Offerings' AND Opportunity_Name__c IN :oppIds]){
-            toUpdateAndInsert.add(new Attribute__c(
-                Attribute_Type__c = 'Strategy Offerings',
-                Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','Strategy-'),
-                AttributePercent__c = attribute.AttributePercent__c * strategyPercentage,
-                AttributeTxt__c = attribute.AttributePercent__c * strategyPercentage + '%',
-                Attribute_TypeName__c = 'Strategy Offerings',
-                Opportunity_Name__c = attribute.Opportunity_Name__c));
-                
-             attribute.Attribute_Type__c = 'IC Offerings';
-             attribute.Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','IC-');
-             attribute.AttributePercent__c = attribute.AttributePercent__c * icPercentage;
-             attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
-             attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
-             
-             toUpdateAndInsert.add(attribute);
+                                        Attribute_Type__c = :UTIL_Constants.TGP_TC AND Opportunity_Name__c IN :oppIds]){
+            
+            if(attributeMap.get(attribute.Attribute_Value__c).size() < 2){
+                strategyPercentage = 1;
+                icPercentage = 1;
+            }
+            
+            if(attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.TGP_Strategy)){
+                toUpdateAndInsert.add(new Attribute__c(
+                    Attribute_Type__c = UTIL_Constants.TGP_Strategy,
+                    Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy),
+                    AttributePercent__c = attribute.AttributePercent__c * strategyPercentage,
+                    AttributeTxt__c = attribute.AttributePercent__c * strategyPercentage + '%',
+                    Attribute_TypeName__c = UTIL_Constants.TGP_Strategy,
+                    Opportunity_Name__c = attribute.Opportunity_Name__c));
+            }
+            
+            if(attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.TGP_IC)){
+                 attribute.Attribute_Type__c = UTIL_Constants.TGP_IC;
+                 attribute.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_IC);
+                 attribute.AttributePercent__c = attribute.AttributePercent__c * icPercentage;
+                 attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
+                 attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
+                 
+                 toUpdateAndInsert.add(attribute);
+            }
+            
         }                                
              
              
         Database.upsert(toUpdateAndInsert);                            
+    }
+    
+    private Map<String, Map<String, String>> retrieveAttributeMappings(String serviceGroup){
+        Map<String, Map<String, String>> attributeMap = new Map<String, Map<String, String>>();
+        
+        Map<String, SG_Split_Attribute_Mapping__c> nameMap = SG_Split_Attribute_Mapping__c.getAll();
+        for(SG_Split_Attribute_Mapping__c attributeCS: nameMap.values()){
+            if(attributeCS.SG_Origin__c.equals(serviceGroup)){
+                if(!attributeMap.containsKey(attributeCS.Attribute_Value_Origin__c)){
+                    attributeMap.put(attributeCS.Attribute_Value_Origin__c, new Map<String, String>());
+                }
+                else{
+                    if(!String.isEmpty(attributeCS.Child_Attribute_Offering_1__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_1__c)){
+                        attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_1__c,attributeCS.Child_Attribute_Value_1__c);
+                    }
+                    if(!String.isEmpty(attributeCS.Child_Attribute_Offering_2__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_2__c)){
+                        attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_2__c,attributeCS.Child_Attribute_Value_2__c);
+                    }
+                }
+            }
+        }
+        
+        return attributeMap;
     }
      
     global void finish(Database.BatchableContext BC){
