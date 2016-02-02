@@ -108,8 +108,8 @@ global class TCServiceGroupConversionBatch implements Database.Batchable<sObject
         for(Attribute__c attribute : [SELECT AttributePercent__c, Attribute_Type__c, Attribute_Value__c, Opportunity_Name__c FROM Attribute__c WHERE
                                         Attribute_Type__c = 'TC Offerings' AND Opportunity_Name__c IN :oppIds]){
             toUpdateAndInsert.add(new Attribute__c(
-                Attribute_Type__c = 'Strategy Offerings',
-                Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','Strategy-'),
+                Attribute_Type__c = 'S Offerings',
+                Attribute_Value__c = attribute.Attribute_Value__c.replace('TC-','S-'),
                 AttributePercent__c = attribute.AttributePercent__c * strategyPercentage,
                 AttributeTxt__c = attribute.AttributePercent__c * strategyPercentage + '%',
                 Attribute_TypeName__c = 'Strategy Offerings',

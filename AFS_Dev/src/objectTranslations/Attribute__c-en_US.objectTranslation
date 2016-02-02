@@ -68,12 +68,12 @@
             <translation><!-- MC Offerings --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>SI Offerings</masterLabel>
-            <translation><!-- SI Offerings --></translation>
+            <masterLabel>S Offerings</masterLabel>
+            <translation><!-- S Offerings --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>Strategy Offerings</masterLabel>
-            <translation><!-- Strategy Offerings --></translation>
+            <masterLabel>SI Offerings</masterLabel>
+            <translation><!-- SI Offerings --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>TC Offerings</masterLabel>
@@ -580,6 +580,54 @@
             <translation><!-- REDHAT --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>S-Data Center Transformation</masterLabel>
+            <translation><!-- S-Data Center Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-Application Modernization Strategy</masterLabel>
+            <translation><!-- S-ITS-Application Modernization Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-Application Strategy</masterLabel>
+            <translation><!-- S-ITS-Application Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-Enterprise Architecture Services</masterLabel>
+            <translation><!-- S-ITS-Enterprise Architecture Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-IT Strategy Svcs</masterLabel>
+            <translation><!-- S-ITS-IT Strategy Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-IT Transformation Svcs</masterLabel>
+            <translation><!-- S-ITS-IT Transformation Svcs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-ITS-Information &amp; Analytics Strategy</masterLabel>
+            <translation><!-- S-ITS-Information &amp; Analytics Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Infrastructure Transformation</masterLabel>
+            <translation><!-- S-Infrastructure Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Network Transformation</masterLabel>
+            <translation><!-- S-Network Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Operations Transformation</masterLabel>
+            <translation><!-- S-Operations Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Security Transformation</masterLabel>
+            <translation><!-- S-Security Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S-Workplace Transformation</masterLabel>
+            <translation><!-- S-Workplace Transformation --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>SALESFORCE</masterLabel>
             <translation><!-- SALESFORCE --></translation>
         </picklistValues>
@@ -690,54 +738,6 @@
         <picklistValues>
             <masterLabel>Strategy</masterLabel>
             <translation><!-- Strategy --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Data Center Transformation</masterLabel>
-            <translation><!-- Strategy-Data Center Transformation --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-Application Modernization Strategy</masterLabel>
-            <translation><!-- Strategy-ITS-Application Modernization Strategy --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-Application Strategy</masterLabel>
-            <translation><!-- Strategy-ITS-Application Strategy --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-Enterprise Architecture Services</masterLabel>
-            <translation><!-- Strategy-ITS-Enterprise Architecture Services --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-IT Strategy Svcs</masterLabel>
-            <translation><!-- Strategy-ITS-IT Strategy Svcs --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-IT Transformation Svcs</masterLabel>
-            <translation><!-- Strategy-ITS-IT Transformation Svcs --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-ITS-Information &amp; Analytics Strategy</masterLabel>
-            <translation><!-- Strategy-ITS-Information &amp; Analytics Strategy --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Infrastructure Transformation</masterLabel>
-            <translation><!-- Strategy-Infrastructure Transformation --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Network Transformation</masterLabel>
-            <translation><!-- Strategy-Network Transformation --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Operations Transformation</masterLabel>
-            <translation><!-- Strategy-Operations Transformation --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Security Transformation</masterLabel>
-            <translation><!-- Strategy-Security Transformation --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>Strategy-Workplace Transformation</masterLabel>
-            <translation><!-- Strategy-Workplace Transformation --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Sustainability-Operational Excellence</masterLabel>

@@ -160,7 +160,7 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy Offerings</fullName>
+                <fullName>S Offerings</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
@@ -983,63 +983,63 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Data Center Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Data Center Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Infrastructure Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Infrastructure Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-Application Modernization Strategy</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-Application Modernization Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-Application Strategy</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-Application Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-Enterprise Architecture Services</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-Enterprise Architecture Services</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-Information &amp; Analytics Strategy</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-Information &amp; Analytics Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-IT Strategy Svcs</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-IT Strategy Svcs</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-ITS-IT Transformation Svcs</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-ITS-IT Transformation Svcs</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Network Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Network Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Operations Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Operations Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Security Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Security Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
-                <fullName>Strategy-Workplace Transformation</fullName>
-                <controllingFieldValues>Strategy Offerings</controllingFieldValues>
+                <fullName>S-Workplace Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
