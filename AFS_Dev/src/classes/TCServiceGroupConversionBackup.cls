@@ -131,8 +131,6 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             
             isChildLacking = false;
             if(attributeMap.get(attribute.Attribute_Value__c).size() < 2){
-                strategyPercentage = 1;
-                icPercentage = 1;
                 isChildLacking = true;
             }
             
@@ -148,8 +146,8 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
                 
                 temp.Attribute_Type__c = UTIL_Constants.TGP_Strategy;
                 temp.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy);
-                temp.AttributePercent__c = attribute.AttributePercent__c * strategyPercentage;
-                temp.AttributeTxt__c = attribute.AttributePercent__c * strategyPercentage + '%';
+                temp.AttributePercent__c = attribute.AttributePercent__c;
+                temp.AttributeTxt__c = temp.AttributePercent__c + '%';
                 temp.Attribute_TypeName__c = UTIL_Constants.TGP_Strategy;
                 
                 toUpdateAndInsert.add(temp);
@@ -158,7 +156,6 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.TGP_IC)){
                  attribute.Attribute_Type__c = UTIL_Constants.TGP_IC;
                  attribute.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_IC);
-                 attribute.AttributePercent__c = attribute.AttributePercent__c * icPercentage;
                  attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
                  attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
                  
