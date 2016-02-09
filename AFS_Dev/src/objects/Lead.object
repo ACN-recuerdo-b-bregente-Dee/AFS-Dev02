@@ -82,6 +82,14 @@
         <fullName>AnnualRevenue</fullName>
     </fields>
     <fields>
+        <fullName>CS_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>CS Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>CampaignId</fullName>
         <type>Lookup</type>
     </fields>

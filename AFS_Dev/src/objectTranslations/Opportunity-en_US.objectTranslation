@@ -2511,6 +2511,10 @@ Best Case: 10% --></help>
         <name>Clone_Blank_Opp_Id</name>
     </webLinks>
     <webLinks>
+        <label><!-- Clone_Opportunity --></label>
+        <name>Clone_Opportunity</name>
+    </webLinks>
+    <webLinks>
         <label><!-- Complexity_Category_Abbreviation --></label>
         <name>Complexity_Category_Abbreviation</name>
     </webLinks>
