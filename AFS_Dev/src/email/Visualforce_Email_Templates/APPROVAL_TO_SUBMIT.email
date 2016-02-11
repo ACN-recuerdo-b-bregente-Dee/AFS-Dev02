@@ -283,6 +283,25 @@
                 </apex:repeat>                 
            </table>
 
+                    <!-- Attributes -->
+            <table>
+                <tr>
+                    <th colspan= "3"> Attributes </th>
+                </tr>
+                <tr > 
+                    <th>Attribute Type</th><th>Attribute Value</th><th>Attribute %</th>
+                </tr>
+                <apex:repeat var="att" value="{!relatedTo.Attributes__r}">
+                <tr>
+
+                    <td>{!att.Attribute_Type__c}</td>
+                    <td>{!att.Attribute_Value__c}</td>
+                    <td>{!att.AttributePercent__c}%</td>
+
+                </tr>
+                </apex:repeat>                 
+           </table>  
+
                     <!-- Opportunity Team Roles -->
             <table>
                 <tr>

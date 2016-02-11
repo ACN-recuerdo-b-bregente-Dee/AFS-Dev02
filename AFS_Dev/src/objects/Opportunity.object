@@ -4985,7 +4985,7 @@ ISBLANK(TEXT(Win_Probability__c))
         <masterLabel>Clone Opportunity</masterLabel>
         <openType>sidebar</openType>
         <protected>false</protected>
-        <url>/apex/dh_superclone__superclone?rid={!Opportunity.Id}&amp;cfg=MyConfigOpp&amp;saveURL=006</url>
+        <url>/apex/dh_superclone__superclone?rid={!Opportunity.Id}&amp;cfg=MyConfigOpp</url>
     </webLinks>
     <webLinks>
         <fullName>Complexity_Category_Abbreviation</fullName>
