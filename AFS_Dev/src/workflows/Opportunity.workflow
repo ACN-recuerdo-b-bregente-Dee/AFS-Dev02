@@ -2,9 +2,12 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
         <fullName>Email_Notification_for_ATS_Approval_for_Status_Stage_Requested_to_2B</fullName>
-        <ccEmails>AFS.OSPs@accenturefederal.com</ccEmails>
         <description>Email Notification for ATS Approval for Status/Stage Requested to 2B</description>
         <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
         <senderType>CurrentUser</senderType>
         <template>Visualforce_Email_Templates/APPROVAL_TO_SUBMIT</template>
     </alerts>

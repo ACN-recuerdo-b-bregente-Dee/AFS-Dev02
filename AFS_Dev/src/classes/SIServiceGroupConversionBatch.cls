@@ -44,9 +44,39 @@ global class SIServiceGroupConversionBatch {
         for(OpportunityLineItem oppLineItem: lineItems){
             opps.add(oppLineItem.Opportunity.Id);
             
+            icItem.Revenue__c = oppLineItem.Revenue__c * icPercentage;
+            icItem.Total_Costs__c = oppLineItem.Total_Costs__c * icPercentage;
+            icItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * icPercentage;
+            icItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * icPercentage;
+            icItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * icPercentage;
+            icItem.OpportunityId = oppLineItem.OpportunityId;
+            icItem.Quantity = 1;
+            icItem.Cost_Components_N_A__c = oppLineItem.Cost_Components_N_A__c;
+            icItem.Target_OI__c = oppLineItem.Target_OI__c;
+            icItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
+            icItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             
+            siItem.Revenue__c = oppLineItem.Revenue__c * siPercentage;
+            siItem.Total_Costs__c = oppLineItem.Total_Costs__c * siPercentage;
+            siItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * siPercentage;
+            siItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * siPercentage;
+            siItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * siPercentage;
+            siItem.OpportunityId = oppLineItem.OpportunityId;
+            siItem.Quantity = 1;
+            siItem.Cost_Components_N_A__c = oppLineItem.Cost_Components_N_A__c;
+            siItem.Target_OI__c = oppLineItem.Target_OI__c;
+            siItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
+            siItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
+            
+            //switch(oppLineItem.Product2.Name)
+            
+            toInsert.add(icItem);
+            toInsert.add(siItem);
         }
-        return new Set<id>();  
+        
+        Database.insert(toInsert);
+        Database.delete(lineItems);
+        return opps;  
     }
     
     private void insertAttributeSplit(Set<id> opps, Decimal siPercentage, Decimal icPercentaege){
