@@ -61,6 +61,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>ParentId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Price</fullName>
         <trackHistory>false</trackHistory>
     </fields>
@@ -93,6 +98,11 @@
     <fields>
         <fullName>Quantity</fullName>
         <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>RootAssetId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>SerialNumber</fullName>

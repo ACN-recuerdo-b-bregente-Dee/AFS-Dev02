@@ -325,6 +325,18 @@
                 <fullName>Other</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <type>Picklist</type>
@@ -416,6 +428,15 @@
         <label>All Open Leads</label>
     </listViews>
     <listViews>
+        <fullName>Call_Center_Lead_Queue_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Call Center Lead Queue</label>
+        <queue>Call_Center_Lead_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
         <fullName>MyUnreadLeads</fullName>
         <columns>FULL_NAME</columns>
         <columns>LEAD.COMPANY</columns>
@@ -440,6 +461,7 @@
         <columns>LEAD.STATE</columns>
         <columns>LEAD.EMAIL</columns>
         <columns>LEAD.STATUS</columns>
+        <columns>LEAD.LEAD_SOURCE</columns>
         <columns>LEAD.CREATED_DATE</columns>
         <columns>CORE.USERS.ALIAS</columns>
         <columns>LEAD.UNREAD</columns>
@@ -450,6 +472,15 @@
             <value>TODAY</value>
         </filters>
         <label>Today&apos;s Leads</label>
+    </listViews>
+    <listViews>
+        <fullName>Web_based_Lead_Queue_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>Web based Lead Queue</label>
+        <queue>Web_based_Lead_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
@@ -463,8 +494,9 @@
         <lookupPhoneDialogsAdditionalFields>LEAD.MOBILE_PHONE</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.TITLE</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>LEAD.PHONE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.COMPANY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.MOBILE_PHONE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>LEAD.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>

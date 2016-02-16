@@ -1122,6 +1122,14 @@ Task Order: Opportunity under an existing contract vehicle --></help>
             <translation><!-- Advertisement --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Employee Referral</masterLabel>
             <translation><!-- Employee Referral --></translation>
         </picklistValues>
@@ -1132,6 +1140,10 @@ Task Order: Opportunity under an existing contract vehicle --></help>
         <picklistValues>
             <masterLabel>Other</masterLabel>
             <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper</masterLabel>
+            <translation><!-- Paper --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Partner</masterLabel>
