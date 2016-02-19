@@ -5,10 +5,6 @@
     <deployed>true</deployed>
     <description>Opportunities with Attributes with Attribute Summary</description>
     <join>
-        <join>
-            <outerJoin>false</outerJoin>
-            <relationship>Attribute_Summary__r</relationship>
-        </join>
         <outerJoin>false</outerJoin>
         <relationship>Attributes__r</relationship>
     </join>
@@ -888,38 +884,5 @@
             <table>Opportunity.Attributes__r</table>
         </columns>
         <masterLabel>Attributes</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Opportunity.Attributes__r.Attribute_Summary__r</table>
-        </columns>
-        <masterLabel>Attribute Summary</masterLabel>
     </sections>
 </ReportType>
