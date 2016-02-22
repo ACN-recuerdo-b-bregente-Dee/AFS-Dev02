@@ -710,6 +710,12 @@
         <relatedList>Attribute__c.Opportunity_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>MemberName</fields>
+        <fields>OppAccessLevel</fields>
+        <fields>TeamMemberRole</fields>
+        <relatedList>RelatedOpportunitySalesTeam</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>Role__c</fields>
         <fields>Name__c</fields>
         <fields>Sales_Credit__c</fields>
