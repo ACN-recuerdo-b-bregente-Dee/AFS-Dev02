@@ -377,6 +377,38 @@
         <type>Picklist</type>
     </fields>
     <fields>
+        <fullName>SR_Email__c</fullName>
+        <description>Email of sales rep who entered lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email of sales rep who entered lead</inlineHelpText>
+        <label>SR Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SR_First_Name__c</fullName>
+        <description>First name of sales rep</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First name of sales rep who entered lead</inlineHelpText>
+        <label>SR First Name</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SR_Last_Name__c</fullName>
+        <description>Last name of sales rep who entered lead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last name of sales rep who entered lead</inlineHelpText>
+        <label>SR Last Name</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Status</fullName>
         <picklist>
             <picklistValues>
