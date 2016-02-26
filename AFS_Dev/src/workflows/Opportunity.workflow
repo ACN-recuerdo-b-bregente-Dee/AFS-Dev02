@@ -5,6 +5,10 @@
         <description>Email Notification for ATS Approval for Status/Stage Requested to 2B</description>
         <protected>false</protected>
         <recipients>
+            <recipient>lhea@accenturefederal.com.smart</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
             <field>LastModifiedById</field>
             <type>userLookup</type>
         </recipients>
@@ -17,6 +21,10 @@
         <protected>false</protected>
         <recipients>
             <recipient>kenneth.a.morris@accenturefederal.com.smart</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lhea@accenturefederal.com.smart</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -54,6 +62,10 @@
         <protected>false</protected>
         <recipients>
             <recipient>barbara.j.overall@accenturefederal.com.smart</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lhea@accenturefederal.com.smart</recipient>
             <type>user</type>
         </recipients>
         <recipients>
