@@ -1,8 +1,8 @@
-global class SIServiceGroupConversionBatch {
+global class SIServiceGroupConversionBatch implements Database.Batchable<sObject> {
     
     global Database.QueryLocator start(Database.BatchableContext context){
         String query = Util_Constants.SI_SG_CONVERSION_BATCHQUERY;
-        
+        System.debug('in start');
         return Database.getQueryLocator(query);
     }
     
@@ -10,7 +10,7 @@ global class SIServiceGroupConversionBatch {
         //get service group split percentages from custom settigs
         ServiceGroupConversion__c siToSi = ServiceGroupConversion__c.getValues('SI to SI');
         ServiceGroupConversion__c siToIc = ServiceGroupConversion__c.getValues('SI to TC');
-        
+        System.debug('in exec');
         //convert from custom settings to percentage
         Decimal siPercentage, icPercentage = 0.0;
         if(siToSi.Active__c == true){
@@ -44,6 +44,7 @@ global class SIServiceGroupConversionBatch {
         for(OpportunityLineItem oppLineItem: lineItems){
             opps.add(oppLineItem.Opportunity.Id);
             
+            icItem = new OpportunityLineItem();
             icItem.Revenue__c = oppLineItem.Revenue__c * icPercentage;
             icItem.Total_Costs__c = oppLineItem.Total_Costs__c * icPercentage;
             icItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * icPercentage;
@@ -56,6 +57,7 @@ global class SIServiceGroupConversionBatch {
             icItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
             icItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             
+            siItem = new OpportunityLineItem();
             siItem.Revenue__c = oppLineItem.Revenue__c * siPercentage;
             siItem.Total_Costs__c = oppLineItem.Total_Costs__c * siPercentage;
             siItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * siPercentage;

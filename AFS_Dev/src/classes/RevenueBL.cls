@@ -18,7 +18,7 @@ public with sharing class RevenueBL {
     *  @throws exception-NA
     */
     public static void setRevenueSchedule(Map<Id, OpportunityLineItem> newOpportunityLineItemMap, String origin) {
-    
+        System.debug(LoggingLevel.ERROR,' -----isRevenueScheduled: ' + isRevenueScheduled);
         if (!isRevenueScheduled) {
             isRevenueScheduled = true;
             OpportunityLineItemSchedule[] revenueSchedulesToInsert = new OpportunityLineItemSchedule[]{};
@@ -27,6 +27,7 @@ public with sharing class RevenueBL {
             Map<String, Custom_Error_Messages__c> cem = Custom_Error_Messages__c.getAll();
             Decimal revenue_update = UTIL_Constants.DEFAULT_ZERO_DECIMAL;
             
+            System.debug(LoggingLevel.ERROR,' Size of OpportunityLineItem: ' + newOpportunityLineItemMap.size());
             for (OpportunityLineItem lineItem : newOpportunityLineItemMap.values()) {
                 if (lineItem.Revenue__c == null) {
                     revenue_update = UTIL_Constants.DEFAULT_ZERO_DECIMAL;
@@ -37,7 +38,9 @@ public with sharing class RevenueBL {
                     if (lineItem.Type_of_Work__c != null) {
                     // Calculate revenue and schedule dates for Outsourcing type of work
                         if (lineItem.Type_of_Work__c.equals(UTIL_Constants.PRODUCT_TYPE_OF_WORK_OUTSOURCING)){
+                        System.debug(LoggingLevel.ERROR,' Pumasok sa outsourcing');
                             if (lineItem.Outsourcing_Start_Date__c <> null && lineItem.Outsourcing_End_Date__c <> null) {
+                            System.debug(LoggingLevel.ERROR,' Pumasok sa outsourcing date');
                                 Integer installments = lineItem.Outsourcing_Start_Date__c.monthsBetween(lineItem.Outsourcing_End_Date__c) + 1;                  
                                 for (Integer i = 0; i < installments; i++) {
                                     revenueSchedulesToInsert.add(
@@ -64,7 +67,9 @@ public with sharing class RevenueBL {
                         }
                     // Calculate revenue and schedule dates for Consulting type of work
                         if (lineItem.Type_of_Work__c.equals(UTIL_Constants.PRODUCT_TYPE_OF_WORK_CONSULTING)){
+                        System.debug(LoggingLevel.ERROR,' Pumasok sa consulting');
                             if (lineItem.Consulting_Start_Date__c <> null && lineItem.Consulting_End_Date__c <> null) {
+                            System.debug(LoggingLevel.ERROR,' Pumasok sa consulting date');
                                 Integer installments = lineItem.Consulting_Start_Date__c.monthsBetween(lineItem.Consulting_End_Date__c) + 1;
                                 for (Integer i = 0; i < installments; i++) {
                                     revenueSchedulesToInsert.add(
@@ -107,9 +112,14 @@ public with sharing class RevenueBL {
                     if (!revenueSchedulesToDelete.isEmpty()){       
                         Database.delete(revenueSchedulesToDelete, true);
                     }
+                    
+                    System.debug(LoggingLevel.ERROR,' Size of revenue schedule: ' + revenueSchedulesToInsert.size());
                     if (!revenueSchedulesToInsert.isEmpty()){
                         Database.insert(revenueSchedulesToInsert, true);
-                        System.debug(LoggingLevel.ERROR,'--revenueSchedulesToInsert-'+revenueSchedulesToInsert);
+                        System.debug(LoggingLevel.ERROR,'--revenueSchedulesToInsert-'+revenueSchedulesToInsert+' inserted schedule size: '+revenueSchedulesToInsert.size());
+                        for(OpportunityLineItemSchedule sched : revenueSchedulesToInsert){
+                            System.debug(LoggingLevel.ERROR,'Id: ' + sched.Id + ' Schedule Date: ' + sched.ScheduleDate);
+                        }
                         //revenueSchedulesToInsert = new OpportunityLineItemSchedule[]{};
                     }
                     
@@ -163,7 +173,9 @@ public with sharing class RevenueBL {
             FROM OpportunityLineItem WHERE OpportunityId IN :opportunityIds]);
         
         //call method to re-calculate revenue schedule
-        RevenueBL.setRevenueSchedule(newOpportunityLineItemMap, UTIL_Constants.REVENUE_BL_ORIGIN);
+        if(!newOpportunityLineItemMap.isEmpty()){
+            RevenueBL.setRevenueSchedule(newOpportunityLineItemMap, UTIL_Constants.REVENUE_BL_ORIGIN);
+        }
     }
     
     public static void setCustomSchedule(Map<Id, OpportunityLineItem> newOpportunityLineItemMap, String origin){
