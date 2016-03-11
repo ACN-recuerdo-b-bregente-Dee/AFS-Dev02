@@ -34,7 +34,7 @@ global class SIServiceGroupConversionBatch implements Database.Batchable<sObject
         List<OpportunityLineItem> toInsert = new List<OpportunityLineItem>();
         OpportunityLineItem icItem = new OpportunityLineItem();
         OpportunityLineItem siItem = new OpportunityLineItem();
-        
+        System.debug('in insert');
         Map<String, PricebookEntry> pbMap = new Map<String, PricebookEntry>();
         for(PricebookEntry entry: [SELECT Id, Product2.Name, Product2.Type__c FROM PricebookEntry WHERE Product2.Name LIKE '%SI%' OR Product2.Name LIKE '%TC%']){
             pbMap.put(entry.Product2.Name, entry);
@@ -74,8 +74,10 @@ global class SIServiceGroupConversionBatch implements Database.Batchable<sObject
             
             toInsert.add(icItem);
             toInsert.add(siItem);
+            System.debug('added '+icItem.Name +' '+ siItem.name);
         }
         
+        System.debug('exit for loop');
         Database.insert(toInsert);
         Database.delete(lineItems);
         return opps;  
@@ -86,7 +88,7 @@ global class SIServiceGroupConversionBatch implements Database.Batchable<sObject
     }
     
     global void finish(Database.BatchableContext context){
-        
+        System.debug('in finish');
     }
 
 }

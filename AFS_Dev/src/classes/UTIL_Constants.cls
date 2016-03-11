@@ -158,15 +158,16 @@ public with sharing class UTIL_Constants {
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c like \'%TC%\' AND '+
                                                              '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
                                                              
+                                                             
     public static final String SI_SG_CONVERSION_BATCHQUERY = 'SELECT Id, Product2Id, Product2.Name, Opportunity.Id, Cost_Components_N_A__c, HW_SW_Costs__c, ' + 
                                                              'Other_Cost_Components__c, Type__c, Subcontractor_Expenses__c, Target_OI__c, Target_OI_Temp_Calc__c, ' +
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c like \'%SI%\' AND '+
-                                                             '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
+                                                             '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')'; 
                                                              
     public static final String MC_SG_CONVERSION_BATCHQUERY = 'SELECT Id, Product2Id, Product2.Name, Opportunity.Id, Cost_Components_N_A__c, HW_SW_Costs__c, ' + 
                                                              'Other_Cost_Components__c, Type__c, Subcontractor_Expenses__c, Target_OI__c, Target_OI_Temp_Calc__c, ' +
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c = \'04 - MC\' AND '+
-                                                             '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\') ';
+                                                             '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
                                                              
     
     public static final String ERROR_MSG_ATT_002 =  'ATT-002';

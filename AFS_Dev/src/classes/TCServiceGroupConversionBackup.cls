@@ -8,26 +8,26 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
       
     // Execute Logic
     global void execute(Database.BatchableContext BC, List<OpportunityLineItem> oppLineItemList){
-        ServiceGroupConversion__c tcStrategy = ServiceGroupConversion__c.getValues('TC to Strategy');
+        ServiceGroupConversion__c tcTC = ServiceGroupConversion__c.getValues('TC to TC');
         ServiceGroupConversion__c tcIC = ServiceGroupConversion__c.getValues('TC to IC');
         
-        Decimal strategyPercentage = 0.50;
+        Decimal tcPercentage = 0.50;
         Decimal icPercentage = 0.50;
-        if(tcStrategy.Active__c == true){
-            strategyPercentage = tcStrategy.Split_Percentage__c/100;
+        if(tcTC.Active__c == true){
+            tcPercentage = tcTC.Split_Percentage__c/100;
         }
         
         if(tcIC.Active__c == true){
             icPercentage = tcIC.Split_Percentage__c/100;
         }
         
-        Set<Id> oppIds = insertLineItemSplit(oppLineItemList, strategyPercentage, icPercentage);
-        insertAttributeSplit(oppIds, strategyPercentage, icPercentage);
+        Set<Id> oppIds = insertLineItemSplit(oppLineItemList, tcPercentage, icPercentage);
+        //insertAttributeSplit(oppIds, strategyPercentage, icPercentage);
      
     }
     
-    private Set<Id> insertLineItemSplit(List<OpportunityLineItem> oppLineItemList, Decimal strategyPercentage, Decimal icPercentage){
-        List<OpportunityLineItem> toInsert = new List<OpportunityLineItem>();
+    private Set<Id> insertLineItemSplit(List<OpportunityLineItem> oppLineItemList, Decimal tcPercentage, Decimal icPercentage){
+        List<OpportunityLineItem> toUpsert = new List<OpportunityLineItem>();
         OpportunityLineItem icOppLineItem = new OpportunityLineItem();
         OpportunityLineItem strategyOppLineItem = new OpportunityLineItem();
         
@@ -36,7 +36,13 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             pbNameMap.put(pricebookEntry.Product2.Name, pricebookEntry);
         }
         
+        Map<Id, AggregateResult> aggResult = new Map<Id, AggregateResult>([SELECT Opportunity_Name__c Id, SUM(AttributePercent__c) attributeSum FROM Attribute__c WHERE Attribute_Value__c like '%TC-ITS%' GROUP BY Opportunity_Name__c]);
+        
         for(OpportunityLineItem oppLineItem: oppLineItemList){
+            Decimal strategyPercentage = 0;
+            if(aggResult.containsKey(oppLineItem.OpportunityId)){
+                strategyPercentage = ((Decimal)aggResult.get(oppLineItem.OpportunityId).get('attributeSum'))/100;
+            }
             
             strategyOppLineItem = new OpportunityLineItem();
             
@@ -53,13 +59,14 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             strategyOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             
         
+            Decimal tempIC = (1 - strategyPercentage)*icPercentage;
             icOppLineItem = new OpportunityLineItem();
             
-            icOppLineItem.Revenue__c = oppLineItem.Revenue__c * icPercentage;
-            icOppLineItem.Total_Costs__c = oppLineItem.Total_Costs__c * icPercentage;
-            icOppLineItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * icPercentage;
-            icOppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * icPercentage;
-            icOppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * icPercentage;
+            icOppLineItem.Revenue__c = oppLineItem.Revenue__c * tempIC;
+            icOppLineItem.Total_Costs__c = oppLineItem.Total_Costs__c * tempIC;
+            icOppLineItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * tempIC;
+            icOppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * tempIC;
+            icOppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * tempIC;
             icOppLineItem.OpportunityId = oppLineItem.OpportunityId;
             icOppLineItem.Quantity = 1;
             icOppLineItem.Cost_Components_N_A__c = oppLineItem.Cost_Components_N_A__c;
@@ -89,13 +96,22 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
                 icOppLineItem.Type__c = pbNameMap.get('IC - Time & Materials').Product2.Type__c;
             }
             
-            toInsert.add(strategyOppLineItem);
-            toInsert.add(icOppLineItem);
+            Decimal tempTC = (1 - strategyPercentage)*tcPercentage;
             
+            oppLineItem.Revenue__c = oppLineItem.Revenue__c * tempTC;
+            oppLineItem.Total_Costs__c = oppLineItem.Total_Costs__c * tempTC;
+            oppLineItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * tempTC;
+            oppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * tempTC;
+            oppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * tempTC;
+            
+            
+            toUpsert.add(strategyOppLineItem);
+            toUpsert.add(icOppLineItem);
+            toUpsert.add(oppLineItem);
         }
         
         Set<Id> successlineItemIds = new Set<Id>();
-        for (Database.SaveResult sr : Database.insert(toInsert, false)) {
+        for (Database.UpsertResult sr : Database.upsert(toUpsert, false)) {
             if (sr.isSuccess()) {
                 successlineItemIds.add(sr.getId());
             }
@@ -107,14 +123,6 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
         for(OpportunityLineItem lineItemRecord : [SELECT OpportunityId FROM OpportunityLineItem WHERE Id IN :successlineItemIds]){
             oppIds.add(lineItemRecord.OpportunityId);
         }
-        
-        for(OpportunityLineItem oppLineItem: oppLineItemList){
-            if(oppIds.contains(oppLineItem.OpportunityId)){
-                lineItemsToDelete.add(oppLineItem);
-            }
-        }
-        
-        Database.delete(lineItemsToDelete);
         
         return oppIds;
     }

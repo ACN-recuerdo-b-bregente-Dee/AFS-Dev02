@@ -15,8 +15,8 @@
     <label>Topics</label>
     <sections>
         <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
             <table>Topic</table>
         </columns>
         <columns>
@@ -26,12 +26,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
+            <field>LastDeleteIssuedDate</field>
             <table>Topic</table>
         </columns>
         <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastDeleteIssuedDate</field>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
             <table>Topic</table>
         </columns>
         <columns>
@@ -44,27 +44,12 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
+            <field>Body</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Type</field>
-            <table>Topic.FeedItems</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Topic.FeedItems</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Topic.FeedItems</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
+            <field>ClientOauthLink</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
@@ -74,27 +59,27 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LikeCount</field>
+            <field>CreatedBy</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ClientOauthLink</field>
+            <field>CreatedDate</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Title</field>
+            <field>DerivedFeedItem</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Body</field>
+            <field>Type</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LinkUrl</field>
+            <field>Id</field>
             <table>Topic.FeedItems</table>
         </columns>
         <columns>
@@ -104,7 +89,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>DerivedFeedItem</field>
+            <field>LastModifiedDate</field>
+            <table>Topic.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LikeCount</field>
+            <table>Topic.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LinkUrl</field>
+            <table>Topic.FeedItems</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Title</field>
             <table>Topic.FeedItems</table>
         </columns>
         <masterLabel>Topic Feed</masterLabel>
@@ -112,12 +112,7 @@
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Topic.FeedItems.Comments</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
+            <field>ClientOauthLink</field>
             <table>Topic.FeedItems.Comments</table>
         </columns>
         <columns>
@@ -127,17 +122,7 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>ClientOauthLink</field>
-            <table>Topic.FeedItems.Comments</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CommentType</field>
-            <table>Topic.FeedItems.Comments</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>IsBest</field>
             <table>Topic.FeedItems.Comments</table>
         </columns>
         <columns>
@@ -147,7 +132,22 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>Topic.FeedItems.Comments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Topic.FeedItems.Comments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>InsertedBy</field>
+            <table>Topic.FeedItems.Comments</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsBest</field>
             <table>Topic.FeedItems.Comments</table>
         </columns>
         <masterLabel>Comments</masterLabel>
