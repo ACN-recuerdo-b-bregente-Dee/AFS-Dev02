@@ -5000,6 +5000,17 @@ ISBLANK(TEXT(Win_Probability__c))
         <url>/apex/dh_superclone__superclone?rid={!Opportunity.Id}&amp;cfg=MyConfigOpp</url>
     </webLinks>
     <webLinks>
+        <fullName>Clone_Related_List</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Clone Related List</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/dh_superclone__superclonecopy?rid={!Opportunity.Id}&amp;cfg=CopyRelatedLists</url>
+    </webLinks>
+    <webLinks>
         <fullName>Complexity_Category_Abbreviation</fullName>
         <availability>online</availability>
         <displayType>link</displayType>

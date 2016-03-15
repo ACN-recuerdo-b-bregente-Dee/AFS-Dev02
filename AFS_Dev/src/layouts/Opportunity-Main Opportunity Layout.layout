@@ -2,6 +2,7 @@
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
     <customButtons>Generate_Approval_Email</customButtons>
     <customButtons>Clone_Opportunity</customButtons>
+    <customButtons>Clone_Related_List</customButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
