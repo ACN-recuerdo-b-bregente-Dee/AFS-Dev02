@@ -12,6 +12,8 @@ public with sharing class UTIL_Constants {
     public static final String OBJAGGREGATERESULT_OpportunityID = 'opportunityId';
     public static final Integer DEFAULT_SOQL_LIMIT = 10000;
     public static final Decimal DEFAULT_ZERO_DECIMAL = 0.00;
+    public static final Decimal DEFAULT_FIFTY_PERCENTAGE = 0.50;
+    public static final Decimal DEFAULT_HUNDRED = 100;
     
     //for opportunityTeamRoleBL
     public static final String OPPORTUNITY_ACCESS_READONLY = 'Read Only';
@@ -72,6 +74,9 @@ public with sharing class UTIL_Constants {
     public static final String MC_COSTPLUS = 'MC - CostPlus';
     public static final String IO_COSTPLUS = 'IO - CostPlus';
     public static final String SI_COSTPLUS = 'SI - CostPlus';
+    public static final String SI_FIXEDPRICE = 'SI - Fixed Price';
+    public static final String TC_FIXEDPRICE = 'TC - Fixed Price';
+    public static final String SI_MATERIALS = 'SI - Time & Materials';
     public static final String TC_MATERIALS = 'TC - Time & Materials';
     
     //Create by Pabs 6/23/15
@@ -169,6 +174,12 @@ public with sharing class UTIL_Constants {
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c = \'04 - MC\' AND '+
                                                              '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
                                                              
+    
+    //created by Dee 3/17/2015 for Split Conversion
+    public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';
+    public static String CUSTOM_SETTING_SI_TO_SI = 'SI to SI';
+    
+    public static String QUERY_WILDCARD_TC = '%TC%';
     
     public static final String ERROR_MSG_ATT_002 =  'ATT-002';
     public static final String ERROR_MSG_ATT_003 =  'ATT-003';

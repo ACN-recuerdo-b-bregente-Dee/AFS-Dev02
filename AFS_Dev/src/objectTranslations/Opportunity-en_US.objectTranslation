@@ -2527,10 +2527,6 @@ Best Case: 10% --></help>
         <name>Clone_Opportunity</name>
     </webLinks>
     <webLinks>
-        <label><!-- Clone_Related_List --></label>
-        <name>Clone_Related_List</name>
-    </webLinks>
-    <webLinks>
         <label><!-- Complexity_Category_Abbreviation --></label>
         <name>Complexity_Category_Abbreviation</name>
     </webLinks>

@@ -42,21 +42,21 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             Decimal strategyPercentage = 0;
             if(aggResult.containsKey(oppLineItem.OpportunityId)){
                 strategyPercentage = ((Decimal)aggResult.get(oppLineItem.OpportunityId).get('attributeSum'))/100;
+                
+                strategyOppLineItem = new OpportunityLineItem();
+            
+                strategyOppLineItem.Revenue__c = oppLineItem.Revenue__c * strategyPercentage;
+                strategyOppLineItem.Total_Costs__c = oppLineItem.Total_Costs__c * strategyPercentage;
+                strategyOppLineItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * strategyPercentage;
+                strategyOppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * strategyPercentage;
+                strategyOppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * strategyPercentage;
+                strategyOppLineItem.OpportunityId = oppLineItem.OpportunityId;
+                strategyOppLineItem.Quantity = 1;
+                strategyOppLineItem.Cost_Components_N_A__c = oppLineItem.Cost_Components_N_A__c;
+                strategyOppLineItem.Target_OI__c = oppLineItem.Target_OI__c;
+                strategyOppLineItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
+                strategyOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             }
-            
-            strategyOppLineItem = new OpportunityLineItem();
-            
-            strategyOppLineItem.Revenue__c = oppLineItem.Revenue__c * strategyPercentage;
-            strategyOppLineItem.Total_Costs__c = oppLineItem.Total_Costs__c * strategyPercentage;
-            strategyOppLineItem.HW_SW_Costs__c = oppLineItem.HW_SW_Costs__c * strategyPercentage;
-            strategyOppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * strategyPercentage;
-            strategyOppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * strategyPercentage;
-            strategyOppLineItem.OpportunityId = oppLineItem.OpportunityId;
-            strategyOppLineItem.Quantity = 1;
-            strategyOppLineItem.Cost_Components_N_A__c = oppLineItem.Cost_Components_N_A__c;
-            strategyOppLineItem.Target_OI__c = oppLineItem.Target_OI__c;
-            strategyOppLineItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
-            strategyOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             
         
             Decimal tempIC = (1 - strategyPercentage)*icPercentage;
@@ -75,22 +75,28 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             icOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             
             if(oppLineItem.Product2.Name.equals('TC - CostPlus')){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - CostPlus').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - CostPlus').Product2.Type__c;
+                if(strategyPercentage != 0){
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - CostPlus').Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get('Strategy - CostPlus').Product2.Type__c;
+                }
                 
                 icOppLineItem.PricebookEntryId = pbNameMap.get('IC - CostPlus').Id;
                 icOppLineItem.Type__c = pbNameMap.get('IC - CostPlus').Product2.Type__c;
             }
             else if(oppLineItem.Product2.Name.equals('TC - Fixed Price')){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Fixed Price').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Fixed Price').Product2.Type__c;
+                if(strategyPercentage != 0){
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Fixed Price').Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Fixed Price').Product2.Type__c;
+                }
                 
                 icOppLineItem.PricebookEntryId = pbNameMap.get('IC - Fixed Price').Id;
                 icOppLineItem.Type__c = pbNameMap.get('IC - Fixed Price').Product2.Type__c;
             }
             else{
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Time & Materials').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Time & Materials').Product2.Type__c;
+                if(strategyPercentage != 0){
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Time & Materials').Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Time & Materials').Product2.Type__c;
+                }
                 
                 icOppLineItem.PricebookEntryId = pbNameMap.get('IC - Time & Materials').Id;
                 icOppLineItem.Type__c = pbNameMap.get('IC - Time & Materials').Product2.Type__c;
@@ -104,8 +110,9 @@ global class TCServiceGroupConversionBackup implements Database.Batchable<sObjec
             oppLineItem.Other_Cost_Components__c = oppLineItem.Other_Cost_Components__c * tempTC;
             oppLineItem.Subcontractor_Expenses__c = oppLineItem.Subcontractor_Expenses__c * tempTC;
             
-            
-            toUpsert.add(strategyOppLineItem);
+            if(strategyPercentage != 0){
+                toUpsert.add(strategyOppLineItem);
+            }
             toUpsert.add(icOppLineItem);
             toUpsert.add(oppLineItem);
         }

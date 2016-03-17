@@ -156,6 +156,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SIServiceGroupConversionBackup</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SIServiceGroupConversionBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
