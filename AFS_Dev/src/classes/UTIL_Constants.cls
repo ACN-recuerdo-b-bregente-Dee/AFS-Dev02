@@ -174,6 +174,7 @@ public with sharing class UTIL_Constants {
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c = \'04 - MC\' AND '+
                                                              '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
                                                              
+                                                             
     
     //created by Dee 3/17/2015 for Split Conversion
     public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';

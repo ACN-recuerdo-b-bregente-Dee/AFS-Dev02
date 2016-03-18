@@ -23,7 +23,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
     global void execute(Database.BatchableContext BC, List<OpportunityLineItem> oppLineItemList){
         
         Set<Id> oppIds = insertLineItemSplit(oppLineItemList);
-        //insertAttributeSplit(oppIds, strategyPercentage, icPercentage);
+        insertAttributeSplit(oppIds);
      
     }
     
@@ -104,7 +104,95 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         return oppIds;
     }
     
- 
+/* Method for Attribute split which accepts Set of Opportunity Ids and % Splits for Strategy and MC */
+    private void insertAttributeSplit(Set<Id> oppIds){
+        System.debug(LoggingLevel.ERROR,'---------insertAttributeSplit()-----------');
+        
+        // Calls the method for retrieving all the attribute split mapping for SI Service Group
+        Map<String, Map<String, String>> attributeMap = retrieveAttributeMappings(UTIL_Constants.MC_OFERRING);
+        
+        // Initializes all the object instance needed for the Attribute Split
+        List<Attribute__c> toUpdateAndInsert = new List<Attribute__c>();
+        Attribute__c temp = new Attribute__c();
+        boolean isChildLacking = false;
+        
+        // Retrieves  all Attribute records from all of the Opportunities specified in the parameter.
+        // Loops through each of the Attribute records.
+        for(Attribute__c attribute : [SELECT AttributePercent__c, Attribute_Type__c, Attribute_Value__c, Opportunity_Name__c FROM Attribute__c WHERE
+                                        Attribute_Type__c = :UTIL_Constants.MC_OFERRING AND Opportunity_Name__c IN :oppIds]){
+            
+            isChildLacking = false;
+            // Sets identifier for child count to true if the size of the Attribute Split Map for the current record is less than 2.
+            if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).size() < 2){
+                isChildLacking = true;
+            }
+            
+            // Sets the child attribute for TC if key for TC Offeringss exists in the map for Attribute Split
+            if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.TGP_Strategy)){
+                System.debug(LoggingLevel.ERROR,'---------'+attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy)+'-----------');
+                if(!isChildLacking){
+                    temp = new Attribute__c();
+                    temp.Opportunity_Name__c = attribute.Opportunity_Name__c;
+                }
+                else{
+                    temp = attribute;
+                }
+                
+                temp.Attribute_Type__c = UTIL_Constants.TGP_Strategy;
+                temp.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy);
+                temp.AttributePercent__c = attribute.AttributePercent__c;
+                temp.AttributeTxt__c = temp.AttributePercent__c + '%';
+                temp.Attribute_TypeName__c = UTIL_Constants.TGP_Strategy;
+                
+                toUpdateAndInsert.add(temp);
+            }
+            
+            // Sets the child attribute for MC if key MC Offerings exists in the Map for Attribute Split.
+            if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.MC_OFERRING)){
+                 attribute.Attribute_Type__c = UTIL_Constants.MC_OFERRING;
+                 attribute.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.MC_OFERRING);
+                 attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
+                 attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
+                 
+                 toUpdateAndInsert.add(attribute);
+            }
+            
+        }                                
+             
+             
+        Database.upsert(toUpdateAndInsert);                            
+    }
+    
+    /* 
+    *  Method for retrieving all the Attribute mappings of the SG Group specified in the parameter.
+    *  Attribute mappings are retrieved from the custom settings. */
+    private Map<String, Map<String, String>> retrieveAttributeMappings(String serviceGroup){
+        System.debug(LoggingLevel.ERROR,'---------retrieveAttributeMappings()-----------');
+        Map<String, Map<String, String>> attributeMap = new Map<String, Map<String, String>>();
+        
+        // Retrievs all the attribute split mappings from the Custom Settings.
+        Map<String, SG_Split_Attribute_Mapping__c> nameMap = SG_Split_Attribute_Mapping__c.getAll();
+        
+        // Filters all the Attribute Split Mappings for the Specified SG Group and stores it to a Map
+        for(SG_Split_Attribute_Mapping__c attributeCS: nameMap.values()){
+            if(attributeCS.SG_Origin__c.equals(serviceGroup)){
+                if(!attributeMap.containsKey(attributeCS.Attribute_Value_Origin__c)){
+                    attributeMap.put(attributeCS.Attribute_Value_Origin__c, new Map<String, String>());
+                }
+                if(!String.isEmpty(attributeCS.Child_Attribute_Offering_1__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_1__c)){
+                        System.debug(LoggingLevel.ERROR,'Child1---------'+attributeCS.Child_Attribute_Value_1__c+'-----------');
+                        attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_1__c,attributeCS.Child_Attribute_Value_1__c);
+                }
+                if(!String.isEmpty(attributeCS.Child_Attribute_Offering_2__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_2__c)){
+                        System.debug(LoggingLevel.ERROR,'Child2---------'+attributeCS.Child_Attribute_Value_2__c+'-----------');
+                        attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_2__c,attributeCS.Child_Attribute_Value_2__c);
+                }
+            }
+        }
+        
+        return attributeMap;
+    }
+    
     global void finish(Database.BatchableContext BC){
         // Logic to be Executed at finish
     }

@@ -870,6 +870,7 @@
             <picklistValues>
                 <fullName>Strategy</fullName>
                 <controllingFieldValues>MC Offerings</controllingFieldValues>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
