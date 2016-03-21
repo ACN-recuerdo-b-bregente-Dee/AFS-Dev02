@@ -14,6 +14,10 @@ public with sharing class UTIL_Constants {
     public static final Decimal DEFAULT_ZERO_DECIMAL = 0.00;
     public static final Decimal DEFAULT_FIFTY_PERCENTAGE = 0.50;
     public static final Decimal DEFAULT_HUNDRED = 100;
+    public static final Decimal DEFAULT_TWO_DECIMAL = 2;
+    public static final Decimal DEFAULT_ONE_DECIMAL = 1;
+    
+    public static final String DEFAULT_PERCENT_STRING = '%';
     
     //for opportunityTeamRoleBL
     public static final String OPPORTUNITY_ACCESS_READONLY = 'Read Only';
@@ -74,10 +78,16 @@ public with sharing class UTIL_Constants {
     public static final String MC_COSTPLUS = 'MC - CostPlus';
     public static final String IO_COSTPLUS = 'IO - CostPlus';
     public static final String SI_COSTPLUS = 'SI - CostPlus';
+    public static final String IC_COSTPLUS = 'IC - CostPlus';
+    public static final String STRATEGY_COSTPLUS = 'Strategy - CostPlus';
     public static final String SI_FIXEDPRICE = 'SI - Fixed Price';
     public static final String TC_FIXEDPRICE = 'TC - Fixed Price';
+    public static final String IC_FIXEDPRICE = 'SI - Fixed Price';
+    public static final String STRATEGY_FIXEDPRICE = 'Strategy - Fixed Price';
     public static final String SI_MATERIALS = 'SI - Time & Materials';
     public static final String TC_MATERIALS = 'TC - Time & Materials';
+    public static final String IC_MATERIALS = 'IC - Time & Materials';
+    public static final String STRATEGY_MATERIALS = 'Strategy - Time & Materials';
     
     //Create by Pabs 6/23/15
     public static final String AO = 'AO';
@@ -179,8 +189,14 @@ public with sharing class UTIL_Constants {
     //created by Dee 3/17/2015 for Split Conversion
     public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';
     public static String CUSTOM_SETTING_SI_TO_SI = 'SI to SI';
+    public static String CUSTOM_SETTING_TC_TO_TC = 'TC to TC';
+    public static String CUSTOM_SETTING_TC_TO_IC = 'TC to IC';
     
     public static String QUERY_WILDCARD_TC = '%TC%';
+    public static String QUERY_WILDCARD_IC = '%IC%';
+    public static String QUERY_WILDCARD_STRATEGY = '%Strategy%';
+    
+    public static String QUERY_WILDCARD_TC_ITS = '%TC-ITS%';
     
     public static final String ERROR_MSG_ATT_002 =  'ATT-002';
     public static final String ERROR_MSG_ATT_003 =  'ATT-003';
