@@ -7,11 +7,12 @@
 * Developer                   Date                   Description
 * ---------------------------------------------------------------------------
 * Lhea Valencia           01/08/2016             Initial creation.
-* Lhea Valencia           03/17/2016             Update the code based on the new requirement.
+* Lhea Valencia           03/17/2016             Modify code based on new requirement
+* Lhea Valencia           03/23/2016             Address best practices
 * ******************************************************************************************************************************/
 global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject>{
      
-    // Start Method
+    /* Start method of Interface */
     global Database.QueryLocator start(Database.BatchableContext BC){
     
         //Retrieves the query from the UTIL_Constants class
@@ -19,26 +20,34 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         return Database.getQueryLocator(query);
     }
       
-    // Execute Logic
+    /* Script statements to run on scope */
     global void execute(Database.BatchableContext BC, List<OpportunityLineItem> oppLineItemList){
         
+        //Calls the method for Financial Details Split and Attribute Split
         Set<Id> oppIds = insertLineItemSplit(oppLineItemList);
         insertAttributeSplit(oppIds);
      
     }
     
+    /* Method for Financial Details Split which accepts Opportunity Line Items and % Splits for Strategy and MC */
     private Set<Id> insertLineItemSplit(List<OpportunityLineItem> oppLineItemList){
+        //Create an instance of List which holds the  OpportunityLineItem to insert and to update.
         List<OpportunityLineItem> toUpsert = new List<OpportunityLineItem>();
-        OpportunityLineItem icOppLineItem = new OpportunityLineItem();
+        
+        //Create an instance of OpportunityLineItem which holds the values for Strategy Opportunity Line Item record.
         OpportunityLineItem strategyOppLineItem = new OpportunityLineItem();
         
+        //Retrieves all the Pricebook entries related to Strategy Opportunity Line Item.
         Map<String, PricebookEntry> pbNameMap = new Map<String, PricebookEntry>();
-        for(PricebookEntry pricebookEntry : [SELECT Id, Product2.Name, Product2.Type__c FROM PricebookEntry Where Product2.Name like '%Strategy%']){
+        for(PricebookEntry pricebookEntry : [SELECT Id, Product2.Name, Product2.Type__c FROM PricebookEntry Where Product2.Name like :UTIL_Constants.QUERY_WILDCARD_STRATEGY]){
             pbNameMap.put(pricebookEntry.Product2.Name, pricebookEntry);
         }
         
-        Map<Id, AggregateResult> aggResult = new Map<Id, AggregateResult>([SELECT Opportunity_Name__c Id, SUM(AttributePercent__c) attributeSum FROM Attribute__c WHERE Attribute_Type__c ='MC Offerings' AND Attribute_Value__c = 'Strategy' GROUP BY Opportunity_Name__c]);
+        //Retrieves the aggregated sum of Attribute % of Strategy Attribute Value by Opportunity ID
+        Map<Id, AggregateResult> aggResult = new Map<Id, AggregateResult>([SELECT Opportunity_Name__c Id, SUM(AttributePercent__c) attributeSum FROM Attribute__c WHERE Attribute_Type__c =:UTIL_Constants.MC_OFERRING AND Attribute_Value__c = :UTIL_Constants.Strategy GROUP BY Opportunity_Name__c]);
         
+        //Iterates through all the Opportunity Line Item records and create a new Strategy Opportunity Line Item.
+        //Updates the current MC Opportunity Line Item record
         for(OpportunityLineItem oppLineItem: oppLineItemList){
             Decimal strategyPercentage = 0;
             if(aggResult.containsKey(oppLineItem.OpportunityId)){
@@ -59,17 +68,17 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
                 strategyOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
             }
                        
-            if(oppLineItem.Product2.Name.equals('MC - CostPlus')){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - CostPlus').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - CostPlus').Product2.Type__c;
+            if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_COSTPLUS)){
+                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Id;
+                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Product2.Type__c;
             }
-            else if(oppLineItem.Product2.Name.equals('MC - Fixed Price')){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Fixed Price').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Fixed Price').Product2.Type__c;
+            else if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_FIXEDPRICE )){
+                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Id;
+                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Product2.Type__c;
             }
             else{
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get('Strategy - Time & Materials').Id;
-                strategyOppLineItem.Type__c = pbNameMap.get('Strategy - Time & Materials').Product2.Type__c;
+                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Id;
+                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Product2.Type__c;
             }
             
             
@@ -87,6 +96,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
             toUpsert.add(oppLineItem);
         }
         
+        //Stores all the Id of Opportunity Line Items which are successfully inserted or updated.
         Set<Id> successlineItemIds = new Set<Id>();
         for (Database.UpsertResult sr : Database.upsert(toUpsert, false)) {
             if (sr.isSuccess()) {
@@ -96,6 +106,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         
         Set<Id> oppIds = new Set<Id>();
         
+        //Stores the parent Opportunity Id of all the Opportunity Line Items which are successfully inserted or updated.
         List<OpportunityLineItem> lineItemsToDelete = new List<OpportunityLineItem>();
         for(OpportunityLineItem lineItemRecord : [SELECT OpportunityId FROM OpportunityLineItem WHERE Id IN :successlineItemIds]){
             oppIds.add(lineItemRecord.OpportunityId);
@@ -104,11 +115,11 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         return oppIds;
     }
     
-/* Method for Attribute split which accepts Set of Opportunity Ids and % Splits for Strategy and MC */
+    /* Method for Attribute split which accepts Set of Opportunity Ids and % Splits for Strategy and MC */
     private void insertAttributeSplit(Set<Id> oppIds){
         System.debug(LoggingLevel.ERROR,'---------insertAttributeSplit()-----------');
         
-        // Calls the method for retrieving all the attribute split mapping for SI Service Group
+        // Calls the method for retrieving all the attribute split mapping for MC Service Group
         Map<String, Map<String, String>> attributeMap = retrieveAttributeMappings(UTIL_Constants.MC_OFERRING);
         
         // Initializes all the object instance needed for the Attribute Split
@@ -127,7 +138,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
                 isChildLacking = true;
             }
             
-            // Sets the child attribute for TC if key for TC Offeringss exists in the map for Attribute Split
+            // Sets the child attribute for Strategy if key for S Offerings exists in the map for Attribute Split
             if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.TGP_Strategy)){
                 System.debug(LoggingLevel.ERROR,'---------'+attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy)+'-----------');
                 if(!isChildLacking){
@@ -141,7 +152,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
                 temp.Attribute_Type__c = UTIL_Constants.TGP_Strategy;
                 temp.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.TGP_Strategy);
                 temp.AttributePercent__c = attribute.AttributePercent__c;
-                temp.AttributeTxt__c = temp.AttributePercent__c + '%';
+                temp.AttributeTxt__c = temp.AttributePercent__c + UTIL_Constants.DEFAULT_PERCENT_STRING;
                 temp.Attribute_TypeName__c = UTIL_Constants.TGP_Strategy;
                 
                 toUpdateAndInsert.add(temp);
@@ -151,7 +162,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
             if(attributeMap.containsKey(attribute.Attribute_Value__c) && attributeMap.get(attribute.Attribute_Value__c).containsKey(UTIL_Constants.MC_OFERRING)){
                  attribute.Attribute_Type__c = UTIL_Constants.MC_OFERRING;
                  attribute.Attribute_Value__c = attributeMap.get(attribute.Attribute_Value__c).get(UTIL_Constants.MC_OFERRING);
-                 attribute.AttributeTxt__c = attribute.AttributePercent__c + '%';
+                 attribute.AttributeTxt__c = attribute.AttributePercent__c + UTIL_Constants.DEFAULT_PERCENT_STRING;
                  attribute.Attribute_TypeName__c = attribute.Attribute_Type__c;
                  
                  toUpdateAndInsert.add(attribute);
@@ -167,10 +178,10 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
     *  Method for retrieving all the Attribute mappings of the SG Group specified in the parameter.
     *  Attribute mappings are retrieved from the custom settings. */
     private Map<String, Map<String, String>> retrieveAttributeMappings(String serviceGroup){
-        System.debug(LoggingLevel.ERROR,'---------retrieveAttributeMappings()-----------');
+        
         Map<String, Map<String, String>> attributeMap = new Map<String, Map<String, String>>();
         
-        // Retrievs all the attribute split mappings from the Custom Settings.
+        // Retrieves all the attribute split mappings from the Custom Settings.
         Map<String, SG_Split_Attribute_Mapping__c> nameMap = SG_Split_Attribute_Mapping__c.getAll();
         
         // Filters all the Attribute Split Mappings for the Specified SG Group and stores it to a Map
@@ -180,11 +191,11 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
                     attributeMap.put(attributeCS.Attribute_Value_Origin__c, new Map<String, String>());
                 }
                 if(!String.isEmpty(attributeCS.Child_Attribute_Offering_1__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_1__c)){
-                        System.debug(LoggingLevel.ERROR,'Child1---------'+attributeCS.Child_Attribute_Value_1__c+'-----------');
+                        
                         attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_1__c,attributeCS.Child_Attribute_Value_1__c);
                 }
                 if(!String.isEmpty(attributeCS.Child_Attribute_Offering_2__c) && !String.isEmpty(attributeCS.Child_Attribute_Value_2__c)){
-                        System.debug(LoggingLevel.ERROR,'Child2---------'+attributeCS.Child_Attribute_Value_2__c+'-----------');
+                       
                         attributeMap.get(attributeCS.Attribute_Value_Origin__c).put(attributeCS.Child_Attribute_Offering_2__c,attributeCS.Child_Attribute_Value_2__c);
                 }
             }
@@ -193,6 +204,7 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         return attributeMap;
     }
     
+    /* Any post-processing will be run here */
     global void finish(Database.BatchableContext BC){
         // Logic to be Executed at finish
     }

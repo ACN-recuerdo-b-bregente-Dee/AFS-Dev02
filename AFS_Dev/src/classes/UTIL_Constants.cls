@@ -88,6 +88,7 @@ public with sharing class UTIL_Constants {
     public static final String TC_MATERIALS = 'TC - Time & Materials';
     public static final String IC_MATERIALS = 'IC - Time & Materials';
     public static final String STRATEGY_MATERIALS = 'Strategy - Time & Materials';
+    public static final String MC_FIXEDPRICE = 'MC - Fixed Price';
     
     //Create by Pabs 6/23/15
     public static final String AO = 'AO';
@@ -113,6 +114,7 @@ public with sharing class UTIL_Constants {
     public static final String TGP_TC = 'TC Offerings';
     public static final String TGP_IC = 'IC Offerings';
     public static final String TGP_Strategy = 'S Offerings';
+    public static final String STRATEGY = 'Strategy';
     
     //Created by Pabs 05/29/15
     public static final String TGP_OFFERINGS = 'TGP Offerings';
@@ -195,6 +197,7 @@ public with sharing class UTIL_Constants {
     public static String QUERY_WILDCARD_TC = '%TC%';
     public static String QUERY_WILDCARD_IC = '%IC%';
     public static String QUERY_WILDCARD_STRATEGY = '%Strategy%';
+    
     
     public static String QUERY_WILDCARD_TC_ITS = '%TC-ITS%';
     
