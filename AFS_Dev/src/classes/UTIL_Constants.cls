@@ -82,7 +82,7 @@ public with sharing class UTIL_Constants {
     public static final String STRATEGY_COSTPLUS = 'Strategy - CostPlus';
     public static final String SI_FIXEDPRICE = 'SI - Fixed Price';
     public static final String TC_FIXEDPRICE = 'TC - Fixed Price';
-    public static final String IC_FIXEDPRICE = 'SI - Fixed Price';
+    public static final String IC_FIXEDPRICE = 'IC - Fixed Price';
     public static final String STRATEGY_FIXEDPRICE = 'Strategy - Fixed Price';
     public static final String SI_MATERIALS = 'SI - Time & Materials';
     public static final String TC_MATERIALS = 'TC - Time & Materials';

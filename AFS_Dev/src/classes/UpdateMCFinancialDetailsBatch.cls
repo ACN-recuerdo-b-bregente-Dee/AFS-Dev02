@@ -38,10 +38,13 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
         OpportunityLineItem strategyOppLineItem = new OpportunityLineItem();
         
         //Retrieves all the Pricebook entries related to Strategy Opportunity Line Item.
+        List<PricebookEntry> priceBooks = [SELECT Id, Product2.Name, Product2.Type__c FROM PricebookEntry Where Product2.Name like :UTIL_Constants.QUERY_WILDCARD_STRATEGY];
+        
+        //Creates a map instance of Pricebook Entry with Product Name as the key.
         Map<String, PricebookEntry> pbNameMap = new Map<String, PricebookEntry>();
-        for(PricebookEntry pricebookEntry : [SELECT Id, Product2.Name, Product2.Type__c FROM PricebookEntry Where Product2.Name like :UTIL_Constants.QUERY_WILDCARD_STRATEGY]){
+        for(PricebookEntry pricebookEntry : priceBooks){
             pbNameMap.put(pricebookEntry.Product2.Name, pricebookEntry);
-        }
+        }       
         
         //Retrieves the aggregated sum of Attribute % of Strategy Attribute Value by Opportunity ID
         Map<Id, AggregateResult> aggResult = new Map<Id, AggregateResult>([SELECT Opportunity_Name__c Id, SUM(AttributePercent__c) attributeSum FROM Attribute__c WHERE Attribute_Type__c =:UTIL_Constants.MC_OFERRING AND Attribute_Value__c = :UTIL_Constants.Strategy GROUP BY Opportunity_Name__c]);
@@ -66,21 +69,20 @@ global class UpdateMCFinancialDetailsBatch implements Database.Batchable<sObject
                 strategyOppLineItem.Target_OI__c = oppLineItem.Target_OI__c;
                 strategyOppLineItem.Target_OI_Temp_Calc__c = oppLineItem.Target_OI_Temp_Calc__c;
                 strategyOppLineItem.Type_of_Work__c = oppLineItem.Type_of_Work__c;
+                
+                if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_COSTPLUS)){
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Product2.Type__c;
+                }
+                else if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_FIXEDPRICE )){
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Product2.Type__c;
+                }
+                else{
+                    strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Id;
+                    strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Product2.Type__c;
+                }
             }
-                       
-            if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_COSTPLUS)){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Id;
-                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_COSTPLUS).Product2.Type__c;
-            }
-            else if(oppLineItem.Product2.Name.equals(UTIL_Constants.MC_FIXEDPRICE )){
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Id;
-                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_FIXEDPRICE).Product2.Type__c;
-            }
-            else{
-                strategyOppLineItem.PricebookEntryId = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Id;
-                strategyOppLineItem.Type__c = pbNameMap.get(UTIL_Constants.STRATEGY_MATERIALS).Product2.Type__c;
-            }
-            
             
             Decimal mcPercentage = (1 - strategyPercentage);
                     
