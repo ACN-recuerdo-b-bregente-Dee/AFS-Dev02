@@ -164,6 +164,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TCAttributeValidator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TCServiceGroupConversionBackup</apexClass>
         <enabled>false</enabled>
     </classAccesses>

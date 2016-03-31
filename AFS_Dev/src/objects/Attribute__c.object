@@ -598,6 +598,66 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>IC-Data Center Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-Infrastructure Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-Application Modernization Strategy</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-Application Strategy</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-Enterprise Architecture Services</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-Information &amp; Analytics Strategy</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-IT Strategy Svcs</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-ITS-IT Transformation Svcs</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-Network Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-Operations Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-Security Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC-Workplace Transformation</fullName>
+                <controllingFieldValues>IC Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>INFORMATICA</fullName>
                 <controllingFieldValues>Alliance</controllingFieldValues>
                 <default>false</default>
@@ -753,6 +813,11 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>S-Data Center Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>SERVICENOW</fullName>
                 <controllingFieldValues>Alliance</controllingFieldValues>
                 <default>false</default>
@@ -838,6 +903,11 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>S-Infrastructure Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>SI-Program, Project &amp; Service Mgmt Svcs</fullName>
                 <controllingFieldValues>SI Offerings</controllingFieldValues>
                 <default>false</default>
@@ -868,6 +938,51 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>S-ITS-Application Modernization Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-ITS-Application Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-ITS-Enterprise Architecture Services</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-ITS-Information &amp; Analytics Strategy</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-ITS-IT Strategy Svcs</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-ITS-IT Transformation Svcs</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-Network Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-Operations Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-Security Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>Strategy</fullName>
                 <controllingFieldValues>MC Offerings</controllingFieldValues>
                 <controllingFieldValues>S Offerings</controllingFieldValues>
@@ -881,6 +996,11 @@
             <picklistValues>
                 <fullName>Sustainability-Technology &amp; Intelligent Infrastructure</fullName>
                 <controllingFieldValues>Horizontals/Initiatives</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S-Workplace Transformation</fullName>
+                <controllingFieldValues>S Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <picklistValues>
@@ -944,6 +1064,10 @@
                 <default>false</default>
             </picklistValues>
             <picklistValues>
+                <fullName>TC-Placeholder Attribute</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
                 <fullName>TC-Security Transformation</fullName>
                 <controllingFieldValues>TC Offerings</controllingFieldValues>
                 <default>false</default>
@@ -981,126 +1105,6 @@
             <picklistValues>
                 <fullName>WORKDAY</fullName>
                 <controllingFieldValues>Alliance</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Data Center Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Infrastructure Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-Application Modernization Strategy</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-Application Strategy</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-Enterprise Architecture Services</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-Information &amp; Analytics Strategy</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-IT Strategy Svcs</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-ITS-IT Transformation Svcs</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Network Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Operations Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Security Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>S-Workplace Transformation</fullName>
-                <controllingFieldValues>S Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Data Center Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Infrastructure Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-Application Modernization Strategy</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-Application Strategy</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-Enterprise Architecture Services</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-Information &amp; Analytics Strategy</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-IT Strategy Svcs</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-ITS-IT Transformation Svcs</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Network Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Operations Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Security Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>IC-Workplace Transformation</fullName>
-                <controllingFieldValues>IC Offerings</controllingFieldValues>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>

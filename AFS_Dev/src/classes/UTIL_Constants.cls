@@ -185,11 +185,12 @@ public with sharing class UTIL_Constants {
                                                              'Other_Cost_Components__c, Type__c, Subcontractor_Expenses__c, Target_OI__c, Target_OI_Temp_Calc__c, ' +
                                                              'Revenue__c, Total_Costs__c, Type_of_Work__c from OpportunityLineItem where Type__c = \'04 - MC\' AND '+
                                                              '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
-                                                             
-                                                             
+    //Added by Raymond 3/30/2016                                                                                         
+    public static final String ATTRIBUTE_VALIDATION_BATCHQUERY1 = 'SELECT Opportunity.id  FROM OpportunityLineItem WHERE (Opportunity.Reporting_Status__c = \'Qualified\' OR Opportunity.Reporting_Status__c = \'Unqualified\')' +
+        														  'AND type__c LIKE \'%TC%\'  AND (Opportunity.Opportunity_ID__c = \'555300\' OR Opportunity.Opportunity_ID__c = \'555301\' OR Opportunity.Opportunity_ID__c = \'555302\' OR Opportunity.Opportunity_ID__c = \'555303\'';
+    public static final String ATTRIBUTE_VALIDATION_BATCHQUERY2 = ' OR Opportunity.Opportunity_ID__c = ';
     
-    //created by Dee 3/17/2015 for Split Conversion
-    public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';
+    //created by Dee 3/17/2015 for Split Conversion    public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';
     public static String CUSTOM_SETTING_SI_TO_SI = 'SI to SI';
     public static String CUSTOM_SETTING_TC_TO_TC = 'TC to TC';
     public static String CUSTOM_SETTING_TC_TO_IC = 'TC to IC';
