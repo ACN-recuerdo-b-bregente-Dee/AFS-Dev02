@@ -187,8 +187,11 @@ public with sharing class UTIL_Constants {
                                                              '(Opportunity.Reporting_Status__c= \'Qualified\' OR Opportunity.Reporting_Status__c= \'Unqualified\')';
     //Added by Raymond 3/30/2016                                                                                         
     public static final String ATTRIBUTE_VALIDATION_BATCHQUERY1 = 'SELECT Opportunity.id  FROM OpportunityLineItem WHERE (Opportunity.Reporting_Status__c = \'Qualified\' OR Opportunity.Reporting_Status__c = \'Unqualified\')' +
-        														  'AND type__c LIKE \'%TC%\'  AND (Opportunity.Opportunity_ID__c = \'555300\' OR Opportunity.Opportunity_ID__c = \'555301\' OR Opportunity.Opportunity_ID__c = \'555302\' OR Opportunity.Opportunity_ID__c = \'555303\'';
+                                                                  'AND type__c LIKE \'%TC%\' AND (Opportunity.Opportunity_ID__c = \'555300\' OR Opportunity.Opportunity_ID__c = \'555301\' OR Opportunity.Opportunity_ID__c = \'555302\' OR Opportunity.Opportunity_ID__c = \'555303\'';
     public static final String ATTRIBUTE_VALIDATION_BATCHQUERY2 = ' OR Opportunity.Opportunity_ID__c = ';
+    
+    //Added by Dee 4/4/2016
+    public static final String OPEN_OPPORTUNITIES_BATCHQUERY = 'SELECT Id FROM Opportunity WHERE Reporting_Status__c = \'Qualified\' OR Reporting_Status__c = \'Unqualified\'';
     
     //created by Dee 3/17/2015 for Split Conversion    public static String CUSTOM_SETTING_SI_TO_TC = 'SI to TC';
     public static String CUSTOM_SETTING_SI_TO_SI = 'SI to SI';
@@ -201,6 +204,9 @@ public with sharing class UTIL_Constants {
     
     
     public static String QUERY_WILDCARD_TC_ITS = '%TC-ITS%';
+    
+    //Added by Dee 4/4/2016
+    public static String TC_PLACEHOLDER = 'TC-PlaceHolder';
     
     public static final String ERROR_MSG_ATT_002 =  'ATT-002';
     public static final String ERROR_MSG_ATT_003 =  'ATT-003';

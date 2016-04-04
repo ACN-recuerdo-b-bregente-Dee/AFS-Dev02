@@ -164,6 +164,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>TCAttributePlaceholderBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TCAttributeValidator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
